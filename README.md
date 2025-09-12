@@ -1,5 +1,5 @@
-# Spatial Unity SDK Starter Template
-
+<<<<<<< HEAD
+# EnglishLearningGame 
 A template to get you started building environments for Spatial.
-
-Read more here: https://docs.spatial.io
+Juego VR desarrollado en unity para aprender ingles A1-A2 accesible mediante avatares en un entorno de Spatial.
+>>>>>>>
