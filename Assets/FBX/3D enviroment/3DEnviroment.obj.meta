@@ -1,0 +1,2076 @@
+fileFormatVersion: 2
+guid: caa78c2bc4961f6409c9a45936c6a8d4
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anchor_anchorsMat
+    second: {fileID: 2100000, guid: b317c654520ab5a4bacf6bd75fd66796, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anchors_anchor1Mat
+    second: {fileID: 2100000, guid: 30d55615889c4494693c1be83566d448, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anchors_anchor2Mat
+    second: {fileID: 2100000, guid: 9f1d065c1df4bac459213e49a43dbeb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anchors_anchor3Mat
+    second: {fileID: 2100000, guid: 20ecde89f416da64fb14ef1be08c0ed0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anchors_anchor4Mat
+    second: {fileID: 2100000, guid: e1c3544b113ee204e8ab4f743794fc1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anchors_anchor5Mat
+    second: {fileID: 2100000, guid: c1c466b80fd1cb7488b149815eb358a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony1_group1_pCube78Mat
+    second: {fileID: 2100000, guid: 8683a97e9e0758044a529a1c2afa8de6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony1_group1_pCube80Mat
+    second: {fileID: 2100000, guid: 1a24c0ad384af0345a5226030f692aca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony1_pCube79_group1Mat
+    second: {fileID: 2100000, guid: 212aa5dc1fd4893429a77f92ee6a1fb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony1_pCube81Mat
+    second: {fileID: 2100000, guid: 1f0e7b8c51b104e418d81f5d3733ec58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony1_pCylinder1Mat
+    second: {fileID: 2100000, guid: bb7257c9e5c4f18419b32841e5222997, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony2_group1_pCube78Mat
+    second: {fileID: 2100000, guid: 23eff27ae64bd554194904b0a3c61ab0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony2_group1_pCube80Mat
+    second: {fileID: 2100000, guid: 3173747d882695946b4b6f7e7ef4c761, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony2_pCube79_group1Mat
+    second: {fileID: 2100000, guid: 7f5cee650246ccf47baf297268564348, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony2_pCube81Mat
+    second: {fileID: 2100000, guid: 1cf022950c46de143a8cdabf236b4fbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony2_pCylinder1Mat
+    second: {fileID: 2100000, guid: 15359f46d6b8c6c47b0f35ddcd68a492, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony3_group1_pCube78Mat
+    second: {fileID: 2100000, guid: e03a5cd0f4190e24b9c81cc74fadd1a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony3_group1_pCube80Mat
+    second: {fileID: 2100000, guid: 81362f0b703b7534987d66ad5b900058, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony3_pCube79_group1Mat
+    second: {fileID: 2100000, guid: 73d7597a83cf3704fa14de2c270a1cc0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony3_pCube81Mat
+    second: {fileID: 2100000, guid: b47614970ad9ca04f93233110b75740a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony3_pCylinder1Mat
+    second: {fileID: 2100000, guid: 0ec4706ed60db1944b6c46f0fddff558, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony_group1_pCube78Mat
+    second: {fileID: 2100000, guid: c4ee80c53f854854fbd77d7793dfb05b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony_group1_pCube80Mat
+    second: {fileID: 2100000, guid: 2eabbe67406f2f24eb9c433f154d43c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony_pCube79_group1Mat
+    second: {fileID: 2100000, guid: 2bdb4e9f74654f641a91dc92337e92ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony_pCube81Mat
+    second: {fileID: 2100000, guid: 9703131d8c3bebf4c8a5d8789cc86bb6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_balcony_pCylinder1Mat
+    second: {fileID: 2100000, guid: 272a9c68a80859940b620ee31e2c234a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface10Mat
+    second: {fileID: 2100000, guid: 5a0fd6e38e8a77a4cb9f998da1f5e083, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface11Mat
+    second: {fileID: 2100000, guid: b8517d878c9b5b945bdd1413938f75bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface12Mat
+    second: {fileID: 2100000, guid: f0c8d8bfecf5cc9479939c246ad65509, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface13Mat
+    second: {fileID: 2100000, guid: 2a4df323af61feb4d8fde486a17b431e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface14Mat
+    second: {fileID: 2100000, guid: aca8c8f9dbc95cb49bf87dcf2ad5c12a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface15Mat
+    second: {fileID: 2100000, guid: 8fac9bc191541fc4384fb88114bfdede, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface16Mat
+    second: {fileID: 2100000, guid: 102dd50b2426f3248be9d6320af9216a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface17Mat
+    second: {fileID: 2100000, guid: 39bb20c6ba70c87468a3eaf882235019, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface18Mat
+    second: {fileID: 2100000, guid: ad5893bbf88e10c4ca9eb3badb8cab63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface19Mat
+    second: {fileID: 2100000, guid: e6c2b69f7fd5d394b8b523b4199a2bd4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface20Mat
+    second: {fileID: 2100000, guid: 6aaf62c38f8fc4c4ea4e27c4afa19e3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface21Mat
+    second: {fileID: 2100000, guid: 2b93f1ca2de6b414d81f23023f34089a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface22Mat
+    second: {fileID: 2100000, guid: e82dd2b209d6cd548a56ce5dcd488e4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface23Mat
+    second: {fileID: 2100000, guid: e1ea1208f93d19f48b9c2b25c7fddcab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface24Mat
+    second: {fileID: 2100000, guid: 11214d668b08130428874d4448383252, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface25Mat
+    second: {fileID: 2100000, guid: 2cb6ee2433bd1bd42b0890c7d1b3008e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface26Mat
+    second: {fileID: 2100000, guid: 32709b537c143ed449fe1657c5d7de3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface2Mat
+    second: {fileID: 2100000, guid: 0ed25899cfea4d14fa702d3907fe76a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface3Mat
+    second: {fileID: 2100000, guid: 1a96ae0decf733b488c9795a44b241ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface4Mat
+    second: {fileID: 2100000, guid: 36e6219b0e33f1341a8578c9f47a0375, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface5Mat
+    second: {fileID: 2100000, guid: 1a36505aa98d83846b994de8b8d97268, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface6Mat
+    second: {fileID: 2100000, guid: 61c579b5eafacfd439c1266d79f3bf4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface7Mat
+    second: {fileID: 2100000, guid: d63a82b7d56ec0f4481f4d717617fdeb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface8Mat
+    second: {fileID: 2100000, guid: e625156d06e25184a8331cb9fc0ac2e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony1_polySurface9Mat
+    second: {fileID: 2100000, guid: bbfd64b97c086bc48b8025b00d248ccc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface10Mat
+    second: {fileID: 2100000, guid: 191b04667ccef144bb7db27090736f2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface11Mat
+    second: {fileID: 2100000, guid: b129fd20dd3e2e74eab9f8306629882d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface12Mat
+    second: {fileID: 2100000, guid: 1570fbf250fb57443a494604d90ac82d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface13Mat
+    second: {fileID: 2100000, guid: ccf1ce3aa17886f4fb5abc4cfe58d6fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface14Mat
+    second: {fileID: 2100000, guid: 5a3635eb9a71670429f5de3b19c00bda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface15Mat
+    second: {fileID: 2100000, guid: 86309aeb9767f8c45860b2197f112389, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface16Mat
+    second: {fileID: 2100000, guid: 0fac4bec45613c54a93c157fc2431f87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface17Mat
+    second: {fileID: 2100000, guid: 913ef1be1b7e4d14ab09030dbe314dcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface18Mat
+    second: {fileID: 2100000, guid: 2f69ec27427ff0747929eba681d49b2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface19Mat
+    second: {fileID: 2100000, guid: 55a2132e7ea4a9b4ab4f626eb61e0de1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface20Mat
+    second: {fileID: 2100000, guid: bfcd3dacc5287e646aae1e08a5240a71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface21Mat
+    second: {fileID: 2100000, guid: 2c5b07dd3c48697489c26138a05360f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface22Mat
+    second: {fileID: 2100000, guid: 4fd4e251e1f615346870183d20ab2cc5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface23Mat
+    second: {fileID: 2100000, guid: 95ea0b122b154574c923ec231641250f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface24Mat
+    second: {fileID: 2100000, guid: 00e149abfd237d346b293301f4e2f9d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface25Mat
+    second: {fileID: 2100000, guid: 52c550e28cb71564cbb5eb51e3495b7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface26Mat
+    second: {fileID: 2100000, guid: bb7c9eacda493254fb1680da67c5d81e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface2Mat
+    second: {fileID: 2100000, guid: e5345bef13f59e649bb2e78980e459dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface3Mat
+    second: {fileID: 2100000, guid: b37428ff18bcb6b4ba5e4119b08d39cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface4Mat
+    second: {fileID: 2100000, guid: 0e487e6b8bfa6144aa5dba9ce79f4f44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface5Mat
+    second: {fileID: 2100000, guid: 5e4c2d5fcf9b5aa4dbbe7ae47d9c1c69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface6Mat
+    second: {fileID: 2100000, guid: 7b6190987abfdeb409aa873017eda48a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface7Mat
+    second: {fileID: 2100000, guid: 0fae509aba941b74fb4ecfdb89785003, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface8Mat
+    second: {fileID: 2100000, guid: caa5b78e1eb0e14438352994e0ff41ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony2_polySurface9Mat
+    second: {fileID: 2100000, guid: cf2374bc283547d4f8d077ecf66fbf2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface10Mat
+    second: {fileID: 2100000, guid: c451bf45ff7c61b4299019af6f3e2744, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface11Mat
+    second: {fileID: 2100000, guid: a70959ac3443805459198cd981c62dbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface12Mat
+    second: {fileID: 2100000, guid: 9c25b97edd3b40f418610f6c9dd131ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface13Mat
+    second: {fileID: 2100000, guid: 50bf0ff6c95e42b4693a1f32b6332de3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface14Mat
+    second: {fileID: 2100000, guid: c359e8daa68fa9142ad8217da467d3b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface15Mat
+    second: {fileID: 2100000, guid: 891c85c0a7688db42b1c5c4f7bb66ec8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface16Mat
+    second: {fileID: 2100000, guid: e90936aec41a34c4aa7a17aa75c1c4f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface17Mat
+    second: {fileID: 2100000, guid: eb888998b1494f34c88914e989240586, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface18Mat
+    second: {fileID: 2100000, guid: 396de8da7b6f5114d84f38e409e8ab27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface19Mat
+    second: {fileID: 2100000, guid: 9a7efe20502f1f24f827574efd3e7730, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface20Mat
+    second: {fileID: 2100000, guid: 69cc6e22f92945c4ba9e2996c20468ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface21Mat
+    second: {fileID: 2100000, guid: 30691955f8f196f4496dae6e8821beca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface22Mat
+    second: {fileID: 2100000, guid: ddb40a356c401dc48951e75f4f6fdf67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface23Mat
+    second: {fileID: 2100000, guid: 6c0441973fa0d69409d9d64f86360f05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface24Mat
+    second: {fileID: 2100000, guid: a6f6c481600628a4fbaf4905a61a2aec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface25Mat
+    second: {fileID: 2100000, guid: 3f6e25d57e107b14bab42376d3f8faec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface26Mat
+    second: {fileID: 2100000, guid: 66f17ba75b1a13e40be9aa733f80bc89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface2Mat
+    second: {fileID: 2100000, guid: e3dc5930adc3a9749b93d2ddfa911aa6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface3Mat
+    second: {fileID: 2100000, guid: 5e6bd85d28f9dc240af5636a75f08047, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface4Mat
+    second: {fileID: 2100000, guid: b2f3c87e8400f4140860eedc68d73016, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface5Mat
+    second: {fileID: 2100000, guid: c49d2f1fcdd37de44b674fa321d5bfdc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface6Mat
+    second: {fileID: 2100000, guid: 3b1f344df7832c34b8b0b483fd7d7ac4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface7Mat
+    second: {fileID: 2100000, guid: 63490c5931bf9c5409719e05440032dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface8Mat
+    second: {fileID: 2100000, guid: 8b7f5eed96247da45a4b9f57b6a8468f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_group3_balcony3_polySurface9Mat
+    second: {fileID: 2100000, guid: f214ca0b66915fa4c8437184c623a936, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_polySurface1_group3_balcony1Mat
+    second: {fileID: 2100000, guid: 350281643f735fa47bd531603d9a75ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_polySurface1_group3_balcony2Mat
+    second: {fileID: 2100000, guid: 3a84b2fda5a23da4abb3fa6e58859c52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balcony_polySurface1_group3_balcony3Mat
+    second: {fileID: 2100000, guid: a1a139f740dd6e0418adc1bb732fc005, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: barrel1_barrelsMat
+    second: {fileID: 2100000, guid: 6c5efd098ee8de446a70d9679029921b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: barrels_barrel3Mat
+    second: {fileID: 2100000, guid: 87fb310a96ee04f40a7818f80e97faee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: box1_boxesMat
+    second: {fileID: 2100000, guid: f76ef1a15c78fc54b9ac58e11c2813b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: boxes_box2Mat
+    second: {fileID: 2100000, guid: 558ce4d07e819484ca4c633627140318, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: boxes_box3Mat
+    second: {fileID: 2100000, guid: 410fbf9a95b117947affe19509070506, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: farbuidling1_farbuilding1Mat
+    second: {fileID: 2100000, guid: 6b887767d7ac047428eb06b2f6708c87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_pCube13Mat
+    second: {fileID: 2100000, guid: da96ff35ea19c7c44acda64ed9a15b04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_pCube14Mat
+    second: {fileID: 2100000, guid: 1dc31c5798ed92b488654066c855a444, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_pCube150Mat
+    second: {fileID: 2100000, guid: ffa4e323e08d8cf4d89c02f62902624b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_pCube151Mat
+    second: {fileID: 2100000, guid: 0b7d7cc6e19abe0478dcd20a0fe58521, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_pCube15Mat
+    second: {fileID: 2100000, guid: d2aa630b538418547b4c3cbac9687dd4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_pCube16Mat
+    second: {fileID: 2100000, guid: 1adbb4eac8484c3438017198355ac11f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_pCube17_woodMat
+    second: {fileID: 2100000, guid: 8d83c43753d3f024091e66c7868e1a43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_pCube194Mat
+    second: {fileID: 2100000, guid: 346e679c05caa1649bf0b68b3ba837f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_pPlane1Mat
+    second: {fileID: 2100000, guid: 3bc968d937936a14f9da3fc2fb0df59c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube128Mat
+    second: {fileID: 2100000, guid: 0b988ce302c3d1745a7b42e33182bc85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube129Mat
+    second: {fileID: 2100000, guid: 680903c50645c97449b61d1bdec32934, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube130Mat
+    second: {fileID: 2100000, guid: 79debf23cebd9e949b73a54e63f2820a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube131Mat
+    second: {fileID: 2100000, guid: 7bc1e5baaa2663c4b8a626f026bbc7ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube134Mat
+    second: {fileID: 2100000, guid: 2479a2d47028e6948816b33648f0321d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube135Mat
+    second: {fileID: 2100000, guid: 80450e31a67f5074e89aa8cfa518448b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube136Mat
+    second: {fileID: 2100000, guid: fa0676fa3a37b824aa85ece3fcefdcc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube137Mat
+    second: {fileID: 2100000, guid: cadb7bb422041f445a0e93ad85791de6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube138Mat
+    second: {fileID: 2100000, guid: 4f5427531ff4c0e46a763ec127b11511, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube139Mat
+    second: {fileID: 2100000, guid: ce33ef627acbc8043a74134d15c89ad6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube140Mat
+    second: {fileID: 2100000, guid: 7d6310c898be9d541a5c5b4589492cc4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube141Mat
+    second: {fileID: 2100000, guid: f93df3911dbb28f4f84176631272b195, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube142Mat
+    second: {fileID: 2100000, guid: 23e1d1229df7ac84b97fd4223112b727, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube143Mat
+    second: {fileID: 2100000, guid: f90926c34457c9c4a959c6fe9968a23e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube144Mat
+    second: {fileID: 2100000, guid: 21b49ace1341e4b43960c3cf1e338652, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube145Mat
+    second: {fileID: 2100000, guid: ac06ac8714fda0c46a86d45934b5dd8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube146Mat
+    second: {fileID: 2100000, guid: 653d3e1c753c9ec49a88c9f780f2e9a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube147Mat
+    second: {fileID: 2100000, guid: 7b501cc91caf67c49a5fd302c6988daf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube148Mat
+    second: {fileID: 2100000, guid: fc345929868f8194cbbca920e9c3a01f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube149Mat
+    second: {fileID: 2100000, guid: 1806f80269e293f4482c38500589bb4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube152Mat
+    second: {fileID: 2100000, guid: 52d384c72f63e1a40b3467af31e1378f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube153Mat
+    second: {fileID: 2100000, guid: 0a9da924e6cb22340bb253e3546453ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube154Mat
+    second: {fileID: 2100000, guid: 1d31ebad3c4651f4d9e596f31d976c53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube155Mat
+    second: {fileID: 2100000, guid: fb8ebaf932e06124c8666f36fa7519e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube156Mat
+    second: {fileID: 2100000, guid: 9e25a486ead5eef42b01a393ec0ae3b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube157Mat
+    second: {fileID: 2100000, guid: 4f6db0aff0666b9408f2ebbdad9aeda6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube158Mat
+    second: {fileID: 2100000, guid: 4c4bf5c181b18ac40932a2ec533d1b99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube159Mat
+    second: {fileID: 2100000, guid: f6b4d5bfb0071764a8e7cbe86710581b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube160Mat
+    second: {fileID: 2100000, guid: 9b4b4fe8476527c42bcb337f793c0e96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube161Mat
+    second: {fileID: 2100000, guid: 3ffe64a7c092e7742a305cb2f00b146b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube162Mat
+    second: {fileID: 2100000, guid: b82ead248e4c1e94a91c679b0c7c9004, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube163Mat
+    second: {fileID: 2100000, guid: 145963666c0814c4ca114e7cbca7c2e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube164Mat
+    second: {fileID: 2100000, guid: 7d0df68c203249a468b572ed587219d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube165Mat
+    second: {fileID: 2100000, guid: 2180fccd255f34e4c9320526ab29e1a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube166Mat
+    second: {fileID: 2100000, guid: 11857c36496493443a15b3e1f48fd488, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube167Mat
+    second: {fileID: 2100000, guid: c88654015dfc19d419f64688942d0988, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube168Mat
+    second: {fileID: 2100000, guid: 07026b74b5e594e45b64009c03f65231, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube169Mat
+    second: {fileID: 2100000, guid: e0fc46a8a7ef68a469a5aeea2540b84a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube170Mat
+    second: {fileID: 2100000, guid: 0461474d1a1bf1846968367e69f7cef3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube171Mat
+    second: {fileID: 2100000, guid: c51d6c1d7dd69c54488ee40822e59ee3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube172Mat
+    second: {fileID: 2100000, guid: 19b4dcf6088e8ef428b9814b661fc679, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube173Mat
+    second: {fileID: 2100000, guid: a94d931094297394bae66b747bd96845, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube174Mat
+    second: {fileID: 2100000, guid: 54ef8643bbdd7204eafabf75efa7e781, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube179_stairMat
+    second: {fileID: 2100000, guid: 4e91b6f7a1f23714a89cddb375cc2dfb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube26Mat
+    second: {fileID: 2100000, guid: c70e45207ef2d064b982bf96c21d8b83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube27Mat
+    second: {fileID: 2100000, guid: e1c1da7656a6e1d47aa975c27a9c3aeb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube28Mat
+    second: {fileID: 2100000, guid: 797590c7fd4cc0f43a73c30fb541fa78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube29Mat
+    second: {fileID: 2100000, guid: fbb61e0ad2767bf49ab88a7b600f70ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube30Mat
+    second: {fileID: 2100000, guid: a332fec6fba285e4faed3eb3693f7970, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube31Mat
+    second: {fileID: 2100000, guid: 067c8b7fe4823194a92a92b0c6526c3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube32Mat
+    second: {fileID: 2100000, guid: 7d22b2247e3d23446a90d1bfc830e587, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube33Mat
+    second: {fileID: 2100000, guid: 745c6b5c3679ba447b8a6d898c953e77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube34Mat
+    second: {fileID: 2100000, guid: e3bafb53e8a41344bac3616bf428b517, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube35Mat
+    second: {fileID: 2100000, guid: 75157bd728c9f854bb03242686c63d38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube36Mat
+    second: {fileID: 2100000, guid: 4182fa1bf55817845920e2c766879476, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube37Mat
+    second: {fileID: 2100000, guid: 6a5fefbc7c2200548ab8a5627d75a672, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube38Mat
+    second: {fileID: 2100000, guid: 0241563fa3f818744bebe05a6a9c198b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube39Mat
+    second: {fileID: 2100000, guid: f380abe0dabcd094b815782c025bcb3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube40Mat
+    second: {fileID: 2100000, guid: a2eb8befe9cf7484f9f4b6c1424c9a30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube41Mat
+    second: {fileID: 2100000, guid: ddbe935fdabb5354ab1fcae092823c6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube42Mat
+    second: {fileID: 2100000, guid: 68ea7cce7cdea3b44a28093beef51862, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube43Mat
+    second: {fileID: 2100000, guid: 2fdffb997b40653449ad5e973ceafb2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube44Mat
+    second: {fileID: 2100000, guid: 5823327023432d14d9916db547598306, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube45Mat
+    second: {fileID: 2100000, guid: b550e7a8ba2233a478c337c5a235ce1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube46Mat
+    second: {fileID: 2100000, guid: 717755c629bbf4246a2e340a56383f09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube47Mat
+    second: {fileID: 2100000, guid: 8d0d63a3777d4f543af7227954be6018, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube48Mat
+    second: {fileID: 2100000, guid: af02bf56bd550d34a864295cd9a28dd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube49Mat
+    second: {fileID: 2100000, guid: ead712b6f28b65e408d5fde912a3b7df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube50Mat
+    second: {fileID: 2100000, guid: f13a985375940594d968cf77bc4bd049, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube51Mat
+    second: {fileID: 2100000, guid: 645838f36edfb2f4cb73cf0967e218d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube52Mat
+    second: {fileID: 2100000, guid: 6719370ec00ad5e4b9d717efb85d9063, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube53Mat
+    second: {fileID: 2100000, guid: 977876dc234a36345b73a69dc16aacf5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube54Mat
+    second: {fileID: 2100000, guid: db87ce7863dfc254b86afa16e542ded7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube55Mat
+    second: {fileID: 2100000, guid: d44a3dc14471a604b80f4dc565c51257, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube56Mat
+    second: {fileID: 2100000, guid: a5041c77ba8bc30479c144b4b642b7f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube57Mat
+    second: {fileID: 2100000, guid: 7029668bb71f02d4982198c38e88d046, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube58Mat
+    second: {fileID: 2100000, guid: fbdeaca0a9626974fa598b514569fb3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube59Mat
+    second: {fileID: 2100000, guid: c7638c56ec0c6c94f91674543f6e1bb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube60Mat
+    second: {fileID: 2100000, guid: 621b8fd909fe0fd44815fc1889b3798f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube61Mat
+    second: {fileID: 2100000, guid: bc9f5c3d578d84d479439bbf588bf234, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube62Mat
+    second: {fileID: 2100000, guid: 972356b6d8068ac41a6fa0c54d56c7b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube64Mat
+    second: {fileID: 2100000, guid: a77299ab86368ad45ad0718dd40612e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube65Mat
+    second: {fileID: 2100000, guid: 447b540f26cbb204a81188b1ea1a1567, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube66Mat
+    second: {fileID: 2100000, guid: 2e653efd3debb9f40be840f5708c3f44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube67Mat
+    second: {fileID: 2100000, guid: 24e41dd14d38d4341b34cf3510c0b59a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube68Mat
+    second: {fileID: 2100000, guid: 2c2f6c098e54d2243a0e532d8bda0778, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube69Mat
+    second: {fileID: 2100000, guid: ed02fcbe8c645aa44a70d3440c073873, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_pCube70Mat
+    second: {fileID: 2100000, guid: d5687fb1d2fe31944b35e5f23823c0b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_stair_pCube180Mat
+    second: {fileID: 2100000, guid: f6b8b268d0af345428e737e50e91d67e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_stair_pCube181Mat
+    second: {fileID: 2100000, guid: aa5d838279e19c44b859ba596313c315, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_stair_pCube182Mat
+    second: {fileID: 2100000, guid: 7d051f6ae2f34fd4eaa6e52324a3ff07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_stair_pCube183Mat
+    second: {fileID: 2100000, guid: 894a73c4908fcfa4393fe6699e196ccb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_stair_pCube184Mat
+    second: {fileID: 2100000, guid: 79701a9536d53af478b7749c270ce329, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_stair_pCube186Mat
+    second: {fileID: 2100000, guid: 81f114d69eabd1a47a34617780777442, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_stair_pCube195Mat
+    second: {fileID: 2100000, guid: dccc1f158de8b4b4e94f9a96bf87a2fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor_wood_stair_pCube196Mat
+    second: {fileID: 2100000, guid: 9cbd7bf4e2376bf48b8fc6a53ae84e02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface10Mat
+    second: {fileID: 2100000, guid: 7426cb4da4e708142806a3b289f76005, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface11Mat
+    second: {fileID: 2100000, guid: a680842bb8821b642a4c2f45c82d9add, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface12Mat
+    second: {fileID: 2100000, guid: 1ac8afe1655dddd42ae635add609af31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface13Mat
+    second: {fileID: 2100000, guid: 23dfd0686cc84d34f8841d0551df661a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface14Mat
+    second: {fileID: 2100000, guid: 0b267d522688b8f419ce213190e4d37a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface15Mat
+    second: {fileID: 2100000, guid: 8a8fc3109567d7a4ba58a8c34eb94f98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface16Mat
+    second: {fileID: 2100000, guid: 06bdb455a464b754bb1be7dd221c137a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface17Mat
+    second: {fileID: 2100000, guid: 41459f4e1fe19014d91e02cef4eca752, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface18Mat
+    second: {fileID: 2100000, guid: 0f91abc4a16633849add43197ea6c124, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface19Mat
+    second: {fileID: 2100000, guid: acf2eb64c6ba8504aaea27cb9c16aa35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface20Mat
+    second: {fileID: 2100000, guid: e1781c4efda81f94a9dae771e9adae36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface21Mat
+    second: {fileID: 2100000, guid: 529c2c610dc174f46bcb71e44ff760ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface22Mat
+    second: {fileID: 2100000, guid: 1d7b4925bc329a346b1b8fe9ce6097d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface23Mat
+    second: {fileID: 2100000, guid: 1bfb148b8e901184ca751222379d5b02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface24Mat
+    second: {fileID: 2100000, guid: 96a463eb1bdfe3446bbb2038746063e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface25Mat
+    second: {fileID: 2100000, guid: 69adeb443d712674e9c5a7d0b747dc45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface26Mat
+    second: {fileID: 2100000, guid: 0752b24713d670c4295c1691c2060aa7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface2Mat
+    second: {fileID: 2100000, guid: 7a0a17ba49c971e43b038f43c6464d11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface3Mat
+    second: {fileID: 2100000, guid: 8d41cd9ab01eabc4e9c43b38667edce0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface4Mat
+    second: {fileID: 2100000, guid: 6f4288c91b5f1d44fb6ed9234fd5ba14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface5Mat
+    second: {fileID: 2100000, guid: 833b7e707d3f84040b5744da20a03d5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface6Mat
+    second: {fileID: 2100000, guid: e91ec412531b0e44e89983eae8acd5d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface7Mat
+    second: {fileID: 2100000, guid: ba188b75471b23f4cb3e00f5bae008db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface8Mat
+    second: {fileID: 2100000, guid: 26bd796db97b3a149b6abe23b7585201, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: group3_balcony_balcony_polySurface9Mat
+    second: {fileID: 2100000, guid: 64efec9c7040359468914798c2c07e49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_celling_pCube126Mat
+    second: {fileID: 2100000, guid: 03e5456196f61914a91576163f324d67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_pCube125_railing_cellingMat
+    second: {fileID: 2100000, guid: bc87f20b0f2e0f94d91727d53db33622, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder10Mat
+    second: {fileID: 2100000, guid: 7538d4a62dd30bc41b8b29a8c6b9450a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder11Mat
+    second: {fileID: 2100000, guid: 1c78c78a8857c634f9e2d4a30df0286d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder12Mat
+    second: {fileID: 2100000, guid: c103555257eaff54294aea080ecc71bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder13Mat
+    second: {fileID: 2100000, guid: b312442638e021e4c8a9d58abce0afe2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder14Mat
+    second: {fileID: 2100000, guid: 3d7b7ab74b6503d4397b34cafce49284, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder15Mat
+    second: {fileID: 2100000, guid: 581b853ae7024d14f8c93420891cc4b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder16Mat
+    second: {fileID: 2100000, guid: b95267e09c5b678408a689439d9f14ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder17Mat
+    second: {fileID: 2100000, guid: 1480d833e9de4db4386d9b39afcef141, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder18Mat
+    second: {fileID: 2100000, guid: 6c0222523771cb7488dc2c7195da244f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder19Mat
+    second: {fileID: 2100000, guid: 41d72e6b85e9adc48a985deaf837a748, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder20Mat
+    second: {fileID: 2100000, guid: 8ffe66f334a9d4a408d6a7a85184b66a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder21Mat
+    second: {fileID: 2100000, guid: cccd7704cf5deda448b29b159a700632, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder22Mat
+    second: {fileID: 2100000, guid: c20dc9b425de7ef46adc94dc2775b715, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder23Mat
+    second: {fileID: 2100000, guid: ab323a223e1795d4e8485f20510bdd3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder24Mat
+    second: {fileID: 2100000, guid: c4974ab6eb8299245b82e88d7f1af434, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder25Mat
+    second: {fileID: 2100000, guid: b26922aa88ce9444f8a9b6e6b71588a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder26Mat
+    second: {fileID: 2100000, guid: 0306383473ba6ec44b8bff4cf0bc4bb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder2Mat
+    second: {fileID: 2100000, guid: 81c7905fa8e22e94eb203486479dabae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder3Mat
+    second: {fileID: 2100000, guid: fb14f841baab022429b04c6d75bebea8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder4Mat
+    second: {fileID: 2100000, guid: e3609165a5a260b4089bb3dde57670ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder5Mat
+    second: {fileID: 2100000, guid: 902c07160e21b4f419aaf6f5aa35dbdb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder6Mat
+    second: {fileID: 2100000, guid: bcea9b6de19e64446899e09b7a896d53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder7Mat
+    second: {fileID: 2100000, guid: 33a2424fa59f60d489005ff6995a0b1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder8Mat
+    second: {fileID: 2100000, guid: 5ffb092b000e56b40b184b27f11458f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_railing_celling_pCylinder9Mat
+    second: {fileID: 2100000, guid: 2baf971fb398c2141af437e681d94794, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ladderMat
+    second: {fileID: 2100000, guid: efda9f9efddea2a46874c7273a63bbea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lamp2_lampsMat
+    second: {fileID: 2100000, guid: 0ab0d2deebe08ab45b8b515010b0f121, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lamps_lamp3Mat
+    second: {fileID: 2100000, guid: 012c4418a3faf0b4dadda0754f4dfedf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lamps_lamp4Mat
+    second: {fileID: 2100000, guid: 200d3002a2a374a41b9e0f236f03c92c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube175Mat
+    second: {fileID: 2100000, guid: 70d730660d806dd48a4bf3c96881fdc7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube185Mat
+    second: {fileID: 2100000, guid: 20832a24f9b97574cab752e3a1a11758, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube187Mat
+    second: {fileID: 2100000, guid: b6f6c9b12da857d4aa96509f0c8c1129, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube188Mat
+    second: {fileID: 2100000, guid: 681dc1bc6cac0c346bd8dd8040bb2f7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube189Mat
+    second: {fileID: 2100000, guid: ade663ff6dc8b17429a5ab1d2b422160, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube190Mat
+    second: {fileID: 2100000, guid: c40d5e576e397084dad812bc1d0cf9fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube191Mat
+    second: {fileID: 2100000, guid: b39a80389c1870a419a115ade866ffe4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube192Mat
+    second: {fileID: 2100000, guid: 318ccc0fca29c284a80e16e242fcae1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube197Mat
+    second: {fileID: 2100000, guid: c9b18719a8a71894584166aebce67bea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube198Mat
+    second: {fileID: 2100000, guid: 7342226b7f9218a4a83ea344ab2f4b00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube199Mat
+    second: {fileID: 2100000, guid: bcc10d9542d29324d93b99c2e1579d9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube200Mat
+    second: {fileID: 2100000, guid: 093fc3fda652f8941933a77708dcfa53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube201Mat
+    second: {fileID: 2100000, guid: f222da7a79cf7984d90d7db13bd42008, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube202Mat
+    second: {fileID: 2100000, guid: 24cbe258cba92fe4991e22cf6d0761e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube203Mat
+    second: {fileID: 2100000, guid: 7a073c79c35c5f842943ade24f77a9a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube204Mat
+    second: {fileID: 2100000, guid: a13d5c07d905f71459817b64129e3f8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube205Mat
+    second: {fileID: 2100000, guid: 3a8917eb7ee9b0c40a4894401a2339a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube206Mat
+    second: {fileID: 2100000, guid: 3a8df3d67f272b6459de8d7d379aadcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube207Mat
+    second: {fileID: 2100000, guid: 714f5ee638dc2e04591c580fafdb4401, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube208Mat
+    second: {fileID: 2100000, guid: 2093d9af36ec0b14fb95944799f21421, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube209Mat
+    second: {fileID: 2100000, guid: 8608caa62b7b42e43afd7cb5c1ad0b68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube210Mat
+    second: {fileID: 2100000, guid: 9db6edfc1bdc02041909ff02baefc4d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube211Mat
+    second: {fileID: 2100000, guid: c2ef2190c8a98864c9bd8b07b4c24dfc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube212Mat
+    second: {fileID: 2100000, guid: cec31af194098be4aa7d576b7d42f0e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube213Mat
+    second: {fileID: 2100000, guid: 2d05a461317be854fbe03b24ad793e25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube214Mat
+    second: {fileID: 2100000, guid: 8c42d825b467bff42aabe5cfa469faea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCube215Mat
+    second: {fileID: 2100000, guid: 1351766c78df797428f786f78003028a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCylinder27Mat
+    second: {fileID: 2100000, guid: 496c5e3c863db154ba883f6685c5b452, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCylinder28Mat
+    second: {fileID: 2100000, guid: 46525ad87de565d429ac5e13584f62c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outsidewalk_pCylinder29Mat
+    second: {fileID: 2100000, guid: 7931f71829e0cde43a0512b6fccc3e9f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCube109_wallMat
+    second: {fileID: 2100000, guid: 52a7af355ca562d429c009b0234dace1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCube123_second_floor_insideMat
+    second: {fileID: 2100000, guid: 985e283092c8dab4688d20ab5284a13d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCube12_floorMat
+    second: {fileID: 2100000, guid: 10029463e176b254a8115c34c6e3e66e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCube85_signMat
+    second: {fileID: 2100000, guid: 5209aed6036124145926d5885ea5c6d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCube8_railMat
+    second: {fileID: 2100000, guid: dae611ae54914f54296dfc16aea61eda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCube9_structureMat
+    second: {fileID: 2100000, guid: 865944eb8a5e8dc4e8e1f44fd2362fff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCylinder30_outsidewalkMat
+    second: {fileID: 2100000, guid: 3d7da0ff23effab499249ae2e7c7b52e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: polySurface1_group3_balcony_balconyMat
+    second: {fileID: 2100000, guid: a63a00f54a97184498d3023db95196d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rail_pCube10Mat
+    second: {fileID: 2100000, guid: 905d5006a7b5a364b9f0d18efd3edab2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rail_pCube1Mat
+    second: {fileID: 2100000, guid: a69284dc98bfa95499874779e0afca42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rail_pCube2Mat
+    second: {fileID: 2100000, guid: 2ddce444d118ae84bba94a6ef0fce2ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rail_pCube3Mat
+    second: {fileID: 2100000, guid: 8b795ce1b0f67a940b855bda2b9a2123, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rail_pCube4Mat
+    second: {fileID: 2100000, guid: 654a57f70dd0bcf419407281159d12d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rail_pCube5Mat
+    second: {fileID: 2100000, guid: 6569ff01961264749bbe7606841683cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rail_pCube6Mat
+    second: {fileID: 2100000, guid: 9574675761ad7fe4087ff50b161335a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ropeandhook1Mat
+    second: {fileID: 2100000, guid: 92a0f43759063954b88e916fc3596013, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_pCube125_railingMat
+    second: {fileID: 2100000, guid: 4124c6119d1af0a4caf76b5fe22943ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_pPlane2Mat
+    second: {fileID: 2100000, guid: 85c08ed0d85d72942942c47e7aedcc4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder10Mat
+    second: {fileID: 2100000, guid: d09169e89f71a44438d334b0841d8975, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder11Mat
+    second: {fileID: 2100000, guid: 654f88fd335090342ba17deefb4fc874, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder12Mat
+    second: {fileID: 2100000, guid: 7968eef61e5bde448b5687fa859c8fb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder13Mat
+    second: {fileID: 2100000, guid: 8f9a51f931102284aa30b669664f1530, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder14Mat
+    second: {fileID: 2100000, guid: ea6f5cfc70fadbe41a977b61efe97791, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder15Mat
+    second: {fileID: 2100000, guid: f8eb9add8d0702f428a10f6f874a7053, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder16Mat
+    second: {fileID: 2100000, guid: 649d9d1d00ca321428ecc0f45fa91ebe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder17Mat
+    second: {fileID: 2100000, guid: 76cdced8d6fd5c243a81660b150ad270, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder18Mat
+    second: {fileID: 2100000, guid: 94562ccc90a4d4041b8b3865ca860a3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder19Mat
+    second: {fileID: 2100000, guid: 3f5124297e42f8545aa0a144baa5c70d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder20Mat
+    second: {fileID: 2100000, guid: 0d071a8131a19f441b1589b6b57534f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder21Mat
+    second: {fileID: 2100000, guid: 876b91e34fcba5c448b228344803cd9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder22Mat
+    second: {fileID: 2100000, guid: bc9dfe477b64b224e9e5bf7fe023083f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder23Mat
+    second: {fileID: 2100000, guid: 076e0b117cf0bd04183853e0a324a1f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder24Mat
+    second: {fileID: 2100000, guid: 94133511b422c2b409e6b600f5ccc608, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder25Mat
+    second: {fileID: 2100000, guid: 23dd1e8c9c228c044977fdee79c31084, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder26Mat
+    second: {fileID: 2100000, guid: 1e8301e84c28721408f29fdd8268c9ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder2Mat
+    second: {fileID: 2100000, guid: f724913dbd019ce44b15be2d9fc5bc84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder3Mat
+    second: {fileID: 2100000, guid: a1aa813fb0db1c145bbed029a7d21e77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder4Mat
+    second: {fileID: 2100000, guid: f2cbef97b2845fe4faf46426f4082e8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder5Mat
+    second: {fileID: 2100000, guid: fa961f0b7fdeace44a005f655b3f388c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder6Mat
+    second: {fileID: 2100000, guid: 18338038e8aa8d44a8eae8b29ee70981, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder7Mat
+    second: {fileID: 2100000, guid: daa410827a7c6b949b4e402934e180ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder8Mat
+    second: {fileID: 2100000, guid: b73a8bd513fa3d240adc892b6f6c6af2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: second_floor_inside_railing_pCylinder9Mat
+    second: {fileID: 2100000, guid: 091eb8ac36eac224f91563583b276589, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sign_pCube84Mat
+    second: {fileID: 2100000, guid: 7ec732bb25f83da46b924ad0e580f1b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sign_sign2Mat
+    second: {fileID: 2100000, guid: be7531796157af74d8ec409c5623c45e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sign_sign5Mat
+    second: {fileID: 2100000, guid: 160872a5eb8fbb94a8ce91212962cc4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: structure_pCube121Mat
+    second: {fileID: 2100000, guid: 0199bfabd592c3e4fbb388f940005156, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: structure_pCube122Mat
+    second: {fileID: 2100000, guid: 7d47a77913bf4c349ade6442b702d4c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: structure_pCube127Mat
+    second: {fileID: 2100000, guid: 7d113e0e8109b0a429c2170baf157d5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: structure_pCube193Mat
+    second: {fileID: 2100000, guid: 51fd34d6f58a6704ca9dbae0be655eed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: structure_pCube63Mat
+    second: {fileID: 2100000, guid: 00f94e840605a384391d34096140a5a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: structure_pCube71Mat
+    second: {fileID: 2100000, guid: 8a95e328509bfbc4289681bcd646196f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: structure_pCube72Mat
+    second: {fileID: 2100000, guid: 4dcc810dcc06f64418bdec97e1dbee5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: structure_pCube73Mat
+    second: {fileID: 2100000, guid: d1997092493b04c4987b3c0a378ca0f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: structure_pCube74Mat
+    second: {fileID: 2100000, guid: 1ad5b10259342fb41b9aebe1b8926537, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: structure_pCube75Mat
+    second: {fileID: 2100000, guid: 28015f00ca364d049b08f4f4d63b6d22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: structure_pCube76Mat
+    second: {fileID: 2100000, guid: 5d954d3a9d66cdd46925343c03289611, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: structure_pCube77Mat
+    second: {fileID: 2100000, guid: 00c2d61c856e8db48bff1713287a9c8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: structure_pCube87Mat
+    second: {fileID: 2100000, guid: 04d4f4cb242ae674e803ce7c235b99f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: structure_pCylinder31Mat
+    second: {fileID: 2100000, guid: 3fad48a59a0b0cf4e845f2f80b55e634, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube100Mat
+    second: {fileID: 2100000, guid: 3e4094071c772b440ac889b7efedf3ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube101Mat
+    second: {fileID: 2100000, guid: da6595761ce9fcd43b8e9af680254b54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube102Mat
+    second: {fileID: 2100000, guid: 560403dda4031514faa76a70997c99d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube103Mat
+    second: {fileID: 2100000, guid: 967a65a4aa5a3744d828866505df33ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube104Mat
+    second: {fileID: 2100000, guid: 65c9a243fa69dc44ca7e2295ddccedf1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube105Mat
+    second: {fileID: 2100000, guid: b82797ade5cf7424c90cc39e643be387, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube106Mat
+    second: {fileID: 2100000, guid: 11d0351649a36674f98df7faf88aa3d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube107Mat
+    second: {fileID: 2100000, guid: 0772fc9196f9c264d9997615f32a2efc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube108Mat
+    second: {fileID: 2100000, guid: bb3de314b320b364e88cc8dd0e8dc4fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube110Mat
+    second: {fileID: 2100000, guid: 7f815ca6e5f56da47be2ae9a38a1deae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube111Mat
+    second: {fileID: 2100000, guid: 805782439c2be0d46812eb5697674f82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube112Mat
+    second: {fileID: 2100000, guid: 075e4f33095cac245aa0f22e80b3e283, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube113Mat
+    second: {fileID: 2100000, guid: 1191636684e3d7d4fa34f622820d4e0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube114Mat
+    second: {fileID: 2100000, guid: e90a0d9c715d97d4ba9ebc00c51e284b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube115Mat
+    second: {fileID: 2100000, guid: c03b8ddfa46f40a45bc5461659fd34d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube116Mat
+    second: {fileID: 2100000, guid: 1722f428692bdb842a4879850ed29a82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube117Mat
+    second: {fileID: 2100000, guid: ba345c9fb100b564a8e2088f5d409cc7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube118Mat
+    second: {fileID: 2100000, guid: a0857f120bef95847adffc4d83354a29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube119Mat
+    second: {fileID: 2100000, guid: 90cdbd40d4d0fe6449cdfdd23572c151, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube120Mat
+    second: {fileID: 2100000, guid: 85dcb9d50019a044fa83034dc235aae5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube82Mat
+    second: {fileID: 2100000, guid: effc9adb33283f04294029ebba979cac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube88Mat
+    second: {fileID: 2100000, guid: c9454ef5f8c166e4882f19ff3006ba85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube89Mat
+    second: {fileID: 2100000, guid: 783a0d93da33ec04faa00e32ba6aa2d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube90Mat
+    second: {fileID: 2100000, guid: 3a244e6db805ea445a921c0e91730d16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube91Mat
+    second: {fileID: 2100000, guid: db47b14886fd78d49a7ab9727f261839, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube92Mat
+    second: {fileID: 2100000, guid: 553be8b0d2e10ba47bc2e9c1361b9527, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube93Mat
+    second: {fileID: 2100000, guid: 5d4d91670952f79458292bd9fa8deaa5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube94Mat
+    second: {fileID: 2100000, guid: 1717dc60507937f43ab5f5215aaaf658, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube95Mat
+    second: {fileID: 2100000, guid: 9fe77503afd5fe24bb190226ccad48a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube96Mat
+    second: {fileID: 2100000, guid: 8910ca4d45f8e8240b5d496469a4816b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube97Mat
+    second: {fileID: 2100000, guid: 34a74d1921fb95e4fa91ca7b232a6d74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube98Mat
+    second: {fileID: 2100000, guid: 062ad095181de8042820c2872ab3bbbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_pCube99Mat
+    second: {fileID: 2100000, guid: 7cf2dadf096f64c42b1397edabd70630, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 2
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 0
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

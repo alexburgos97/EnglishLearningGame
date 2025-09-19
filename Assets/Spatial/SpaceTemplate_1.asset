@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc1c66bb2ec14ab791591a8bf43d353, type: 3}
+  m_Name: SpaceTemplate_1
+  m_EditorClassIdentifier: 
+  version: 0
+  sku: euyj9e6cmpbbbid6j5ls3du4
+  packageName: 3DEnviroment
+  thumbnail: {fileID: 0}
+  savedProjectSettings: {fileID: 11400000, guid: b4d3f3931508d4e3381693ee23f6fe04,
+    type: 2}
+  variants:
+  - name: Default
+    id: 5b28967a813d458696535740e79ffc52
+    scene: {fileID: 102900000, guid: 2000200394e12ec4d8f4d6d9e7c3dbab, type: 3}
+    thumbnail: {fileID: 2800000, guid: 3e957416a542c1843bdfa0f544f8bdcc, type: 3}
+    miniThumbnail: {fileID: 2800000, guid: 08bd35ca7d1d67b498363c4ad5ecd6db, type: 3}
+    thumbnailColor: {r: 0, g: 0, b: 1, a: 1}
