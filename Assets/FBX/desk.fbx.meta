@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 85b0eea219e501f478f03cff062d8a44
+guid: 7b69f5df2d9dbf34e81f416105e484d5
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,43 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: tripo_mat_d87b5400
-    second: {fileID: 2100000, guid: 4d2662143261983418fc4f91beec6b9c, type: 2}
+      name: Chrome Dirty
+    second: {fileID: 2100000, guid: 8a3db7ced0779ca49922becf0b8a5299, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.1
+    second: {fileID: 2100000, guid: f3dfb98c5aa427743acfa1940fd1e11d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table Top
+    second: {fileID: 2100000, guid: 9398b933c7f575a448a9a1a4fe2b94e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls
+    second: {fileID: 2100000, guid: 7ee4648fbebea6e45a1d8084113df3d6, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Table Top_Color
+    second: {fileID: 2800000, guid: 7feb7a544e110064fa7bb230712dba73, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Table Top_Color(Normal)
+    second: {fileID: 2800000, guid: ad55625145620cd4198c3cac900e1729, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Walls_Color
+    second: {fileID: 2800000, guid: 5d2970f6da285aa4ea27425744116ce6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Walls_Color(normal)
+    second: {fileID: 2800000, guid: 1baeaa06790d7bd4fa7fe3ec179a2ff6, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
