@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3cbd75fb6c32bb545882c4b8a75aeab5
+guid: 06fe28f9431055c48afd1a2571f2f4b4
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: tripo_mat_8769deb1
-    second: {fileID: 2100000, guid: 8932f8ba284313441ab644a2cb3af1a0, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: dcfd20e34de281c49b824f16bc9d9577, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PENCIL
+    second: {fileID: 2800000, guid: fbb0b6fe78ba63d4e896de5a0cb3e109, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
