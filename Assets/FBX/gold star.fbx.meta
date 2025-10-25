@@ -1,13 +1,38 @@
 fileFormatVersion: 2
-guid: a15e392a5e3252d4980f1b890eaf9dd7
+guid: b148eb8fa7278be4fb5061bb391c6847
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Star
+    second: {fileID: 2100000, guid: b2873c3c0d5d7cf4d8068449e91cd4ae, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gold star_Star_BaseColor
+    second: {fileID: 2800000, guid: 5d359d55c6edc224795ab236d5df2841, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gold star_Star_Metallic
+    second: {fileID: 2800000, guid: 9dba01a73050ba740b8c78dc6e65b547, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gold star_Star_Normal
+    second: {fileID: 2800000, guid: c1c813fbe7d25114c88fc01413c72894, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gold star_Star_Roughness
+    second: {fileID: 2800000, guid: f97abaa2ea2d800418c6c50c7b62302d, type: 3}
   materials:
     materialImportMode: 2
-    materialName: 1
-    materialSearch: 0
+    materialName: 0
+    materialSearch: 1
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
