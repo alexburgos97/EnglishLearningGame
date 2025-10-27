@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5621e5ad1b9084f8bb66de8251cfd5a3, type: 3}
+  m_Name: Space_2
+  m_EditorClassIdentifier: 
+  version: 1
+  sku: dq6cng7godcmh737mac3hfgk
+  packageName: Sky Academy
+  thumbnail: {fileID: 2800000, guid: 503e72f3a2d60ca48a391108e34f0c01, type: 3}
+  savedProjectSettings: {fileID: 11400000, guid: b4d3f3931508d4e3381693ee23f6fe04,
+    type: 2}
+  worldID: a47bqasj4dxecp28gdmn2
+  scene: {fileID: 102900000, guid: 22bf0dec4109e744ca707b7f629f5d91, type: 3}
+  csharpAssembly: {fileID: 0}
+  embeddedPackageAssets: []
+  networkPrefabs: []
+  settings:
+    serverInstancingEnabled: 1
+    serverCapacitySetting: 1
+    serverInstanceCapacity: 16
