@@ -18,6 +18,7 @@ MonoBehaviour:
   thumbnail: {fileID: 2800000, guid: 8556be473992b42dbb7035908e118623, type: 3}
   savedProjectSettings: {fileID: 11400000, guid: b4d3f3931508d4e3381693ee23f6fe04,
     type: 2}
+  teamID: 
   worldID: rrhlp4p4dy8a9zf1qryep
   scene: {fileID: 102900000, guid: 22bf0dec4109e744ca707b7f629f5d91, type: 3}
   csharpAssembly: {fileID: 5897886265953266890, guid: 3852c751841c5a04fa040102f443f53e,
