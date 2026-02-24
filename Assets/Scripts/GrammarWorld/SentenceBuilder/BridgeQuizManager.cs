@@ -8,6 +8,7 @@ public class BridgeQuizManager : MonoBehaviour
     [Header("Arrastra aquí tus cubos en orden")]
     public BridgeBlock[] bridgeBlocks;
 
+//LAS 20 FRASES A COMPLETAR DEL JUEGO DEL PUENTE
     private string[,] allQuestions = new string[,]
     {
         {"I ___ hungry every morning.",                  "AM",    "IS",     "AM"},
@@ -49,19 +50,21 @@ public class BridgeQuizManager : MonoBehaviour
 
     void Start()
     {
-        int blocksCount = bridgeBlocks.Length;
-        if (blocksCount > totalQuestions)
+        // EL SECRETO DE LA ESCALABILIDAD: 1 pregunta en el cráter + 1 por cada cubo
+        int preguntasNecesarias = bridgeBlocks.Length + 1;
+
+        if (preguntasNecesarias > totalQuestions)
         {
-            Debug.LogError("Tienes más bloques que preguntas!");
+            Debug.LogError("Tienes más cubos que preguntas en el banco!");
             return;
         }
 
-        currentSentences = new string[blocksCount];
-        currentOptionsA  = new string[blocksCount];
-        currentOptionsB  = new string[blocksCount];
-        currentAnswers   = new string[blocksCount];
+        currentSentences = new string[preguntasNecesarias];
+        currentOptionsA  = new string[preguntasNecesarias];
+        currentOptionsB  = new string[preguntasNecesarias];
+        currentAnswers   = new string[preguntasNecesarias];
 
-        SelectRandomQuestions(blocksCount);
+        SelectRandomQuestions(preguntasNecesarias);
     }
 
     private void SelectRandomQuestions(int cantidad)
@@ -98,12 +101,14 @@ public class BridgeQuizManager : MonoBehaviour
 
     public void OnAnswerCorrect()
     {
-        bridgeBlocks[currentIndex].MoveToPosition();
+        // Mueve el bloque SOLO si todavía hay bloques físicos por mover
+        if (currentIndex < bridgeBlocks.Length)
+        {
+            bridgeBlocks[currentIndex].MoveToPosition();
+        }
+
         currentIndex++;
         quizActive = false;
-
-        if (currentIndex >= bridgeBlocks.Length)
-            OnBridgeComplete();
     }
 
     public void OnAnswerWrong()
@@ -111,8 +116,10 @@ public class BridgeQuizManager : MonoBehaviour
         quizActive = false;
     }
 
-    private void OnBridgeComplete()
+    // NUEVA FUNCIÓN EXCLUSIVA PARA TU LÍNEA DE LLEGADA
+    public void LlegadaAMeta()
     {
-        SpatialBridge.coreGUIService.DisplayToastMessage("Perfect! The bridge is stable!");
+        SpatialBridge.coreGUIService.DisplayToastMessage("Perfect! The bridge is stable! You crossed the crater!");
+        // Aquí puedes agregar sonidos, dar medallas, etc.
     }
 }

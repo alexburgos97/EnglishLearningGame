@@ -3013,7 +3013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Logica
-      Piscina","summary":"cambia la gravedad al entrar al agua","pan":{"x":1137.607,"y":76.80557},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{"target":null},"position":{"x":8.0,"y":-156.0},"guid":"9ba401f8-9f2c-4cae-8d5c-18f73f359599","$version":"A","$type":"Unity.VisualScripting.OnTriggerEnter","$id":"10"},{"defaultValues":{"maxJumpCount":{"$content":100,"$type":"System.Int32"}},"position":{"x":1383.0,"y":-155.0},"guid":"35b26026-d3d0-4e74-916b-f09dacb18720","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarMaxJumpCountNode","$id":"12"},{"defaultValues":{"speed":{"$content":3.0,"$type":"System.Single"}},"position":{"x":281.0,"y":-156.0},"guid":"04573379-d975-476c-aef0-066f455b3ebd","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarRunSpeedNode","$id":"14"},{"defaultValues":{"speed":{"$content":6.875,"$type":"System.Single"}},"position":{"x":292.0,"y":31.0},"guid":"49c636e7-fc84-4c95-b6d1-c42f7719dda5","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarRunSpeedNode","$id":"16"},{"defaultValues":{"gravityMultiplier":{"$content":1.5,"$type":"System.Single"}},"position":{"x":844.0,"y":33.0},"guid":"b499de2b-878b-4437-a453-91fbeec4eba3","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarGravityMultiplierNode","$id":"18"},{"defaultValues":{"maxJumpCount":{"$content":2,"$type":"System.Int32"}},"position":{"x":1387.0,"y":37.0},"guid":"e49379ce-ef78-48be-874a-e41c060faf0b","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarMaxJumpCountNode","$id":"20"},{"coroutine":false,"defaultValues":{"target":null},"position":{"x":9.0,"y":29.0},"guid":"45027139-855e-4e18-ba17-d09405148f91","$version":"A","$type":"Unity.VisualScripting.OnTriggerExit","$id":"22"},{"defaultValues":{"airControl":{"$content":1.0,"$type":"System.Single"}},"position":{"x":1127.0,"y":-154.0},"guid":"59fac4dd-6a45-4e88-a060-466af23f4813","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarAirControlNode","$id":"24"},{"defaultValues":{"airControl":{"$content":1.0,"$type":"System.Single"}},"position":{"x":1125.0,"y":34.0},"guid":"cce4df58-c21f-4d3a-ad74-790dd5467ba5","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarAirControlNode","$id":"26"},{"defaultValues":{"height":{"$content":1.5,"$type":"System.Single"}},"position":{"x":568.0,"y":30.0},"guid":"82855fed-afd0-406d-a0dd-ae9cac81ed19","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarJumpHeightNode","$id":"28"},{"defaultValues":{"gravityMultiplier":{"$content":0.1,"$type":"System.Single"}},"position":{"x":840.0,"y":-155.0},"guid":"9791a693-85e8-4fb1-8526-4dcba70fbcf4","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarGravityMultiplierNode","$id":"30"},{"defaultValues":{"height":{"$content":3.0,"$type":"System.Single"}},"position":{"x":551.0,"y":-156.0},"guid":"ce59e1aa-2cdd-4cb2-b5f3-dc0cf5f52822","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarJumpHeightNode","$id":"32"},{"sourceUnit":{"$ref":"22"},"sourceKey":"trigger","destinationUnit":{"$ref":"16"},"destinationKey":"inputTrigger","guid":"1e0252e1-b577-4bb1-9b88-a5721f0d4e64","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"14"},"destinationKey":"inputTrigger","guid":"454ea9fa-2fe8-4114-a3d8-4bb22deee533","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"32"},"destinationKey":"inputTrigger","guid":"621bc33a-50e1-4858-8468-aeb432c33a9b","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"16"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"28"},"destinationKey":"inputTrigger","guid":"86311117-3208-4e23-a016-8dd9126d9f06","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"32"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"30"},"destinationKey":"inputTrigger","guid":"a2ad5809-da26-42bf-a4bd-28fc26d44c4d","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"18"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"26"},"destinationKey":"inputTrigger","guid":"1ce697b6-9a3f-4143-91eb-492dbdd023e2","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"24"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"12"},"destinationKey":"inputTrigger","guid":"3625b31f-6600-451c-a125-3e48003bf2bd","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"30"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"24"},"destinationKey":"inputTrigger","guid":"7df66ae3-44d2-40e5-a5e4-842ef5d93e2d","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"28"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"18"},"destinationKey":"inputTrigger","guid":"2d245161-58a7-4d46-ac51-ff081331d7eb","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"26"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"20"},"destinationKey":"inputTrigger","guid":"571d98f9-f171-4949-93fe-63fa2a8a0d66","$type":"Unity.VisualScripting.ControlConnection"}],"$version":"A"}}}'
+      Piscina","summary":"cambia la gravedad al entrar al agua","pan":{"x":1137.607,"y":76.80557},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{"target":null},"position":{"x":8.0,"y":-156.0},"guid":"9ba401f8-9f2c-4cae-8d5c-18f73f359599","$version":"A","$type":"Unity.VisualScripting.OnTriggerEnter","$id":"10"},{"defaultValues":{"maxJumpCount":{"$content":2,"$type":"System.Int32"}},"position":{"x":1387.0,"y":37.0},"guid":"e49379ce-ef78-48be-874a-e41c060faf0b","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarMaxJumpCountNode","$id":"12"},{"defaultValues":{"speed":{"$content":3.0,"$type":"System.Single"}},"position":{"x":281.0,"y":-156.0},"guid":"04573379-d975-476c-aef0-066f455b3ebd","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarRunSpeedNode","$id":"14"},{"defaultValues":{"speed":{"$content":6.875,"$type":"System.Single"}},"position":{"x":292.0,"y":31.0},"guid":"49c636e7-fc84-4c95-b6d1-c42f7719dda5","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarRunSpeedNode","$id":"16"},{"defaultValues":{"gravityMultiplier":{"$content":1.5,"$type":"System.Single"}},"position":{"x":844.0,"y":33.0},"guid":"b499de2b-878b-4437-a453-91fbeec4eba3","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarGravityMultiplierNode","$id":"18"},{"defaultValues":{"gravityMultiplier":{"$content":0.1,"$type":"System.Single"}},"position":{"x":840.0,"y":-155.0},"guid":"9791a693-85e8-4fb1-8526-4dcba70fbcf4","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarGravityMultiplierNode","$id":"20"},{"defaultValues":{"maxJumpCount":{"$content":100,"$type":"System.Int32"}},"position":{"x":1383.0,"y":-155.0},"guid":"35b26026-d3d0-4e74-916b-f09dacb18720","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarMaxJumpCountNode","$id":"22"},{"defaultValues":{"airControl":{"$content":1.0,"$type":"System.Single"}},"position":{"x":1127.0,"y":-154.0},"guid":"59fac4dd-6a45-4e88-a060-466af23f4813","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarAirControlNode","$id":"24"},{"defaultValues":{"airControl":{"$content":1.0,"$type":"System.Single"}},"position":{"x":1125.0,"y":34.0},"guid":"cce4df58-c21f-4d3a-ad74-790dd5467ba5","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarAirControlNode","$id":"26"},{"defaultValues":{"height":{"$content":1.5,"$type":"System.Single"}},"position":{"x":568.0,"y":30.0},"guid":"82855fed-afd0-406d-a0dd-ae9cac81ed19","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarJumpHeightNode","$id":"28"},{"defaultValues":{"height":{"$content":3.0,"$type":"System.Single"}},"position":{"x":551.0,"y":-156.0},"guid":"ce59e1aa-2cdd-4cb2-b5f3-dc0cf5f52822","$version":"A","$type":"SpatialSys.UnitySDK.VisualScripting.SetLocalAvatarJumpHeightNode","$id":"30"},{"coroutine":false,"defaultValues":{"target":null},"position":{"x":9.0,"y":29.0},"guid":"45027139-855e-4e18-ba17-d09405148f91","$version":"A","$type":"Unity.VisualScripting.OnTriggerExit","$id":"32"},{"sourceUnit":{"$ref":"24"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"22"},"destinationKey":"inputTrigger","guid":"3625b31f-6600-451c-a125-3e48003bf2bd","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"20"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"24"},"destinationKey":"inputTrigger","guid":"7df66ae3-44d2-40e5-a5e4-842ef5d93e2d","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"28"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"18"},"destinationKey":"inputTrigger","guid":"2d245161-58a7-4d46-ac51-ff081331d7eb","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"32"},"sourceKey":"trigger","destinationUnit":{"$ref":"16"},"destinationKey":"inputTrigger","guid":"1e0252e1-b577-4bb1-9b88-a5721f0d4e64","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"14"},"destinationKey":"inputTrigger","guid":"454ea9fa-2fe8-4114-a3d8-4bb22deee533","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"30"},"destinationKey":"inputTrigger","guid":"621bc33a-50e1-4858-8468-aeb432c33a9b","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"16"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"28"},"destinationKey":"inputTrigger","guid":"86311117-3208-4e23-a016-8dd9126d9f06","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"30"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"20"},"destinationKey":"inputTrigger","guid":"a2ad5809-da26-42bf-a4bd-28fc26d44c4d","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"18"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"26"},"destinationKey":"inputTrigger","guid":"1ce697b6-9a3f-4143-91eb-492dbdd023e2","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"26"},"sourceKey":"outputTrigger","destinationUnit":{"$ref":"12"},"destinationKey":"inputTrigger","guid":"571d98f9-f171-4949-93fe-63fa2a8a0d66","$type":"Unity.VisualScripting.ControlConnection"}],"$version":"A"}}}'
     _objectReferences: []
 --- !u!114 &51302382
 MonoBehaviour:
@@ -15694,7 +15694,7 @@ Transform:
   m_Children:
   - {fileID: 787964409}
   m_Father: {fileID: 1649442542}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124799741
 GameObject:
@@ -49609,8 +49609,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -100, y: 60}
-  m_SizeDelta: {x: 160, y: 70}
+  m_AnchoredPosition: {x: -150, y: 135}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &311222674
 MonoBehaviour:
@@ -49669,7 +49669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.88235295, b: 0.36078432, a: 1}
+  m_Color: {r: 0.9019608, g: 0.54901963, b: 0.17254902, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -61399,6 +61399,7 @@ GameObject:
   - component: {fileID: 468854975}
   - component: {fileID: 468854974}
   - component: {fileID: 468854973}
+  - component: {fileID: 468854976}
   m_Layer: 0
   m_Name: FeedbackText
   m_TagString: Untagged
@@ -61509,6 +61510,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468854971}
   m_CullTransparentMesh: 1
+--- !u!114 &468854976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468854971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &471097801
 GameObject:
   m_ObjectHideFlags: 0
@@ -108251,8 +108267,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 34.05, y: 13.52}
-  m_SizeDelta: {x: 700, y: 350}
+  m_AnchoredPosition: {x: 34.05, y: 14.06}
+  m_SizeDelta: {x: 900, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &787964410
 MonoBehaviour:
@@ -154460,8 +154476,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 100, y: 60}
-  m_SizeDelta: {x: 160, y: 70}
+  m_AnchoredPosition: {x: 150, y: 135}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084047085
 MonoBehaviour:
@@ -154520,7 +154536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.88235295, b: 0.36078432, a: 1}
+  m_Color: {r: 0.899371, g: 0.5472159, b: 0.1725207, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -166830,7 +166846,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -167839,7 +167855,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -169400,6 +169416,156 @@ Transform:
   m_Father: {fileID: 393063293}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1267670829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1267670830}
+  - component: {fileID: 1267670834}
+  - component: {fileID: 1267670833}
+  - component: {fileID: 1267670832}
+  - component: {fileID: 1267670831}
+  m_Layer: 0
+  m_Name: TriggerFinPuente
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1267670830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267670829}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -35.29, y: 12, z: 17.640106}
+  m_LocalScale: {x: 7, y: 3, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1649442542}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &1267670831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267670829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24533cd6da2394ed2bea6783b0af62c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  listenFor: 1
+  onEnterEvent:
+    id: 0
+    unityEventIsSynced: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 579769171}
+          m_TargetAssemblyTypeName: BridgeQuizManager, NewAssembly
+          m_MethodName: LlegadaAMeta
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    animatorEvent:
+      events: []
+    questEvent:
+      events: []
+  onExitEvent:
+    id: 0
+    unityEventIsSynced: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    animatorEvent:
+      events: []
+    questEvent:
+      events: []
+  deprecated_onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  deprecated_onExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &1267670832
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267670829}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1267670833
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267670829}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1267670834
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267670829}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1270056993
 GameObject:
   m_ObjectHideFlags: 0
@@ -209700,6 +209866,7 @@ Transform:
   - {fileID: 579769170}
   - {fileID: 1353538937}
   - {fileID: 197253409}
+  - {fileID: 1267670830}
   - {fileID: 120879276}
   m_Father: {fileID: 471097802}
   m_RootOrder: 0
@@ -221578,7 +221745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16981131, g: 0.14978638, b: 0.14978638, a: 0.392}
+  m_Color: {r: 0.0117479125, g: 0.12210196, b: 0.4509804, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

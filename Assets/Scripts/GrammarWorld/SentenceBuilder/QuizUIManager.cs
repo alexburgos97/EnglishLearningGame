@@ -63,7 +63,7 @@ public class QuizUIManager : MonoBehaviour
         if (selected == correct)
         {
             feedbackText.text = "Correct!";
-            feedbackText.color = Color.green;
+            feedbackText.color = Color.blue;
             Invoke(nameof(ClosePanel), 1f);
             BridgeQuizManager.Instance.OnAnswerCorrect();
         }

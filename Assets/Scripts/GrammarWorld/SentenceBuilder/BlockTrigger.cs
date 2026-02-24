@@ -1,5 +1,4 @@
 using UnityEngine;
-using SpatialSys.UnitySDK; // Necesario para el Toast
 
 public class BlockTrigger : MonoBehaviour
 {
@@ -7,11 +6,10 @@ public class BlockTrigger : MonoBehaviour
 
     public void Activar()
     {
-        // 1. ESTE MENSAJE ES CLAVE: Te confirmará si el trigger físico funciona
-        //SpatialBridge.coreGUIService.DisplayToastMessage("Pisaste el trigger del bloque: " + blockIndex);
-        
-        // 2. Ejecuta la lógica
-        BridgeQuizManager.Instance.OnAvatarReachedEdge(blockIndex);
+        // 1. Mueve la ventana del Canvas EXACTAMENTE a la posición de este trigger
         QuizUIManager.Instance.MoverCanvasAPosicion(this.transform);
+        
+        // 2. Le avisa al manager que muestre la pregunta
+        BridgeQuizManager.Instance.OnAvatarReachedEdge(blockIndex);
     }
 }
