@@ -118,8 +118,9 @@ public class BridgeQuizManager : MonoBehaviour
 
     // NUEVA FUNCIÓN EXCLUSIVA PARA TU LÍNEA DE LLEGADA
     public void LlegadaAMeta()
-    {
-        SpatialBridge.coreGUIService.DisplayToastMessage("Perfect! The bridge is stable! You crossed the crater!");
-        // Aquí puedes agregar sonidos, dar medallas, etc.
-    }
+{
+    SpatialBridge.coreGUIService.DisplayToastMessage(
+        "Perfect! The bridge is stable! You crossed the crater!");
+    GameProgressManager.Instance.AwardBuildersMedal();
+}
 }
