@@ -46,20 +46,24 @@ public class GameProgressManager : MonoBehaviour
 
     public void AwardBuildersMedal()
     {
-        if (hasBuildersMedal) return;
-        hasBuildersMedal = true;
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasBuildersMedal", true);
-        SpatialBridge.questService.quests[1].GetTaskByID(1).Complete();
-        CheckSentenceBuilderBadge();
+    if (hasBuildersMedal) return;
+    hasBuildersMedal = true;
+    SpatialBridge.userWorldDataStoreService.SetVariable("hasBuildersMedal", true);
+    SpatialBridge.questService.quests[1].GetTaskByID(1).Complete();
+    
+    // Activar Quest del volcán
+    SpatialBridge.questService.quests[2].Start();
+    
+    CheckSentenceBuilderBadge();
     }
 
     public void AwardVerbMasterMedal()
     {
-        if (hasVerbMaster) return;
-        hasVerbMaster = true;
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasVerbMaster", true);
-        SpatialBridge.questService.quests[2].GetTaskByID(1).Complete();
-        CheckSentenceBuilderBadge();
+    if (hasVerbMaster) return;
+    hasVerbMaster = true;
+    SpatialBridge.userWorldDataStoreService.SetVariable("hasVerbMaster", true);
+    SpatialBridge.questService.quests[2].GetTaskByID(1).Complete();
+    CheckSentenceBuilderBadge();
     }
 
     public void AwardPathfinderMedal()
