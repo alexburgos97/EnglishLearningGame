@@ -48,6 +48,9 @@ public class VolcanoUIManager : MonoBehaviour
 
     public void ShowQuestion(int index)
     {
+         // Mover canvas cerca del jugador
+        Vector3 avatarPos = SpatialBridge.actorService.localActor.avatar.position;
+        volcanoPanel.transform.root.position = avatarPos + Vector3.up * 2f + Vector3.forward * 2f;
         currentIndex = index;
         feedbackText.text = "";
 

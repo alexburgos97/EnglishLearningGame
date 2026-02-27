@@ -10,30 +10,31 @@ public class VolcanoQuizManager : MonoBehaviour
     public Transform puntoLanzamiento;
     public Transform puntoJugadorPS;
     public Transform puntoJugadorPA;
+    public GameObject bloqueadorLava;
 
     // Banco Presente Simple
     private string[,] presentSimple = new string[,]
     {
-        {"SHE", "EATS",    "EAT",    "EATS",    "She ___ two eggs for breakfast.",          "She eats two eggs for breakfast."},
-        {"HE",  "DRINKS",  "DRINK",  "DRINKS",  "He ___ coffee twice a day.",               "He drinks coffee twice a day."},
-        {"THEY","ARE",     "IS",     "ARE",     "They ___ always at the cafeteria.",         "They are always at the cafeteria."},
-        {"I",   "BUY",     "BOUGHT", "BUY",     "I ___ three bottles of water every morning.","I buy three bottles of water every morning."},
-        {"THEY","ARE",     "IS",     "ARE",     "They ___ usually at home in the evenings.", "They are usually at home in the evenings."},
+        {"SHE", "EATS",    "EAT",    "EATS",    "___  ___ two eggs for breakfast.",          "She eats two eggs for breakfast."},
+        {"HE",  "DRINKS",  "DRINK",  "DRINKS",  "___  ___ coffee twice a day.",               "He drinks coffee twice a day."},
+        {"THEY","ARE",     "IS",     "ARE",     "___  ___ always at the cafeteria.",         "They are always at the cafeteria."},
+        {"I",   "BUY",     "BOUGHT", "BUY",     "___  ___ three bottles of water every morning.","I buy three bottles of water every morning."},
+        {"THEY","ARE",     "IS",     "ARE",     "___  ___ usually at home in the evenings.", "They are usually at home in the evenings."},
     };
 
     // Banco Pasado Simple
     private string[,] pastSimple = new string[,]
     {
-        {"HE",  "WAS",     "ARE",    "WAS",     "He ___ a very fast runner when he was young.",           "He was a very fast runner when he was young."},
-        {"I",   "WASHED",  "WASHES", "WASHED",  "I ___ my face and brushed my teeth this morning.",       "I washed my face and brushed my teeth this morning."},
-        {"THEY","WERE",    "IS",     "WERE",    "They ___ very happy together.",                           "They were very happy together."},
-        {"IT",  "PLAYED",  "PLAY",   "PLAYED",  "It ___ with its ball in the garden.",                    "It played with its ball in the garden."},
-        {"SHE", "BOUGHT",  "BUY",    "BOUGHT",  "She ___ a gift for her mother's birthday.",              "She bought a gift for her mother's birthday."},
-        {"WE",  "WERE",    "IS",     "WERE",    "We ___ late for school.",                                "We were late for school."},
-        {"HE",  "FIXED",   "FIX",    "FIXED",   "He ___ his car in the garage yesterday.",               "He fixed his car in the garage yesterday."},
-        {"YOU", "CLEANED", "CLEANS", "CLEANED", "You ___ your room because you were very busy.",          "You cleaned your room because you were very busy."},
-        {"IT",  "WAS",     "ARE",    "WAS",     "It ___ a beautiful sunny day yesterday.",               "It was a beautiful sunny day yesterday."},
-        {"WE",  "STUDIED", "STUDIES","STUDIED", "We ___ for the exam because we wanted a good grade.",   "We studied for the exam because we wanted a good grade."},
+        {"HE",  "WAS",     "ARE",    "WAS",     "___  ___ a very fast runner when he was young.",           "He was a very fast runner when he was young."},
+        {"I",   "WASHED",  "WASHES", "WASHED",  "___  ___ my face and brushed my teeth this morning.",       "I washed my face and brushed my teeth this morning."},
+        {"THEY","WERE",    "IS",     "WERE",    "___  ___ very happy together.",                           "They were very happy together."},
+        {"IT",  "PLAYED",  "PLAY",   "PLAYED",  "___  ___ with its ball in the garden.",                    "It played with its ball in the garden."},
+        {"SHE", "BOUGHT",  "BUY",    "BOUGHT",  "___  ___ a gift for her mother's birthday.",              "She bought a gift for her mother's birthday."},
+        {"WE",  "WERE",    "IS",     "WERE",    "___  ___ late for school.",                                "We were late for school."},
+        {"HE",  "FIXED",   "FIX",    "FIXED",   "___  ___ his car in the garage yesterday.",               "He fixed his car in the garage yesterday."},
+        {"YOU", "CLEANED", "CLEANS", "CLEANED", "___  ___ your room because you were very busy.",          "You cleaned your room because you were very busy."},
+        {"IT",  "WAS",     "ARE",    "WAS",     "___  ___ a beautiful sunny day yesterday.",               "It was a beautiful sunny day yesterday."},
+        {"WE",  "STUDIED", "STUDIES","STUDIED", "___  ___ for the exam because we wanted a good grade.",   "We studied for the exam because we wanted a good grade."},
     };
 
     [HideInInspector] public string[] currentPronouns;
@@ -64,10 +65,13 @@ public class VolcanoQuizManager : MonoBehaviour
         currentIndex = 0;
         gameActive = true;
 
+        // Iniciar el Quest del volcán
+        SpatialBridge.questService.quests[2].Start();
+
         if (isPresentSimple)
-            PrepareQuestions(presentSimple, 5);
-        else
-            PrepareQuestions(pastSimple, 10);
+        PrepareQuestions(presentSimple, 5);
+     else
+        PrepareQuestions(pastSimple, 10);
 
         LaunchNextRock();
     }
@@ -148,10 +152,13 @@ public class VolcanoQuizManager : MonoBehaviour
     }
 
     private void OnGameComplete()
-    {
-        gameActive = false;
-        SpatialBridge.coreGUIService.DisplayToastMessage(
-            "Amazing! You completed the Volcano Challenge!");
-        GameProgressManager.Instance.AwardVerbMasterMedal();
-    }
+{
+    gameActive = false;
+    SpatialBridge.coreGUIService.DisplayToastMessage(
+        "Amazing! Now cross the volcano to claim your medal!");
+    
+    // Desactivar el bloqueador para que pueda cruzar
+    if (bloqueadorLava != null)
+        bloqueadorLava.SetActive(false);
+}
 }

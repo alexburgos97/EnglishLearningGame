@@ -29,7 +29,7 @@ public class VolcanoRock : MonoBehaviour
         // Calcular velocidad para trayectoria parabólica
         Vector3 target = targetPoint.position;
         Vector3 origin = puntoLanzamiento.position;
-        float height = 8f;
+        float height = 15f;
         float gravity = Mathf.Abs(Physics.gravity.y);
 
         float displacementY = target.y - origin.y;

@@ -48,12 +48,8 @@ public class GameProgressManager : MonoBehaviour
     {
         if (hasBuildersMedal) return;
         hasBuildersMedal = true;
-
         SpatialBridge.userWorldDataStoreService.SetVariable("hasBuildersMedal", true);
-
-        // Completar la task del Quest - esto otorga la badge automáticamente
         SpatialBridge.questService.quests[1].GetTaskByID(1).Complete();
-
         CheckSentenceBuilderBadge();
     }
 
@@ -61,11 +57,8 @@ public class GameProgressManager : MonoBehaviour
     {
         if (hasVerbMaster) return;
         hasVerbMaster = true;
-
         SpatialBridge.userWorldDataStoreService.SetVariable("hasVerbMaster", true);
-        SpatialBridge.coreGUIService.DisplayToastMessage(
-            "You earned the Verb Master Medal!");
-
+        SpatialBridge.questService.quests[2].GetTaskByID(1).Complete();
         CheckSentenceBuilderBadge();
     }
 
@@ -73,11 +66,8 @@ public class GameProgressManager : MonoBehaviour
     {
         if (hasPathfinder) return;
         hasPathfinder = true;
-
         SpatialBridge.userWorldDataStoreService.SetVariable("hasPathfinder", true);
-        SpatialBridge.coreGUIService.DisplayToastMessage(
-            "You earned the Pathfinder Medal!");
-
+        SpatialBridge.questService.quests[3].GetTaskByID(1).Complete();
         CheckSentenceBuilderBadge();
     }
 
@@ -87,6 +77,7 @@ public class GameProgressManager : MonoBehaviour
         {
             hasSentenceBuilder = true;
             SpatialBridge.userWorldDataStoreService.SetVariable("hasSentenceBuilder", true);
+            SpatialBridge.questService.quests[4].GetTaskByID(1).Complete();
             SpatialBridge.coreGUIService.DisplayToastMessage(
                 "You completed GrammarWorld! The Sentence Builder Badge is yours!");
         }
