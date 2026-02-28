@@ -5,151 +5,194 @@ using SpatialSys.UnitySDK;
 
 public class VolcanoUIManager : MonoBehaviour
 {
-    [Header("Configuración")]
-    public bool isPresentSimplePlatform;
+    public static VolcanoUIManager Instance { get; private set; }
 
-    [Header("Elementos UI (De esta ventana)")]
-    public GameObject startPanel;
-    public GameObject quizPanel;
-    public TextMeshProUGUI sentenceText;
-    public TextMeshProUGUI buttonAText;
-    public TextMeshProUGUI buttonBText;
-    public TextMeshProUGUI feedbackText;
-    public Button buttonA;
-    public Button buttonB;
+    [Header("Paneles de inicio")]
+    public GameObject startPanelPS;
+    public Button startButtonPS;
+    public GameObject startPanelPA;
+    public Button startButtonPA;
 
-    [Header("Conexiones (De esta plataforma)")]
-    public VolcanoQuizManager centralManager;
-    public VolcanoRock rockScript; 
-    public Transform rockTargetPoint; 
+    [Header("Paneles de preguntas")]
+    public GameObject questionPanelPS;
+    public GameObject questionPanelPA;
+
+    [Header("Presente Simple - Campos")]
+    public TextMeshProUGUI sentenceTextPS;
+    public TextMeshProUGUI feedbackTextPS;
+    public Button buttonAPS;
+    public Button buttonBPS;
+    public TextMeshProUGUI buttonATextPS;
+    public TextMeshProUGUI buttonBTextPS;
+
+    [Header("Pasado Simple - Campos")]
+    public TextMeshProUGUI sentenceTextPA;
+    public TextMeshProUGUI feedbackTextPA;
+    public Button buttonAPA;
+    public Button buttonBPA;
+    public TextMeshProUGUI buttonATextPA;
+    public TextMeshProUGUI buttonBTextPA;
 
     private int currentIndex = 0;
-    private int maxQuestions;
-    private string[,] currentBank;
+    private bool isPS = true;
 
-    // Bancos de preguntas integrados directamente en la UI correspondiente
-    private string[,] presentSimple = new string[,] {
-        {"SHE", "EATS", "EAT", "EATS", "She ___ two eggs for breakfast.", "She eats two eggs for breakfast."},
-        {"HE", "DRINKS", "DRINK", "DRINKS", "He ___ coffee twice a day.", "He drinks coffee twice a day."},
-        {"THEY","ARE", "IS", "ARE", "They ___ always at the cafeteria.", "They are always at the cafeteria."},
-        {"I", "BUY", "BOUGHT", "BUY", "I ___ three bottles of water every morning.","I buy three bottles of water every morning."},
-        {"THEY","ARE", "IS", "ARE", "They ___ usually at home in the evenings.", "They are usually at home in the evenings."}
-    };
-
-    private string[,] pastSimple = new string[,] {
-        {"HE", "WAS", "ARE", "WAS", "He ___ a very fast runner when he was young.", "He was a very fast runner when he was young."},
-        {"I", "WASHED", "WASHES", "WASHED", "I ___ my face and brushed my teeth this morning.", "I washed my face and brushed my teeth this morning."},
-        {"THEY","WERE", "IS", "WERE", "They ___ very happy together.", "They were very happy together."},
-        {"IT", "PLAYED", "PLAY", "PLAYED", "It ___ with its ball in the garden.", "It played with its ball in the garden."},
-        {"SHE", "BOUGHT", "BUY", "BOUGHT", "She ___ a gift for her mother's birthday.", "She bought a gift for her mother's birthday."},
-        {"WE", "WERE", "IS", "WERE", "We ___ late for school.", "We were late for school."},
-        {"HE", "FIXED", "FIX", "FIXED", "He ___ his bicycle yesterday.", "He fixed his bicycle yesterday."},
-        {"YOU", "CLEANED", "CLEAN", "CLEANED", "You ___ your bedroom on Saturday.", "You cleaned your bedroom on Saturday."},
-        {"IT", "WAS", "IS", "WAS", "It ___ a very hot day.", "It was a very hot day."},
-        {"WE", "STUDIED", "STUDY", "STUDIED", "We ___ hard for the test.", "We studied hard for the test."}
-    };
+    void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
 
     void Start()
     {
-        startPanel.SetActive(false);
-        quizPanel.SetActive(false);
-        
-        if (isPresentSimplePlatform)
+        if (startPanelPS != null) startPanelPS.SetActive(false);
+        if (startPanelPA != null) startPanelPA.SetActive(false);
+        if (questionPanelPS != null) questionPanelPS.SetActive(false);
+        if (questionPanelPA != null) questionPanelPA.SetActive(false);
+
+        startButtonPS.onClick.AddListener(() => OnStartClicked(true));
+        startButtonPA.onClick.AddListener(() => OnStartClicked(false));
+    }
+
+    public void ShowStartPanel(bool isPresentSimple)
+    {
+        isPS = isPresentSimple;
+        if (isPresentSimple)
+            startPanelPS.SetActive(true);
+        else
+            startPanelPA.SetActive(true);
+    }
+
+    private void OnStartClicked(bool isPresentSimple)
+    {
+        startPanelPS.SetActive(false);
+        startPanelPA.SetActive(false);
+        VolcanoQuizManager.Instance.StartGame(isPresentSimple);
+    }
+
+    public void ShowQuestion(int index)
+    {
+        currentIndex = index;
+
+        if (isPS)
         {
-            currentBank = presentSimple;
-            maxQuestions = 5;
+            feedbackTextPS.text = "";
+            sentenceTextPS.text = VolcanoQuizManager.Instance.currentSentences[index];
+            buttonATextPS.text  = VolcanoQuizManager.Instance.currentVerbsA[index];
+            buttonBTextPS.text  = VolcanoQuizManager.Instance.currentVerbsB[index];
+
+            buttonAPS.onClick.RemoveAllListeners();
+            buttonBPS.onClick.RemoveAllListeners();
+            buttonAPS.onClick.AddListener(() => CheckAnswer(
+                VolcanoQuizManager.Instance.currentVerbsA[currentIndex]));
+            buttonBPS.onClick.AddListener(() => CheckAnswer(
+                VolcanoQuizManager.Instance.currentVerbsB[currentIndex]));
+
+            buttonAPS.interactable = true;
+            buttonBPS.interactable = true;
+            questionPanelPS.SetActive(true);
         }
         else
         {
-            currentBank = pastSimple;
-            maxQuestions = 10;
-        }
-    }
+            feedbackTextPA.text = "";
+            sentenceTextPA.text = VolcanoQuizManager.Instance.currentSentences[index];
+            buttonATextPA.text  = VolcanoQuizManager.Instance.currentVerbsA[index];
+            buttonBTextPA.text  = VolcanoQuizManager.Instance.currentVerbsB[index];
 
-    public void ShowVolcanoMessage(string msg)
-    {
-        SpatialBridge.coreGUIService.DisplayToastMessage(msg);
-    }
+            buttonAPA.onClick.RemoveAllListeners();
+            buttonBPA.onClick.RemoveAllListeners();
+            buttonAPA.onClick.AddListener(() => CheckAnswer(
+                VolcanoQuizManager.Instance.currentVerbsA[currentIndex]));
+            buttonBPA.onClick.AddListener(() => CheckAnswer(
+                VolcanoQuizManager.Instance.currentVerbsB[currentIndex]));
 
-    public void ActivatePlatform()
-    {
-        if (centralManager == null) return;
-        
-        // Bloqueo: Si ya se completó, no vuelve a salir el Start
-        if (isPresentSimplePlatform && centralManager.presentSimpleCompleted) return;
-        if (!isPresentSimplePlatform && centralManager.pastSimpleCompleted) return;
-
-        startPanel.SetActive(true);
-    }
-
-    // Este método lo conectaremos al botón START
-    public void StartQuiz()
-    {
-        startPanel.SetActive(false);
-        currentIndex = 0;
-        LoadQuestion();
-    }
-
-    private void LoadQuestion()
-    {
-        if (currentIndex >= maxQuestions)
-        {
-            quizPanel.SetActive(false);
-            centralManager.PlatformCompleted(isPresentSimplePlatform);
-            return;
-        }
-
-        string pronoun = currentBank[currentIndex, 0];
-        string verbA = currentBank[currentIndex, 1];
-        string verbB = currentBank[currentIndex, 2];
-        string sentence = currentBank[currentIndex, 4];
-
-        sentenceText.text = sentence;
-        buttonAText.text = verbA;
-        buttonBText.text = verbB;
-        feedbackText.text = "";
-
-        buttonA.onClick.RemoveAllListeners();
-        buttonB.onClick.RemoveAllListeners();
-        buttonA.onClick.AddListener(() => CheckAnswer(verbA));
-        buttonB.onClick.AddListener(() => CheckAnswer(verbB));
-
-        buttonA.interactable = true;
-        buttonB.interactable = true;
-
-        quizPanel.SetActive(true);
-
-        if (rockScript != null && rockTargetPoint != null)
-        {
-            rockScript.Launch(pronoun, rockTargetPoint);
+            buttonAPA.interactable = true;
+            buttonBPA.interactable = true;
+            questionPanelPA.SetActive(true);
         }
     }
 
     private void CheckAnswer(string selected)
     {
-        string correct = currentBank[currentIndex, 3];
-        string fullSentence = currentBank[currentIndex, 5];
+        string correct = VolcanoQuizManager.Instance.currentAnswers[currentIndex];
+        string fullSentence = VolcanoQuizManager.Instance.currentFullSentences[currentIndex];
 
-        buttonA.interactable = false;
-        buttonB.interactable = false;
-
-        if (selected == correct)
+        if (isPS)
         {
-            feedbackText.text = "Correct! " + fullSentence;
-            feedbackText.color = Color.green;
-            currentIndex++;
-            Invoke(nameof(LoadQuestion), 2.5f);
+            buttonAPS.interactable = false;
+            buttonBPS.interactable = false;
+
+            if (selected == correct)
+            {
+                feedbackTextPS.text = "Correct! " + fullSentence;
+                feedbackTextPS.color = Color.green;
+                Invoke(nameof(NextQuestion), 2f);
+            }
+            else
+            {
+                feedbackTextPS.text = "Don't worry! The correct answer is: " + fullSentence;
+                feedbackTextPS.color = Color.red;
+                Invoke(nameof(ShowTryAgain), 2f);
+            }
         }
         else
         {
-            feedbackText.text = "Don't worry! The correct answer is:\n" + fullSentence;
-            feedbackText.color = Color.red;
-            Invoke(nameof(ResetCurrentQuestion), 3.5f);
+            buttonAPA.interactable = false;
+            buttonBPA.interactable = false;
+
+            if (selected == correct)
+            {
+                feedbackTextPA.text = "Correct! " + fullSentence;
+                feedbackTextPA.color = Color.green;
+                Invoke(nameof(NextQuestion), 2f);
+            }
+            else
+            {
+                feedbackTextPA.text = "Don't worry! The correct answer is: " + fullSentence;
+                feedbackTextPA.color = Color.red;
+                Invoke(nameof(ShowTryAgain), 2f);
+            }
         }
     }
 
-    private void ResetCurrentQuestion()
+    private void NextQuestion()
     {
-        LoadQuestion();
+        questionPanelPS.SetActive(false);
+        questionPanelPA.SetActive(false);
+        VolcanoQuizManager.Instance.OnAnswerCorrect();
+    }
+
+    private void ShowTryAgain()
+    {
+        if (isPS)
+        {
+            buttonAPS.interactable = true;
+            buttonBPS.interactable = true;
+            feedbackTextPS.text = "";
+        }
+        else
+        {
+            buttonAPA.interactable = true;
+            buttonBPA.interactable = true;
+            feedbackTextPA.text = "";
+        }
+        VolcanoQuizManager.Instance.OnAnswerWrong();
+    }
+
+    public void ClosePanel()
+    {
+        questionPanelPS.SetActive(false);
+        questionPanelPA.SetActive(false);
+    }
+
+    public void HidePSPanels()
+    {
+        startPanelPS.SetActive(false);
+        questionPanelPS.SetActive(false);
+    }
+
+    public void HidePAPanels()
+    {
+        startPanelPA.SetActive(false);
+        questionPanelPA.SetActive(false);
     }
 }

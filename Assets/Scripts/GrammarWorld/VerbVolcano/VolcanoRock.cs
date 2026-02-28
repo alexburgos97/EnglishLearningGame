@@ -1,42 +1,64 @@
 using UnityEngine;
-using TMPro; // Necesario para modificar el texto de la roca
+using TMPro;
+using SpatialSys.UnitySDK;
 
 public class VolcanoRock : MonoBehaviour
 {
-    [Header("Configuración Visual")]
-    [Tooltip("El texto 3D o de UI de la roca donde aparecerá el pronombre")]
-    public TMP_Text pronounText;
-    public float speed = 5f;
+    public TextMeshProUGUI pronounText;
+    public Transform puntoLanzamiento;
 
-    private Transform target;
-    private bool isMoving = false;
+    private Rigidbody rb;
+    private bool isLaunched = false;
+    private bool hasLanded = false;
 
-    // El VolcanoUIManager llama a este método al cargar una pregunta nueva
-    public void Launch(string textToDisplay, Transform targetPoint)
+    void Awake()
     {
-        if (pronounText != null)
-        {
-            pronounText.text = textToDisplay;
-        }
-
-        target = targetPoint;
-        
-        // Reiniciamos el movimiento
-        isMoving = true;
+        rb = GetComponent<Rigidbody>();
+        gameObject.SetActive(false);
     }
 
-    void Update()
+    public void Launch(string pronoun, Transform targetPoint)
     {
-        // Movimiento simple hacia el objetivo (el jugador o el centro de la plataforma)
-        if (isMoving && target != null)
+        if (targetPoint == null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-
-            // Se detiene al llegar al destino
-            if (Vector3.Distance(transform.position, target.position) < 0.1f)
-            {
-                isMoving = false;
-            }
+            SpatialBridge.coreGUIService.DisplayToastMessage("ERROR: targetPoint null!");
+            return;
         }
+
+        hasLanded = false;
+        isLaunched = true;
+        pronounText.text = pronoun;
+        gameObject.SetActive(true);
+
+        transform.position = puntoLanzamiento.position;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        float height = 15f;
+        float gravity = Mathf.Abs(Physics.gravity.y);
+
+        float displacementY = targetPoint.position.y - puntoLanzamiento.position.y;
+        Vector3 displacementXZ = new Vector3(
+            targetPoint.position.x - puntoLanzamiento.position.x, 0,
+            targetPoint.position.z - puntoLanzamiento.position.z);
+
+        float time = Mathf.Sqrt(-2 * height / -gravity) +
+            Mathf.Sqrt(2 * (displacementY - height) / -gravity);
+
+        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * -gravity * height);
+        Vector3 velocityXZ = displacementXZ / time;
+
+        rb.velocity = velocityXZ + velocityY;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (!isLaunched) return;
+        if (hasLanded) return;
+
+        hasLanded = true;
+        isLaunched = false;
+        gameObject.SetActive(false);
+        VolcanoQuizManager.Instance.OnRockLanded();
     }
 }
