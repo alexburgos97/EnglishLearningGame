@@ -8,14 +8,26 @@ public class VolcanoTrigger : MonoBehaviour
 
     public void Activar()
     {
-        if (activated) return;
-        activated = true;
-
         if (isPresentSimple)
+        {
+            if (activated) return;
+            activated = true;
             VolcanoQuizManager.Instance.TryStartPresentSimple();
+            GetComponent<SpatialTriggerEvent>().enabled = false;
+        }
         else
+        {
+            // Pasado Simple solo se desactiva cuando PS está completado
+            bool psCompleted = VolcanoQuizManager.Instance.PresentSimpleCompleted;
+            if (!psCompleted)
+            {
+                VolcanoQuizManager.Instance.TryStartPastSimple();
+                return; // No desactiva el trigger
+            }
+            if (activated) return;
+            activated = true;
             VolcanoQuizManager.Instance.TryStartPastSimple();
-
-        GetComponent<SpatialTriggerEvent>().enabled = false;
+            GetComponent<SpatialTriggerEvent>().enabled = false;
+        }
     }
 }

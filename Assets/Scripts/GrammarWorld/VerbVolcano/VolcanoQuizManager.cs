@@ -16,6 +16,7 @@ public class VolcanoQuizManager : MonoBehaviour
     public Transform posicionPA;
 
     // Control de completado
+    public bool PresentSimpleCompleted => presentSimpleCompleted;
     private bool presentSimpleCompleted = false;
     private bool pastSimpleCompleted = false;
     private bool psStarted = false;

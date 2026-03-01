@@ -91,4 +91,17 @@ public class GameProgressManager : MonoBehaviour
     public bool HasVerbMaster()      => hasVerbMaster;
     public bool HasPathfinder()      => hasPathfinder;
     public bool HasSentenceBuilder() => hasSentenceBuilder;
+
+    public void ResetAllProgress()
+    {
+    hasBuildersMedal = false;
+    hasVerbMaster = false;
+    hasPathfinder = false;
+    hasSentenceBuilder = false;
+    SpatialBridge.userWorldDataStoreService.SetVariable("hasBuildersMedal", false);
+    SpatialBridge.userWorldDataStoreService.SetVariable("hasVerbMaster", false);
+    SpatialBridge.userWorldDataStoreService.SetVariable("hasPathfinder", false);
+    SpatialBridge.userWorldDataStoreService.SetVariable("hasSentenceBuilder", false);
+    SpatialBridge.coreGUIService.DisplayToastMessage("Progress reset!");
+    }
 }

@@ -1,54 +1,14 @@
 fileFormatVersion: 2
-guid: 0c8b75aef4bf21a468982749c87cb023
+guid: f27fb49df4d8a1948845d70c4070d527
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Volcano_1.1
-    second: {fileID: 2100000, guid: 782e7dd515aa9f54b8804726ead3d609, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Volcano_2.1
-    second: {fileID: 2100000, guid: 4776d5a17e982ce499ab6ad71d1ddc66, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Volcano_3
-    second: {fileID: 2100000, guid: 45d3f6f2bb4841c4bb791579241eb471, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mat
-    second: {fileID: 2100000, guid: 90a1f5f39dcd64542854482ae4940ee6, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: T_Magma
-    second: {fileID: 2800000, guid: 0a9587ff00e44a44ca3d42065beb8f4b, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Volcano_1Ambient_Occlusion
-    second: {fileID: 2800000, guid: 4a5a9566fdb679940ab79a83a18fdac3, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Volcano_2Ambient_Occlusion
-    second: {fileID: 2800000, guid: 38acd14f8101b83449cd6f1692d6726e, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Volcano_3Ambient_Occlusion
-    second: {fileID: 2800000, guid: 228fd4849dc75f642a46f605435205ba, type: 3}
+  externalObjects: {}
   materials:
-    materialImportMode: 2
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -107,6 +67,7 @@ ModelImporter:
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

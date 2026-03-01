@@ -67,7 +67,7 @@ Material:
     - _Slider: 1.08
     - _Smoothness: 0.3
     m_Colors:
-    - _BaseColor: {r: 0.02683338, g: 0.6320754, b: 0.055654474, a: 1}
+    - _BaseColor: {r: 0.6741528, g: 0.7176471, b: 0.074509814, a: 1}
     - _EmissionColor: {r: 0.039215684, g: 0.36862746, b: 0.27646184, a: 1}
     - _LeaveAnimStrength: {r: 1, g: 1, b: 0.2, a: 0}
     - _LeaveAnimStrength_1: {r: 6.283184, g: 4, b: 4, a: 0}
