@@ -1,7 +1,7 @@
+using SpatialSys.UnitySDK;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
 public class MazeUIManager : MonoBehaviour
 {
     public static MazeUIManager Instance { get; private set; }
@@ -25,9 +25,9 @@ public class MazeUIManager : MonoBehaviour
 
     public void ShowInstruction(string text)
     {
-        instructionText.text = text;
-        instructionPanel.SetActive(true);
-    }
+    instructionText.text = text;
+    instructionPanel.SetActive(true);
+    }   
 
     public void HidePanel()
     {
@@ -36,6 +36,6 @@ public class MazeUIManager : MonoBehaviour
 
     private void ReplayAudio()
     {
-        MazeManager.Instance.audioSource.Play();
+        MazeManager.Instance.ReplayCurrentInstruction();
     }
 }

@@ -63,6 +63,8 @@ public class GameProgressManager : MonoBehaviour
     hasVerbMaster = true;
     SpatialBridge.userWorldDataStoreService.SetVariable("hasVerbMaster", true);
     SpatialBridge.questService.quests[2].GetTaskByID(1).Complete();
+    // Activar Quest del laberinto
+    SpatialBridge.questService.quests[3].Start();
     CheckSentenceBuilderBadge();
     }
 
