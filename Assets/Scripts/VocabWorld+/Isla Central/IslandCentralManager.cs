@@ -53,7 +53,8 @@ public class IslandCentralManager : MonoBehaviour
     // Llamado por Trigger_Inicio_Isla_Central
     public void OnPlayerEnter()
     {
-        PlayAudio(audioBienvenida);
+    SpatialBridge.questService.quests[5].Start();
+    PlayAudio(audioBienvenida);
     }
 
     // Llamado por el jugador al tocar el mapa o un trigger
