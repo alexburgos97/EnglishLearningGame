@@ -24,6 +24,8 @@ public class VocabCardManager : MonoBehaviour
     public TextMeshProUGUI schoolSlot2;
     public TextMeshProUGUI schoolSlot3;
 
+    public GameObject iconoVocabCard;
+
     private int foodCount = 0;
     private int clothesCount = 0;
     private int schoolCount = 0;
@@ -41,13 +43,16 @@ public class VocabCardManager : MonoBehaviour
 
     public void ShowVocabCard()
     {
-        vocabCardPanel.SetActive(true);
+    iconoVocabCard.SetActive(true);
+    vocabCardPanel.SetActive(false);
     }
 
     public void HideVocabCard()
     {
-        vocabCardPanel.SetActive(false);
+    iconoVocabCard.SetActive(false);
+    vocabCardPanel.SetActive(false);
     }
+
 
     public void AddFoodWord(string word)
     {
@@ -86,4 +91,10 @@ public class VocabCardManager : MonoBehaviour
     public int GetFoodCount() => foodCount;
     public int GetClothesCount() => clothesCount;
     public int GetSchoolCount() => schoolCount;
+
+    public void ToggleVocabCard()
+    {
+    bool isActive = vocabCardPanel.activeSelf;
+    vocabCardPanel.SetActive(!isActive);
+    }
 }
