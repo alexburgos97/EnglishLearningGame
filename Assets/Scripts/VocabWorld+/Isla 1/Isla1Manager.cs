@@ -89,7 +89,7 @@ public class Isla1Manager : MonoBehaviour
     // Zona Ropa - cuando completa una palabra
     public void OnClothesWordComplete(int index)
     {
-        AudioMatchManager.Instance.ShowQuestion(index);
+        //AudioMatchManager.Instance.ShowQuestion(index);Ya no necesario, AudioMatchManager se activa por ClothesObject
     }
 
     // Zona Ropa completa
