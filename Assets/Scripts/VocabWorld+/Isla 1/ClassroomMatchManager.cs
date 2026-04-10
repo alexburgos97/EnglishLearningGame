@@ -7,38 +7,14 @@ public class ClassroomMatchManager : MonoBehaviour
 {
     public static ClassroomMatchManager Instance { get; private set; }
 
-    [Header("Referencias")]
-    public AudioSource audioSource;
-
     [Header("Panel principal")]
     public GameObject classroomPanel;
+
+    [Header("Feedback")]
     public TextMeshProUGUI feedbackText;
 
-    [Header("Botones de palabras")]
-    public Button wordButton1;
-    public Button wordButton2;
-    public Button wordButton3;
-    public TextMeshProUGUI wordButtonText1;
-    public TextMeshProUGUI wordButtonText2;
-    public TextMeshProUGUI wordButtonText3;
-
-    [Header("Slots de objetos")]
-    public Button objectSlot1;
-    public Button objectSlot2;
-    public Button objectSlot3;
-    public TextMeshProUGUI objectSlotText1;
-    public TextMeshProUGUI objectSlotText2;
-    public TextMeshProUGUI objectSlotText3;
-
-    [Header("Audios")]
-    public AudioClip audioBook;
-    public AudioClip audioRuler;
-    public AudioClip audioBackpack;
-
-    private string[] words = { "book", "ruler", "backpack" };
-    private AudioClip[] wordAudios;
-    private string selectedWord = "";
     private int matchedCount = 0;
+    private int totalWords = 3;
 
     void Awake()
     {
@@ -49,93 +25,34 @@ public class ClassroomMatchManager : MonoBehaviour
     void Start()
     {
         classroomPanel.SetActive(false);
-        feedbackText.text = "";
-
-        wordAudios = new AudioClip[] { audioBook, audioRuler, audioBackpack };
-
-        // Configurar botones de palabras
-        wordButton1.onClick.AddListener(() => SelectWord("book", audioBook));
-        wordButton2.onClick.AddListener(() => SelectWord("ruler", audioRuler));
-        wordButton3.onClick.AddListener(() => SelectWord("backpack", audioBackpack));
-
-        // Configurar slots de objetos
-        objectSlot1.onClick.AddListener(() => TryMatch("book"));
-        objectSlot2.onClick.AddListener(() => TryMatch("ruler"));
-        objectSlot3.onClick.AddListener(() => TryMatch("backpack"));
-
-        objectSlotText1.text = "?";
-        objectSlotText2.text = "?";
-        objectSlotText3.text = "?";
     }
 
     public void ShowPanel()
     {
-        wordButtonText1.text = "book";
-        wordButtonText2.text = "ruler";
-        wordButtonText3.text = "backpack";
         classroomPanel.SetActive(true);
     }
 
-    private void SelectWord(string word, AudioClip audio)
+    public void OnWordMatched()
     {
-        selectedWord = word;
-        feedbackText.text = "Now tap the correct object!";
-        feedbackText.color = Color.white;
+        matchedCount++;
+        if (matchedCount >= totalWords)
+            Invoke(nameof(OnComplete), 1.5f);
+    }
 
-        if (audio != null)
+    public void ShowFeedback(string message, Color color)
+    {
+        if (feedbackText != null)
         {
-            audioSource.clip = audio;
-            audioSource.Play();
+            feedbackText.text = message;
+            feedbackText.color = color;
+            Invoke(nameof(ClearFeedback), 2f);
         }
     }
 
-    private void TryMatch(string objectName)
+    private void ClearFeedback()
     {
-        if (selectedWord == "") 
-        {
-            feedbackText.text = "Select a word first!";
-            feedbackText.color = Color.yellow;
-            return;
-        }
-
-        if (selectedWord == objectName)
-        {
-            feedbackText.text = "Correct! " + objectName.ToUpper();
-            feedbackText.color = Color.green;
-
-            // Desactivar botón de palabra usado
-            DisableWordButton(objectName);
-
-            // Mostrar palabra en slot
-            ShowWordInSlot(objectName);
-
-            VocabCardManager.Instance.AddSchoolWord(objectName);
-            matchedCount++;
-            selectedWord = "";
-
-            if (matchedCount >= 3)
-                Invoke(nameof(OnComplete), 1.5f);
-        }
-        else
-        {
-            feedbackText.text = "Try again!";
-            feedbackText.color = Color.red;
-            selectedWord = "";
-        }
-    }
-
-    private void DisableWordButton(string word)
-    {
-        if (wordButtonText1.text == word) wordButton1.interactable = false;
-        else if (wordButtonText2.text == word) wordButton2.interactable = false;
-        else if (wordButtonText3.text == word) wordButton3.interactable = false;
-    }
-
-    private void ShowWordInSlot(string word)
-    {
-        if (word == "book") objectSlotText1.text = "book";
-        else if (word == "ruler") objectSlotText2.text = "ruler";
-        else if (word == "backpack") objectSlotText3.text = "backpack";
+        if (feedbackText != null)
+            feedbackText.text = "";
     }
 
     private void OnComplete()

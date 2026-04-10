@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using System.Collections;
 
 public class DroppableObject : MonoBehaviour, IDropHandler
@@ -8,11 +9,11 @@ public class DroppableObject : MonoBehaviour, IDropHandler
     public AudioClip correctAudio;
 
     private bool isCompleted = false;
-    private SpriteRenderer spriteRenderer;
+    private Image objectImage;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        objectImage = GetComponent<Image>();
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -27,10 +28,8 @@ public class DroppableObject : MonoBehaviour, IDropHandler
             isCompleted = true;
             draggable.MarkAsCompleted();
 
-            // Efecto de brillo
             StartCoroutine(GlowEffect());
 
-            // Reproducir audio correcto
             if (correctAudio != null)
             {
                 AudioSource audio = GetComponent<AudioSource>();
@@ -41,29 +40,28 @@ public class DroppableObject : MonoBehaviour, IDropHandler
             }
 
             VocabCardManager.Instance.AddSchoolWord(correctWord);
-            //ClassroomMatchManager.Instance.OnWordMatched();
-
-            SpatialSys.UnitySDK.SpatialBridge.coreGUIService.DisplayToastMessage(
-                correctWord.ToUpper() + " correct!");
+            ClassroomMatchManager.Instance.OnWordMatched();
+            ClassroomMatchManager.Instance.ShowFeedback(
+                correctWord.ToUpper() + " correct!", Color.green);
         }
         else
         {
-            SpatialSys.UnitySDK.SpatialBridge.coreGUIService.DisplayToastMessage(
-                "Try again!");
+            ClassroomMatchManager.Instance.ShowFeedback(
+                "Try again!", Color.red);
         }
     }
 
     private IEnumerator GlowEffect()
     {
-        if (spriteRenderer == null) yield break;
+        if (objectImage == null) yield break;
 
-        Color originalColor = spriteRenderer.color;
-        spriteRenderer.color = Color.yellow;
+        Color originalColor = objectImage.color;
+        objectImage.color = Color.yellow;
         yield return new WaitForSeconds(0.3f);
-        spriteRenderer.color = originalColor;
+        objectImage.color = originalColor;
         yield return new WaitForSeconds(0.3f);
-        spriteRenderer.color = Color.yellow;
+        objectImage.color = Color.yellow;
         yield return new WaitForSeconds(0.3f);
-        spriteRenderer.color = originalColor;
+        objectImage.color = originalColor;
     }
 }

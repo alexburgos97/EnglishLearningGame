@@ -24,7 +24,6 @@ public class DraggableWord : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         originalPosition = rectTransform.anchoredPosition;
         originalParent = transform.parent;
-
         canvas = GetComponentInParent<Canvas>();
 
         audioSource = GetComponent<AudioSource>();
@@ -40,9 +39,8 @@ public class DraggableWord : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup.alpha = 0.7f;
         canvasGroup.blocksRaycasts = false;
-        transform.SetParent(canvas.transform);
+        // No cambiamos el parent para evitar que desaparezca el canvas
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -52,14 +50,12 @@ public class DraggableWord : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         ReturnToOriginalPosition();
     }
 
     public void ReturnToOriginalPosition()
     {
-        transform.SetParent(originalParent);
         rectTransform.anchoredPosition = originalPosition;
     }
 
