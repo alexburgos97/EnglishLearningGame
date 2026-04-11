@@ -10,23 +10,41 @@ public class PassportManager : MonoBehaviour
     public GameObject passportPanel;
     public Button passportIcon;
 
-    [Header("Medallas - Imágenes en gris y color")]
+    [Header("Medallas GrammarWorld - Imágenes")]
     public Image medalBuilders;
     public Image medalVerbMaster;
     public Image medalPathfinder;
     public Image medalSentenceBuilder;
 
-    [Header("Sprites en color")]
+    [Header("Medallas VocabWorld+ - Imágenes")]
+    public Image medalDailyLifeScout;
+    public Image medalNumberCruncher;
+    public Image medalGlobalCitizen;
+    public Image medalLexiconLegend;
+
+    [Header("GrammarWorld - Sprites en color")]
     public Sprite buildersColor;
     public Sprite verbMasterColor;
     public Sprite pathfinderColor;
     public Sprite sentenceBuilderColor;
 
-    [Header("Sprites en gris")]
+    [Header("GrammarWorld - Sprites en gris")]
     public Sprite buildersGray;
     public Sprite verbMasterGray;
     public Sprite pathfinderGray;
     public Sprite sentenceBuilderGray;
+
+    [Header("VocabWorld+ - Sprites en color")]
+    public Sprite dailyLifeScoutColor;
+    public Sprite numberCruncherColor;
+    public Sprite globalCitizenColor;
+    public Sprite lexiconLegendColor;
+
+    [Header("VocabWorld+ - Sprites en gris")]
+    public Sprite dailyLifeScoutGray;
+    public Sprite numberCruncherGray;
+    public Sprite globalCitizenGray;
+    public Sprite lexiconLegendGray;
 
     private bool isOpen = false;
 
@@ -53,7 +71,7 @@ public class PassportManager : MonoBehaviour
 
     private void OpenPassport()
     {
-        // Actualizar medallas según progreso
+        // GrammarWorld
         medalBuilders.sprite = GameProgressManager.Instance.HasBuildersMedal() ?
             buildersColor : buildersGray;
         medalVerbMaster.sprite = GameProgressManager.Instance.HasVerbMaster() ?
@@ -62,6 +80,16 @@ public class PassportManager : MonoBehaviour
             pathfinderColor : pathfinderGray;
         medalSentenceBuilder.sprite = GameProgressManager.Instance.HasSentenceBuilder() ?
             sentenceBuilderColor : sentenceBuilderGray;
+
+        // VocabWorld+
+        medalDailyLifeScout.sprite = GameProgressManager.Instance.HasDailyLifeScoutMedal() ?
+            dailyLifeScoutColor : dailyLifeScoutGray;
+        medalNumberCruncher.sprite = GameProgressManager.Instance.HasNumberCruncher() ?
+            numberCruncherColor : numberCruncherGray;
+        medalGlobalCitizen.sprite = GameProgressManager.Instance.HasGlobalCitizen() ?
+            globalCitizenColor : globalCitizenGray;
+        medalLexiconLegend.sprite = GameProgressManager.Instance.HasLexiconLegend() ?
+            lexiconLegendColor : lexiconLegendGray;
 
         passportPanel.SetActive(true);
     }
