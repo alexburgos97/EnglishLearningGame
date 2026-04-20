@@ -25,25 +25,28 @@ public class MathManager : MonoBehaviour
     private string[] signWords = {"", "PLUS", "MINUS", "TIMES", "DIVIDED BY"};
     private string[] signSymbols = {"", "+", "-", "×", "÷"};
 
+    // Solo num1, signo, num2 - el resultado se calcula automaticamente
     private int[][,] phases = new int[][,]
     {
-        new int[,] { {9,1,2,11}, {7,1,5,12}, {8,1,5,13}, {6,1,8,14}, {7,1,8,15} },
-        new int[,] { {20,2,3,17}, {19,2,1,18}, {20,2,1,19}, {20,2,4,16}, {18,2,2,16} },
-        new int[,] { {4,3,3,12}, {5,3,3,15}, {4,3,4,16}, {3,3,6,18}, {4,3,5,20} },
-        new int[,] { {22,4,2,11}, {26,4,2,13}, {28,4,2,14}, {34,4,2,17}, {38,4,2,19} }
+        // PLUS: num1, signo, num2
+        new int[,] { {9,1,2}, {7,1,5}, {8,1,5}, {6,1,8}, {7,1,8} },
+        // MINUS
+        new int[,] { {20,2,3}, {19,2,1}, {20,2,1}, {20,2,4}, {18,2,2} },
+        // TIMES
+        new int[,] { {4,3,3}, {5,3,3}, {4,3,4}, {3,3,6}, {4,3,5} },
+        // DIVIDED BY
+        new int[,] { {20,4,4}, {18,4,3}, {15,4,5}, {14,4,7}, {12,4,6} }
     };
 
     private int currentPhase = 0;
-    private int[] rowOrder = new int[5];
+    private int activeRow = 0;
     private int[] filledNum1 = new int[5];
     private string[] filledSign = new string[5];
     private int[] filledNum2 = new int[5];
     private bool[] rowCompleted = new bool[5];
-    private int completedRows = 0;
     private bool isTalking = false;
     private Vector3 originalScale;
     private float pulseTimer = 0f;
-    private int currentInstructionRow = 0;
     private int rowToClear = 0;
 
     void Awake()
@@ -87,17 +90,7 @@ public class MathManager : MonoBehaviour
 
     private void StartPhase()
     {
-        completedRows = 0;
-        currentInstructionRow = 0;
-
-        rowOrder = new int[] {0, 1, 2, 3, 4};
-        for (int i = 4; i > 0; i--)
-        {
-            int j = Random.Range(0, i + 1);
-            int temp = rowOrder[i];
-            rowOrder[i] = rowOrder[j];
-            rowOrder[j] = temp;
-        }
+        activeRow = 0;
 
         for (int i = 0; i < 5; i++)
         {
@@ -112,21 +105,25 @@ public class MathManager : MonoBehaviour
         }
 
         feedbackText.text = "";
-        ShowCurrentInstruction();
+        ShowInstruction();
     }
 
-    private void ShowCurrentInstruction()
+    private void ShowInstruction()
     {
-        if (currentInstructionRow >= 5) return;
+        if (activeRow >= 5) return;
 
-        int eq = rowOrder[currentInstructionRow];
-        int n1 = phases[currentPhase][eq, 0];
-        int sign = phases[currentPhase][eq, 1];
-        int n2 = phases[currentPhase][eq, 2];
+        int n1 = phases[currentPhase][activeRow, 0];
+        int sign = phases[currentPhase][activeRow, 1];
+        int n2 = phases[currentPhase][activeRow, 2];
 
         instructionText.text = GetNumberWord(n1) + " " +
             signWords[sign] + " " +
             GetNumberWord(n2) + " equals ?";
+    }
+
+    public bool IsRowActive(int row)
+    {
+        return row == activeRow;
     }
 
     private string GetNumberWord(int number)
@@ -148,9 +145,21 @@ public class MathManager : MonoBehaviour
         return number.ToString();
     }
 
+    private int CalculateResult(int num1, string sign, int num2)
+    {
+        switch (sign)
+        {
+            case "+": return num1 + num2;
+            case "-": return num1 - num2;
+            case "×": return num1 * num2;
+            case "÷": return num2 != 0 ? num1 / num2 : 0;
+            default: return 0;
+        }
+    }
+
     public void SetFilledNum1(int row, int value)
     {
-        if (row >= 0 && row < 5)
+        if (row == activeRow)
         {
             filledNum1[row] = value;
             CheckRow(row);
@@ -159,7 +168,7 @@ public class MathManager : MonoBehaviour
 
     public void SetFilledSign(int row, string sign)
     {
-        if (row >= 0 && row < 5)
+        if (row == activeRow)
         {
             filledSign[row] = sign;
             CheckRow(row);
@@ -168,7 +177,7 @@ public class MathManager : MonoBehaviour
 
     public void SetFilledNum2(int row, int value)
     {
-        if (row >= 0 && row < 5)
+        if (row == activeRow)
         {
             filledNum2[row] = value;
             CheckRow(row);
@@ -177,35 +186,34 @@ public class MathManager : MonoBehaviour
 
     private void CheckRow(int row)
     {
-        if (rowCompleted[row]) return;
         if (filledNum1[row] == -1 || filledSign[row] == "" || filledNum2[row] == -1) return;
 
-        int eq = rowOrder[row];
-        int expectedN1 = phases[currentPhase][eq, 0];
-        int expectedSign = phases[currentPhase][eq, 1];
-        int expectedN2 = phases[currentPhase][eq, 2];
-        int expectedResult = phases[currentPhase][eq, 3];
+        int expectedN1 = phases[currentPhase][row, 0];
+        int expectedSign = phases[currentPhase][row, 1];
+        int expectedN2 = phases[currentPhase][row, 2];
 
         if (filledNum1[row] == expectedN1 &&
             filledSign[row] == signSymbols[expectedSign] &&
             filledNum2[row] == expectedN2)
         {
+            // Calcular resultado automaticamente
+            int result = CalculateResult(filledNum1[row], filledSign[row], filledNum2[row]);
+
             rowCompleted[row] = true;
-            completedRows++;
-            slotsResult[row].ShowResult(expectedResult, GetNumberWord(expectedResult));
+            slotsResult[row].ShowResult(result);
             feedbackText.text = "Well done!";
             feedbackText.color = Color.green;
 
-            currentInstructionRow++;
-            if (currentInstructionRow < 5)
-                ShowCurrentInstruction();
+            activeRow++;
 
-            if (completedRows >= 5)
+            if (activeRow < 5)
+                ShowInstruction();
+            else
                 Invoke(nameof(OnPhaseComplete), 1.5f);
         }
         else
         {
-            feedbackText.text = "Try again!";
+            feedbackText.text = "Try again! Follow the instruction.";
             feedbackText.color = Color.red;
             rowToClear = row;
             Invoke(nameof(ClearRowDelayed), 1.5f);
@@ -214,17 +222,12 @@ public class MathManager : MonoBehaviour
 
     private void ClearRowDelayed()
     {
-        ClearRow(rowToClear);
-    }
-
-    private void ClearRow(int row)
-    {
-        filledNum1[row] = -1;
-        filledSign[row] = "";
-        filledNum2[row] = -1;
-        slotsNum1[row].ClearSlot();
-        slotsSign[row].ClearSlot();
-        slotsNum2[row].ClearSlot();
+        filledNum1[rowToClear] = -1;
+        filledSign[rowToClear] = "";
+        filledNum2[rowToClear] = -1;
+        slotsNum1[rowToClear].ClearSlot();
+        slotsSign[rowToClear].ClearSlot();
+        slotsNum2[rowToClear].ClearSlot();
         feedbackText.text = "";
     }
 
@@ -250,8 +253,4 @@ public class MathManager : MonoBehaviour
             "Amazing! You mastered the numbers!");
         GameProgressManager.Instance.AwardNumberCruncherMedal();
     }
-    public bool IsRowActive(int row)
-{
-    return row == currentInstructionRow;
-}
 }

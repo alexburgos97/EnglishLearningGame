@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using SpatialSys.UnitySDK;
 
 public class DroppableSlot : MonoBehaviour, IPointerClickHandler
 {
@@ -64,12 +65,12 @@ public class DroppableSlot : MonoBehaviour, IPointerClickHandler
             slotImage.color = Color.white;
     }
 
-    public void ShowResult(int result, string resultWord)
+    public void ShowResult(int result)
     {
         isFilled = true;
         if (slotText != null)
         {
-            slotText.text = result + "\n" + resultWord;
+            slotText.text = result.ToString();
             slotText.color = Color.green;
         }
     }
