@@ -8,7 +8,6 @@ public class BridgeQuizManager : MonoBehaviour
     [Header("Arrastra aquí tus cubos en orden")]
     public BridgeBlock[] bridgeBlocks;
 
-//LAS 20 FRASES A COMPLETAR DEL JUEGO DEL PUENTE
     private string[,] allQuestions = new string[,]
     {
         {"I ___ hungry every morning.",                  "AM",    "IS",     "AM"},
@@ -41,6 +40,7 @@ public class BridgeQuizManager : MonoBehaviour
     private int currentIndex = 0;
     public bool quizActive = false;
     private int totalQuestions => allQuestions.GetLength(0);
+    private bool[] usedQuestions;
 
     void Awake()
     {
@@ -50,7 +50,6 @@ public class BridgeQuizManager : MonoBehaviour
 
     void Start()
     {
-        // EL SECRETO DE LA ESCALABILIDAD: 1 pregunta en el cráter + 1 por cada cubo
         int preguntasNecesarias = bridgeBlocks.Length + 1;
 
         if (preguntasNecesarias > totalQuestions)
@@ -63,6 +62,7 @@ public class BridgeQuizManager : MonoBehaviour
         currentOptionsA  = new string[preguntasNecesarias];
         currentOptionsB  = new string[preguntasNecesarias];
         currentAnswers   = new string[preguntasNecesarias];
+        usedQuestions = new bool[totalQuestions];
 
         SelectRandomQuestions(preguntasNecesarias);
     }
@@ -87,12 +87,42 @@ public class BridgeQuizManager : MonoBehaviour
             currentOptionsA[i]  = allQuestions[q, 1];
             currentOptionsB[i]  = allQuestions[q, 2];
             currentAnswers[i]   = allQuestions[q, 3];
+            usedQuestions[q] = true;
         }
+    }
+
+    // Cambiar pregunta actual por otra del banco no usada
+    public void ChangeCurrentQuestion()
+    {
+        // Buscar una pregunta no usada
+        for (int q = 0; q < totalQuestions; q++)
+        {
+            if (!usedQuestions[q])
+            {
+                currentSentences[currentIndex] = allQuestions[q, 0];
+                currentOptionsA[currentIndex]  = allQuestions[q, 1];
+                currentOptionsB[currentIndex]  = allQuestions[q, 2];
+                currentAnswers[currentIndex]   = allQuestions[q, 3];
+                usedQuestions[q] = true;
+                return;
+            }
+        }
+
+        // Si todas estan usadas, resetear y elegir cualquiera diferente
+        for (int q = 0; q < totalQuestions; q++) usedQuestions[q] = false;
+        int newQ = Random.Range(0, totalQuestions);
+        currentSentences[currentIndex] = allQuestions[newQ, 0];
+        currentOptionsA[currentIndex]  = allQuestions[newQ, 1];
+        currentOptionsB[currentIndex]  = allQuestions[newQ, 2];
+        currentAnswers[currentIndex]   = allQuestions[newQ, 3];
+        usedQuestions[newQ] = true;
     }
 
     public void OnAvatarReachedEdge(int blockIndex)
     {
         if (quizActive) return;
+        // No mostrar preguntas en bloques ya respondidos
+        if (blockIndex < currentIndex) return;
         if (blockIndex != currentIndex) return;
 
         quizActive = true;
@@ -101,7 +131,6 @@ public class BridgeQuizManager : MonoBehaviour
 
     public void OnAnswerCorrect()
     {
-        // Mueve el bloque SOLO si todavía hay bloques físicos por mover
         if (currentIndex < bridgeBlocks.Length)
         {
             bridgeBlocks[currentIndex].MoveToPosition();
@@ -113,14 +142,13 @@ public class BridgeQuizManager : MonoBehaviour
 
     public void OnAnswerWrong()
     {
-        quizActive = false;
+        // Ya no se cierra el panel, se cambia la pregunta
     }
 
-    // NUEVA FUNCIÓN EXCLUSIVA PARA TU LÍNEA DE LLEGADA
     public void LlegadaAMeta()
-{
-    SpatialBridge.coreGUIService.DisplayToastMessage(
-        "Perfect! The bridge is stable! You crossed the crater!");
-    GameProgressManager.Instance.AwardBuildersMedal();
-}
+    {
+        SpatialBridge.coreGUIService.DisplayToastMessage(
+            "Perfect! The bridge is stable! You crossed the crater!");
+        GameProgressManager.Instance.AwardBuildersMedal();
+    }
 }

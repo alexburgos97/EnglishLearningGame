@@ -19,6 +19,7 @@ public class QuizUIManager : MonoBehaviour
     public Transform quizCanvas;
 
     private int currentIndex = 0;
+    private bool answerInProgress = false;
 
     void Awake()
     {
@@ -26,22 +27,19 @@ public class QuizUIManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    // El trigger llama a este método y le pasa su posición exacta
     public void MoverCanvasAPosicion(Transform posicionTrigger)
     {
         if (quizCanvas != null)
         {
-            // 1. Se teletransporta exactamente al cubo invisible que pisaste y sube 1.5 metros (altura de los ojos)
             quizCanvas.position = posicionTrigger.position + new Vector3(0, 1.5f, 0);
-            
-            // 2. Copia la rotación exacta del cubo invisible (CERO matemáticas de Spatial)
-            quizCanvas.rotation = posicionTrigger.rotation; 
+            quizCanvas.rotation = posicionTrigger.rotation;
         }
     }
 
     public void ShowQuestion(int index)
     {
         currentIndex = index;
+        answerInProgress = false;
 
         sentenceText.text = BridgeQuizManager.Instance.currentSentences[index];
         optionAText.text  = BridgeQuizManager.Instance.currentOptionsA[index];
@@ -53,26 +51,42 @@ public class QuizUIManager : MonoBehaviour
         buttonA.onClick.AddListener(() => CheckAnswer(BridgeQuizManager.Instance.currentOptionsA[currentIndex]));
         buttonB.onClick.AddListener(() => CheckAnswer(BridgeQuizManager.Instance.currentOptionsB[currentIndex]));
 
+        buttonA.interactable = true;
+        buttonB.interactable = true;
         quizPanel.SetActive(true);
     }
 
     private void CheckAnswer(string selected)
     {
+        if (answerInProgress) return;
+        answerInProgress = true;
+
+        // Desactivar botones inmediatamente para evitar doble clic
+        buttonA.interactable = false;
+        buttonB.interactable = false;
+
         string correct = BridgeQuizManager.Instance.currentAnswers[currentIndex];
 
         if (selected == correct)
         {
             feedbackText.text = "Correct!";
             feedbackText.color = Color.blue;
-            Invoke(nameof(ClosePanel), 1f);
             BridgeQuizManager.Instance.OnAnswerCorrect();
+            Invoke(nameof(ClosePanel), 1f);
         }
         else
         {
             feedbackText.text = "Be careful! Try again!";
             feedbackText.color = Color.red;
-            BridgeQuizManager.Instance.OnAnswerWrong();
+            // Cambiar a otra pregunta despues de 1.5 segundos
+            Invoke(nameof(ChangeQuestion), 1.5f);
         }
+    }
+
+    private void ChangeQuestion()
+    {
+        BridgeQuizManager.Instance.ChangeCurrentQuestion();
+        ShowQuestion(currentIndex);
     }
 
     private void ClosePanel()
