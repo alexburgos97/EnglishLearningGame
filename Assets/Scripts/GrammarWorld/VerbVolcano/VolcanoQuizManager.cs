@@ -208,4 +208,33 @@ public class VolcanoQuizManager : MonoBehaviour
                 "Amazing! Cross the volcano to claim your medal!");
         }
     }
+    public int GetPresentSimpleCount()
+        {
+        return presentSimple.GetLength(0);
+    }
+
+    public string GetPronoun(int index)
+        {
+        return presentSimple[index, 0];
+    }
+
+    public string GetVerbA(int index)
+        {
+        return presentSimple[index, 1];
+    }
+
+    public string GetVerbB(int index)
+        {
+        return presentSimple[index, 2];
+    }
+
+    public string GetAnswer(int index)
+        {
+        return presentSimple[index, 3];
+    }
+
+    public string GetSentence(int index)
+        {
+        return presentSimple[index, 4];
+    }
 }
