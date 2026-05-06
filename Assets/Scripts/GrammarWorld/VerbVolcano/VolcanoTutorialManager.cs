@@ -12,7 +12,6 @@ public class VolcanoTutorialManager : MonoBehaviour
     public AudioSource audioSource;
     public VolcanoRock rock;
     public Transform puntoLanzamiento;
-    public Transform puntoDemo;
 
     [Header("Audios de fases")]
     public AudioClip audioPhase1;
@@ -51,6 +50,8 @@ public class VolcanoTutorialManager : MonoBehaviour
     private float pulseTimer = 0f;
     private bool tutorialCompleted = false;
     private bool answerInProgress = false;
+
+    public bool TutorialCompleted => tutorialCompleted;
 
     void Awake()
     {
@@ -133,10 +134,8 @@ public class VolcanoTutorialManager : MonoBehaviour
         demoFeedbackText.text = "";
         answerInProgress = false;
 
-        // Acceder al banco de Presente Simple del VolcanoQuizManager
         int count = VolcanoQuizManager.Instance.GetPresentSimpleCount();
 
-        // Seleccionar pregunta aleatoria diferente a la anterior
         int q;
         do {
             q = Random.Range(0, count);
@@ -150,14 +149,24 @@ public class VolcanoTutorialManager : MonoBehaviour
         currentCorrectAnswer = VolcanoQuizManager.Instance.GetAnswer(q);
 
         demoSentenceText.text = sentence;
-        demoOption1Text.text = verbA;
-        demoOption2Text.text = verbB;
+
+        // Aleatorizar las opciones
+        if (Random.value < 0.5f)
+        {
+            demoOption1Text.text = verbA;
+            demoOption2Text.text = verbB;
+        }
+        else
+        {
+            demoOption1Text.text = verbB;
+            demoOption2Text.text = verbA;
+        }
 
         demoOption1Button.interactable = true;
         demoOption2Button.interactable = true;
 
-        if (rock != null && puntoLanzamiento != null && puntoDemo != null)
-            rock.Launch(pronoun, puntoDemo);
+        if (rock != null && puntoLanzamiento != null)
+            rock.Launch(pronoun, VolcanoQuizManager.Instance.posicionPS);
     }
 
     private void CheckDemoAnswer(string selected)

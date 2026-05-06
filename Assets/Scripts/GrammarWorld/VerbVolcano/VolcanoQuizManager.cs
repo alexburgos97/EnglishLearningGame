@@ -8,7 +8,7 @@ public class VolcanoQuizManager : MonoBehaviour
     [Header("Referencias")]
     public VolcanoRock rock;
     public Transform puntoLanzamiento;
-    public GameObject colliderLava;
+    public GameObject[] collidersLava;
     public Transform puntoReaparicion;
 
     [Header("Puntos de jugador")]
@@ -203,8 +203,17 @@ public class VolcanoQuizManager : MonoBehaviour
     {
         if (presentSimpleCompleted && pastSimpleCompleted)
         {
-            colliderLava.SetActive(false);
-            SpatialBridge.coreGUIService.DisplayToastMessage(
+            // Desactivar TODOS los colliders de lava
+            foreach (GameObject collider in collidersLava)
+            {
+                if (collider != null)
+                collider.SetActive(false);
+            }
+                // Enfriar la lava
+                LavaBlocker lavaBlocker = FindObjectOfType<LavaBlocker>();
+                 if (lavaBlocker != null)
+                lavaBlocker.CoolLava();
+                SpatialBridge.coreGUIService.DisplayToastMessage(
                 "Amazing! Cross the volcano to claim your medal!");
         }
     }

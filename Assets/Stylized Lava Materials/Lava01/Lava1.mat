@@ -108,8 +108,8 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DistortX: 0.92
-    - _DistortY: 0.36
+    - _DistortX: 0
+    - _DistortY: 0
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0

@@ -35,6 +35,9 @@ public class VolcanoUIManager : MonoBehaviour
 
     private int currentIndex = 0;
     private bool isPS = true;
+    private string currentVerbA = "";
+    private string currentVerbB = "";
+    private bool answerInProgress = false;
 
     void Awake()
     {
@@ -72,20 +75,34 @@ public class VolcanoUIManager : MonoBehaviour
     public void ShowQuestion(int index)
     {
         currentIndex = index;
+        answerInProgress = false;
+
+        string verbA = VolcanoQuizManager.Instance.currentVerbsA[index];
+        string verbB = VolcanoQuizManager.Instance.currentVerbsB[index];
+
+        // Aleatorizar las opciones
+        if (Random.value < 0.5f)
+        {
+            currentVerbA = verbA;
+            currentVerbB = verbB;
+        }
+        else
+        {
+            currentVerbA = verbB;
+            currentVerbB = verbA;
+        }
 
         if (isPS)
         {
             feedbackTextPS.text = "";
             sentenceTextPS.text = VolcanoQuizManager.Instance.currentSentences[index];
-            buttonATextPS.text  = VolcanoQuizManager.Instance.currentVerbsA[index];
-            buttonBTextPS.text  = VolcanoQuizManager.Instance.currentVerbsB[index];
+            buttonATextPS.text  = currentVerbA;
+            buttonBTextPS.text  = currentVerbB;
 
             buttonAPS.onClick.RemoveAllListeners();
             buttonBPS.onClick.RemoveAllListeners();
-            buttonAPS.onClick.AddListener(() => CheckAnswer(
-                VolcanoQuizManager.Instance.currentVerbsA[currentIndex]));
-            buttonBPS.onClick.AddListener(() => CheckAnswer(
-                VolcanoQuizManager.Instance.currentVerbsB[currentIndex]));
+            buttonAPS.onClick.AddListener(() => CheckAnswer(currentVerbA));
+            buttonBPS.onClick.AddListener(() => CheckAnswer(currentVerbB));
 
             buttonAPS.interactable = true;
             buttonBPS.interactable = true;
@@ -95,15 +112,13 @@ public class VolcanoUIManager : MonoBehaviour
         {
             feedbackTextPA.text = "";
             sentenceTextPA.text = VolcanoQuizManager.Instance.currentSentences[index];
-            buttonATextPA.text  = VolcanoQuizManager.Instance.currentVerbsA[index];
-            buttonBTextPA.text  = VolcanoQuizManager.Instance.currentVerbsB[index];
+            buttonATextPA.text  = currentVerbA;
+            buttonBTextPA.text  = currentVerbB;
 
             buttonAPA.onClick.RemoveAllListeners();
             buttonBPA.onClick.RemoveAllListeners();
-            buttonAPA.onClick.AddListener(() => CheckAnswer(
-                VolcanoQuizManager.Instance.currentVerbsA[currentIndex]));
-            buttonBPA.onClick.AddListener(() => CheckAnswer(
-                VolcanoQuizManager.Instance.currentVerbsB[currentIndex]));
+            buttonAPA.onClick.AddListener(() => CheckAnswer(currentVerbA));
+            buttonBPA.onClick.AddListener(() => CheckAnswer(currentVerbB));
 
             buttonAPA.interactable = true;
             buttonBPA.interactable = true;
@@ -113,6 +128,9 @@ public class VolcanoUIManager : MonoBehaviour
 
     private void CheckAnswer(string selected)
     {
+        if (answerInProgress) return;
+        answerInProgress = true;
+
         string correct = VolcanoQuizManager.Instance.currentAnswers[currentIndex];
         string fullSentence = VolcanoQuizManager.Instance.currentFullSentences[currentIndex];
 
@@ -123,13 +141,13 @@ public class VolcanoUIManager : MonoBehaviour
 
             if (selected == correct)
             {
-                feedbackTextPS.text = "Correct! " + fullSentence;
+                feedbackTextPS.text = "CORECT! ";
                 feedbackTextPS.color = Color.green;
                 Invoke(nameof(NextQuestion), 2f);
             }
             else
             {
-                feedbackTextPS.text = "Don't worry! The correct answer is: " + fullSentence;
+                feedbackTextPS.text = "DON'T WORRY! TRY AGAIN: ";
                 feedbackTextPS.color = Color.red;
                 Invoke(nameof(ShowTryAgain), 2f);
             }
