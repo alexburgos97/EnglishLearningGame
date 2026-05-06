@@ -13,12 +13,12 @@ public class SparkyDialog : MonoBehaviour
 
     private string[] dialogSteps = new string[]
     {
-        "Hello! I am Sparky, your guide. Welcome to the Central Classroom of Sky Academy! This place is magical because of 'Sintaxis Lumina' – our special energy of communication and knowledge.\nLook at the holograms! It is beautiful, right?",
-        "But look... the colors are disappearing. A dark force called 'Linguistic Chaos' is attacking the academy. It feeds on confusion. The Runa of Structure (in GrammarWorld) and the Runa of Meaning (in VocabWorld+) are broken! We are in danger.",
+        "Hello! I am Sparky, your guide. Welcome to the Central Classroom of Sky Academy! This place is magical because of 'Sintaxis Lumina' – our special energy of communication and knowledge.\n",
+        "But the colors are disappearing. A dark force called 'Linguistic Chaos' is attacking the academy. It feeds on confusion. The Runa of Structure (in GrammarWorld) and the Runa of Meaning (in VocabWorld+) are broken! We are in danger.",
         "Wait! My sensors detect something special in you. You are a 'Word Mender'! You have the power to fix words and restore the energy.\nYou are the hero we need!",
         "Take this Badge Passport. It is very important!",
         "Here is your mission:\n\n* First, go to GrammarWorld. Win 3 badges and 1 final insignia.\n* Then, go to VocabWorld+. Win 3 badges and 1 final insignia.\n\nYou must complete the passport to save the Academy!",
-        "Are you ready Word Mender? The portal to GrammarWorld is open. Let's fix the Runa of Structure first.\n Good luck!"
+        "Are you ready Word Mender? The portal to GrammarWorld is open.\n Good luck!"
     };
 
     private void Start()

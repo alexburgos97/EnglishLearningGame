@@ -141,13 +141,13 @@ public class VolcanoUIManager : MonoBehaviour
 
             if (selected == correct)
             {
-                feedbackTextPS.text = "CORECT! ";
+                feedbackTextPS.text = "CORECT! WELL DONE! ";
                 feedbackTextPS.color = Color.green;
                 Invoke(nameof(NextQuestion), 2f);
             }
             else
             {
-                feedbackTextPS.text = "DON'T WORRY! TRY AGAIN: ";
+                feedbackTextPS.text = "DON'T WORRY! TRY AGAIN!";
                 feedbackTextPS.color = Color.red;
                 Invoke(nameof(ShowTryAgain), 2f);
             }
@@ -159,13 +159,13 @@ public class VolcanoUIManager : MonoBehaviour
 
             if (selected == correct)
             {
-                feedbackTextPA.text = "Correct! " + fullSentence;
-                feedbackTextPA.color = Color.green;
+                feedbackTextPA.text = "CORRECT! WELL DONE";
+                feedbackTextPA.color = Color.blue;
                 Invoke(nameof(NextQuestion), 2f);
             }
             else
             {
-                feedbackTextPA.text = "Don't worry! The correct answer is: " + fullSentence;
+                feedbackTextPA.text = "Don't worry! Try Again";
                 feedbackTextPA.color = Color.red;
                 Invoke(nameof(ShowTryAgain), 2f);
             }
