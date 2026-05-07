@@ -15,7 +15,7 @@ MonoBehaviour:
   version: 1
   sku: vysull4jg4r61cjxt16xu3q8
   packageName: English Space
-  thumbnail: {fileID: 2800000, guid: 8556be473992b42dbb7035908e118623, type: 3}
+  thumbnail: {fileID: 2800000, guid: 503e72f3a2d60ca48a391108e34f0c01, type: 3}
   savedProjectSettings: {fileID: 11400000, guid: b4d3f3931508d4e3381693ee23f6fe04,
     type: 2}
   teamID: 

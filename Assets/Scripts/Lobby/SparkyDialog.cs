@@ -9,6 +9,10 @@ public class SparkyDialog : MonoBehaviour
     [SerializeField] private Button nextButton;
     [SerializeField] private TextMeshProUGUI nextButtonText;
 
+    [Header("Audios de cada paso")]
+    [SerializeField] private AudioClip[] dialogAudios;
+    private AudioSource audioSource;
+
     private int currentStep = 0;
 
     private string[] dialogSteps = new string[]
@@ -24,6 +28,12 @@ public class SparkyDialog : MonoBehaviour
     private void Start()
     {
         dialogPanel.SetActive(false);
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.spatialBlend = 0f;
+        audioSource.playOnAwake = false;
     }
 
     public void OpenDialog()
@@ -39,6 +49,8 @@ public class SparkyDialog : MonoBehaviour
         if (currentStep >= dialogSteps.Length)
         {
             dialogPanel.SetActive(false);
+            if (audioSource != null)
+                audioSource.Stop();
             return;
         }
         UpdateDialog();
@@ -47,6 +59,16 @@ public class SparkyDialog : MonoBehaviour
     private void UpdateDialog()
     {
         dialogText.text = dialogSteps[currentStep];
+
+        // Reproducir audio del paso actual
+        if (dialogAudios != null && 
+            currentStep < dialogAudios.Length && 
+            dialogAudios[currentStep] != null)
+        {
+            audioSource.clip = dialogAudios[currentStep];
+            audioSource.Play();
+        }
+
         if (currentStep == dialogSteps.Length - 1)
             nextButtonText.text = "Close";
         else
