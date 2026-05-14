@@ -9,7 +9,7 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 804e1ce4c496647cfa3f1a1134187c71, type: 3}
   _removeEmptyRootObjects: 1
-  _scaleFactor: 1
+  _scaleFactor: 0.007623374
   _deduplicateResources: 0
   _deduplicatedStatistics:
     meshCountBefore: 0
@@ -52,11 +52,11 @@ ScriptedImporter:
 '
   optimizeGameObjects: 0
   materials:
-  - {instanceID: 0}
+  - {fileID: 8977057710184593447, guid: 341341a699122694a8322db0fa9e9291, type: 3}
   textures:
-  - {instanceID: 0}
-  - {instanceID: 0}
-  - {instanceID: 0}
+  - {fileID: 6983701643236107813, guid: 341341a699122694a8322db0fa9e9291, type: 3}
+  - {fileID: 8022499087761476943, guid: 341341a699122694a8322db0fa9e9291, type: 3}
+  - {fileID: 5230624929818990856, guid: 341341a699122694a8322db0fa9e9291, type: 3}
   hasSceneData: 1
   hasAnimationData: 0
   hasMaterialData: 1
@@ -64,13 +64,16 @@ ScriptedImporter:
   animations: []
   _extensions: []
   _textures:
-  - texture: {instanceID: 0}
+  - texture: {fileID: 6983701643236107813, guid: 341341a699122694a8322db0fa9e9291,
+      type: 3}
     shouldBeLinear: 0
     shouldBeNormalMap: 0
-  - texture: {instanceID: 0}
+  - texture: {fileID: 8022499087761476943, guid: 341341a699122694a8322db0fa9e9291,
+      type: 3}
     shouldBeLinear: 1
     shouldBeNormalMap: 0
-  - texture: {instanceID: 0}
+  - texture: {fileID: 5230624929818990856, guid: 341341a699122694a8322db0fa9e9291,
+      type: 3}
     shouldBeLinear: 1
     shouldBeNormalMap: 1
   _mainAssetIdentifier: scenes/Sketchfab_Scene
