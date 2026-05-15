@@ -19,6 +19,10 @@ public class VolcanoTutorialManager : MonoBehaviour
     public AudioClip audioPhase3;
     public AudioClip audioPhase4;
 
+    [Header("Audios de feedback")]
+    public AudioClip audioCorrect;
+    public AudioClip audioWrong;
+
     [Header("UI")]
     public GameObject tutorialPanel;
     public TextMeshProUGUI instructionText;
@@ -36,10 +40,10 @@ public class VolcanoTutorialManager : MonoBehaviour
 
     private string[] phaseTexts = new string[]
     {
-        "Welcome to the Verb Volcano! Sparky here. The volcano is angry and will throw rocks with pronouns.",
+        "Welcome to the Verb Volcano! The volcano is angry and will throw rocks with pronouns.",
         "You will start on the LEFT platform with Present Simple verbs. After completing it, move to the RIGHT platform for Past Simple verbs.",
         "Watch! A rock will appear with a pronoun. Read the sentence and choose the correct verb to match the pronoun. Try it!",
-        "Are you ready to master the verbs? Go to the LEFT platform and start launching!"
+        "Are you ready? Go to the LEFT platform and start! Good Luck!"
     };
 
     private int currentPhase = 0;
@@ -150,7 +154,6 @@ public class VolcanoTutorialManager : MonoBehaviour
 
         demoSentenceText.text = sentence;
 
-        // Aleatorizar las opciones
         if (Random.value < 0.5f)
         {
             demoOption1Text.text = verbA;
@@ -181,14 +184,24 @@ public class VolcanoTutorialManager : MonoBehaviour
         {
             demoFeedbackText.text = "Well done!";
             demoFeedbackText.color = Color.green;
+            PlayFeedbackAudio(true);
             Invoke(nameof(GoToPhase4), 2f);
         }
         else
         {
             demoFeedbackText.text = "Try again!";
             demoFeedbackText.color = Color.red;
+            PlayFeedbackAudio(false);
             Invoke(nameof(ShowDemoQuestion), 1.5f);
         }
+    }
+
+    public void PlayFeedbackAudio(bool isCorrect)
+    {
+        AudioClip clip = isCorrect ? audioCorrect : audioWrong;
+        if (clip == null) return;
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 
     private void GoToPhase4()

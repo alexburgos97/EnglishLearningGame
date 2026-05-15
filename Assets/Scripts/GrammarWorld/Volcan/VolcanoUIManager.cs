@@ -33,6 +33,11 @@ public class VolcanoUIManager : MonoBehaviour
     public TextMeshProUGUI buttonATextPA;
     public TextMeshProUGUI buttonBTextPA;
 
+    [Header("Audios de feedback")]
+    public AudioClip audioCorrect;
+    public AudioClip audioWrong;
+    private AudioSource audioSource;
+
     private int currentIndex = 0;
     private bool isPS = true;
     private string currentVerbA = "";
@@ -54,6 +59,12 @@ public class VolcanoUIManager : MonoBehaviour
 
         startButtonPS.onClick.AddListener(() => OnStartClicked(true));
         startButtonPA.onClick.AddListener(() => OnStartClicked(false));
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.spatialBlend = 0f;
+        audioSource.playOnAwake = false;
     }
 
     public void ShowStartPanel(bool isPresentSimple)
@@ -80,7 +91,6 @@ public class VolcanoUIManager : MonoBehaviour
         string verbA = VolcanoQuizManager.Instance.currentVerbsA[index];
         string verbB = VolcanoQuizManager.Instance.currentVerbsB[index];
 
-        // Aleatorizar las opciones
         if (Random.value < 0.5f)
         {
             currentVerbA = verbA;
@@ -132,7 +142,6 @@ public class VolcanoUIManager : MonoBehaviour
         answerInProgress = true;
 
         string correct = VolcanoQuizManager.Instance.currentAnswers[currentIndex];
-        string fullSentence = VolcanoQuizManager.Instance.currentFullSentences[currentIndex];
 
         if (isPS)
         {
@@ -141,14 +150,16 @@ public class VolcanoUIManager : MonoBehaviour
 
             if (selected == correct)
             {
-                feedbackTextPS.text = "CORECT! WELL DONE! ";
+                feedbackTextPS.text = "CORRECT! WELL DONE!";
                 feedbackTextPS.color = Color.green;
+                PlayFeedbackAudio(true);
                 Invoke(nameof(NextQuestion), 2f);
             }
             else
             {
                 feedbackTextPS.text = "DON'T WORRY! TRY AGAIN!";
                 feedbackTextPS.color = Color.red;
+                PlayFeedbackAudio(false);
                 Invoke(nameof(ShowTryAgain), 2f);
             }
         }
@@ -159,17 +170,27 @@ public class VolcanoUIManager : MonoBehaviour
 
             if (selected == correct)
             {
-                feedbackTextPA.text = "CORRECT! WELL DONE";
-                feedbackTextPA.color = Color.blue;
+                feedbackTextPA.text = "CORRECT! WELL DONE!";
+                feedbackTextPA.color = Color.green;
+                PlayFeedbackAudio(true);
                 Invoke(nameof(NextQuestion), 2f);
             }
             else
             {
-                feedbackTextPA.text = "Don't worry! Try Again";
+                feedbackTextPA.text = "DON'T WORRY! TRY AGAIN!";
                 feedbackTextPA.color = Color.red;
+                PlayFeedbackAudio(false);
                 Invoke(nameof(ShowTryAgain), 2f);
             }
         }
+    }
+
+    public void PlayFeedbackAudio(bool isCorrect)
+    {
+        AudioClip clip = isCorrect ? audioCorrect : audioWrong;
+        if (clip == null) return;
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 
     private void NextQuestion()
