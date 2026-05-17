@@ -81,8 +81,17 @@ public class MathManager : MonoBehaviour
         }
     }
 
+    private bool gameActive = false;
+    private bool gameCompleted = false;   
+
     public void StartMath()
     {
+        // No reiniciar si el juego ya está activo o completado
+        if (gameActive) return;
+        if (currentPhase > 0) return;
+
+        mathPanel.SetActive(true);
+        StartPhase();
         currentPhase = 0;
         mathPanel.SetActive(true);
         StartPhase();
@@ -246,6 +255,8 @@ public class MathManager : MonoBehaviour
 
     private void OnMathComplete()
     {
+        gameActive = false;
+        gameCompleted = true;
         mathPanel.SetActive(false);
         if (puente_Isla3 != null)
             puente_Isla3.SetActive(true);
