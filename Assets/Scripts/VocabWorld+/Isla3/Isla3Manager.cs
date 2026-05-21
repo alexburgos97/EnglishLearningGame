@@ -33,11 +33,15 @@ public class Isla3Manager : MonoBehaviour
 
     public void MoveCanvasToPlayer()
     {
-        if (isla3Canvas == null) return;
-        Vector3 avatarPos = SpatialBridge.actorService.localActor.avatar.position;
-        isla3Canvas.position = avatarPos + Vector3.up * 2f + Vector3.forward * 2f;
-        isla3Canvas.LookAt(avatarPos);
-        isla3Canvas.Rotate(0, 180f, 0);
+    if (isla3Canvas == null) return;
+    Vector3 avatarPos = SpatialBridge.actorService.localActor.avatar.position;
+    
+    // Posicionar frente al jugador
+    Vector3 dirección = avatarPos - isla3Canvas.position;
+    dirección.y = 0; // Evitar inclinación vertical
+    
+    isla3Canvas.position = avatarPos + Vector3.up * 2f + dirección.normalized * 1.5f;
+    isla3Canvas.rotation = Quaternion.LookRotation(dirección.normalized);
     }
 
     public void ShowFamilyPanel()
@@ -97,11 +101,17 @@ public class Isla3Manager : MonoBehaviour
 
     private void CheckAllComplete()
     {
-        if (totalCompleted >= totalInteractions)
+    if (totalCompleted >= totalInteractions)
         {
-            SpatialBridge.coreGUIService.DisplayToastMessage(
-                "Amazing! You explored the whole city!");
-            GameProgressManager.Instance.AwardGlobalCitizenMedal();
+        SpatialBridge.coreGUIService.DisplayToastMessage(
+            "Amazing! You explored the whole city!");
+
+        // Desactivar bloqueador de la insignia
+        GameObject bloqueador = GameObject.Find("Bloqueador_Insignia_Final");
+        if (bloqueador != null)
+            bloqueador.SetActive(false);
+
+        GameProgressManager.Instance.AwardGlobalCitizenMedal();
         }
     }
 }

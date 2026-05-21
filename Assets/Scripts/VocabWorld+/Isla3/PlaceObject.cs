@@ -61,23 +61,34 @@ public class PlaceObject : MonoBehaviour
 
     public void OnPlayerInteract()
     {
-        if (completed) return;
+    if (completed) return;
 
-        if (wordAudio != null)
-        {
-            audioSource.clip = wordAudio;
-            audioSource.Play();
-        }
+    if (wordAudio != null)
+    {
+        audioSource.clip = wordAudio;
+        audioSource.Play();
+    }
 
-        questionText.text = "What is this place?";
-        feedbackText.text = "";
-        answerInProgress = false;
+    questionText.text = "What is this place?";
+    feedbackText.text = "";
+    answerInProgress = false;
 
-        option1Button.interactable = true;
-        option2Button.interactable = true;
-        option3Button.interactable = true;
+    // Reasignar opciones y listeners cada vez
+    ShuffleOptions();
 
-        Isla3Manager.Instance.ShowPlacePanel();
+    option1Button.onClick.RemoveAllListeners();
+    option2Button.onClick.RemoveAllListeners();
+    option3Button.onClick.RemoveAllListeners();
+
+    option1Button.onClick.AddListener(() => CheckAnswer(option1Text.text));
+    option2Button.onClick.AddListener(() => CheckAnswer(option2Text.text));
+    option3Button.onClick.AddListener(() => CheckAnswer(option3Text.text));
+
+    option1Button.interactable = true;
+    option2Button.interactable = true;
+    option3Button.interactable = true;
+
+    Isla3Manager.Instance.ShowPlacePanel();
     }
 
     private void CheckAnswer(string selected)

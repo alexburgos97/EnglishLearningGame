@@ -104,6 +104,10 @@ public class GameProgressManager : MonoBehaviour
         SpatialBridge.questService.quests[3].GetTaskByID(1).Complete();
         CheckSentenceBuilderBadge();
     }
+    public void AwardLexiconLegendBadge()
+    {
+    CheckLexiconLegendBadge();
+    }
 
     private void CheckSentenceBuilderBadge()
     {

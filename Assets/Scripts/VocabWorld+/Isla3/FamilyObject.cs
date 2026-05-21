@@ -34,17 +34,25 @@ public class FamilyObject : MonoBehaviour
 
     public void OnPlayerInteract()
     {
-        if (completed) return;
+    if (completed) return;
 
-        if (wordAudio != null)
+    if (wordAudio != null)
         {
-            audioSource.clip = wordAudio;
-            audioSource.Play();
-        }
+        audioSource.clip = wordAudio;
+        audioSource.Play();
+    }
 
-        feedbackText.text = "";
-        answerInput.text = "";
-        Isla3Manager.Instance.ShowFamilyPanel();
+    feedbackText.text = "";
+    answerInput.text = "";
+
+    // Reasignar el listener al objeto correcto
+    submitButton.onClick.RemoveAllListeners();
+    submitButton.onClick.AddListener(CheckAnswer);
+
+    closeButton.onClick.RemoveAllListeners();
+    closeButton.onClick.AddListener(ClosePanel);
+
+    Isla3Manager.Instance.ShowFamilyPanel();
     }
 
     private void CheckAnswer()
