@@ -199,19 +199,19 @@ public class CraterTutorialManager : MonoBehaviour
         ShowPhase();
     }
 
-    private void OnNextClicked()
+    public void OnNextClicked()
     {
         currentPhase++;
         ShowPhase();
     }
 
-    private void OnRepetirClicked()
+    public void OnRepetirClicked()
     {
         currentPhase = 0;
         ShowPhase();
     }
 
-    private void OnPlayClicked()
+    public void OnPlayClicked()
     {
         tutorialCompleted = true;
         tutorialPanel.SetActive(false);
@@ -226,6 +226,7 @@ public class CraterTutorialManager : MonoBehaviour
     private void PlayAudio(AudioClip clip)
     {
         if (clip == null) return;
+        if (audioSource == null) return;
         audioSource.clip = clip;
         audioSource.Play();
         isTalking = true;
