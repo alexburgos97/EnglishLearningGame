@@ -48,5 +48,14 @@ public class SentenceBuilderTrigger : MonoBehaviour
         }
 
         GameProgressManager.Instance.AwardSentenceBuilderBadge();
+
+        // Desactivar la insignia después de 2 segundos
+        Invoke(nameof(DesactivarInsignia), 2f);
+    }
+
+    private void DesactivarInsignia()
+    {
+        if (insigniaSprite != null)
+            insigniaSprite.SetActive(false);
     }
 }

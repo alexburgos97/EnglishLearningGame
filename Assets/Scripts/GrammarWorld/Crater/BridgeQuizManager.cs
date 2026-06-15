@@ -8,6 +8,9 @@ public class BridgeQuizManager : MonoBehaviour
     [Header("Arrastra aquí tus cubos en orden")]
     public BridgeBlock[] bridgeBlocks;
 
+    [Header("Medalla")]
+    public GameObject medallaSprite;
+
     private string[,] allQuestions = new string[,]
     {
         {"I ___ hungry every morning.",                  "AM",    "IS",     "AM"},
@@ -91,10 +94,8 @@ public class BridgeQuizManager : MonoBehaviour
         }
     }
 
-    // Cambiar pregunta actual por otra del banco no usada
     public void ChangeCurrentQuestion()
     {
-        // Buscar una pregunta no usada
         for (int q = 0; q < totalQuestions; q++)
         {
             if (!usedQuestions[q])
@@ -108,7 +109,6 @@ public class BridgeQuizManager : MonoBehaviour
             }
         }
 
-        // Si todas estan usadas, resetear y elegir cualquiera diferente
         for (int q = 0; q < totalQuestions; q++) usedQuestions[q] = false;
         int newQ = Random.Range(0, totalQuestions);
         currentSentences[currentIndex] = allQuestions[newQ, 0];
@@ -121,7 +121,6 @@ public class BridgeQuizManager : MonoBehaviour
     public void OnAvatarReachedEdge(int blockIndex)
     {
         if (quizActive) return;
-        // No mostrar preguntas en bloques ya respondidos
         if (blockIndex < currentIndex) return;
         if (blockIndex != currentIndex) return;
 
@@ -132,23 +131,27 @@ public class BridgeQuizManager : MonoBehaviour
     public void OnAnswerCorrect()
     {
         if (currentIndex < bridgeBlocks.Length)
-        {
             bridgeBlocks[currentIndex].MoveToPosition();
-        }
 
         currentIndex++;
         quizActive = false;
     }
 
-    public void OnAnswerWrong()
-    {
-        // Ya no se cierra el panel, se cambia la pregunta
-    }
+    public void OnAnswerWrong() { }
 
     public void LlegadaAMeta()
     {
         SpatialBridge.coreGUIService.DisplayToastMessage(
             "Perfect! The bridge is stable! You crossed the crater!");
         GameProgressManager.Instance.AwardBuildersMedal();
+
+        // Desactivar la medalla de la escena
+        Invoke(nameof(DesactivarMedalla), 2f);
+    }
+
+    private void DesactivarMedalla()
+    {
+        if (medallaSprite != null)
+            medallaSprite.SetActive(false);
     }
 }

@@ -17,18 +17,18 @@ public class MathManager : MonoBehaviour
     public TextMeshProUGUI feedbackText;
 
     [Header("Slots por fila")]
-    public DroppableSlot[] slotsNum1 = new DroppableSlot[5];
-    public DroppableSlot[] slotsSign = new DroppableSlot[5];
-    public DroppableSlot[] slotsNum2 = new DroppableSlot[5];
-    public DroppableSlot[] slotsResult = new DroppableSlot[5];
+    public DroppableSlot[] slotsNum1 = new DroppableSlot[2];
+    public DroppableSlot[] slotsSign = new DroppableSlot[2];
+    public DroppableSlot[] slotsNum2 = new DroppableSlot[2];
+    public DroppableSlot[] slotsResult = new DroppableSlot[2];
 
     private string[] signWords = {"", "PLUS", "MINUS", "TIMES", "DIVIDED BY"};
     private string[] signSymbols = {"", "+", "-", "×", "÷"};
 
-    // Solo num1, signo, num2 - el resultado se calcula automaticamente
-    private int[][,] phases = new int[][,]
+    // Banco de 5 ecuaciones por operacion
+    private int[][,] allPhases = new int[][,]
     {
-        // PLUS: num1, signo, num2
+        // PLUS
         new int[,] { {9,1,2}, {7,1,5}, {8,1,5}, {6,1,8}, {7,1,8} },
         // MINUS
         new int[,] { {20,2,3}, {19,2,1}, {20,2,1}, {20,2,4}, {18,2,2} },
@@ -38,16 +38,22 @@ public class MathManager : MonoBehaviour
         new int[,] { {20,4,4}, {18,4,3}, {15,4,5}, {14,4,7}, {12,4,6} }
     };
 
+    // Las 2 ecuaciones seleccionadas para la fase actual
+    private int[,] currentPhaseEquations = new int[2, 3];
+    private bool[] usedInPhase = new bool[5];
+    private int lastUsedIndex = -1;
+
     private int currentPhase = 0;
     private int activeRow = 0;
-    private int[] filledNum1 = new int[5];
-    private string[] filledSign = new string[5];
-    private int[] filledNum2 = new int[5];
-    private bool[] rowCompleted = new bool[5];
+    private int[] filledNum1 = new int[2];
+    private string[] filledSign = new string[2];
+    private int[] filledNum2 = new int[2];
+    private bool[] rowCompleted = new bool[2];
     private bool isTalking = false;
     private Vector3 originalScale;
     private float pulseTimer = 0f;
     private int rowToClear = 0;
+    private bool gameActive = false;
 
     void Awake()
     {
@@ -81,27 +87,71 @@ public class MathManager : MonoBehaviour
         }
     }
 
-    private bool gameActive = false;
-    private bool gameCompleted = false;   
-
     public void StartMath()
     {
-        // No reiniciar si el juego ya está activo o completado
         if (gameActive) return;
         if (currentPhase > 0) return;
-
-        mathPanel.SetActive(true);
-        StartPhase();
+        gameActive = true;
         currentPhase = 0;
         mathPanel.SetActive(true);
         StartPhase();
     }
 
+    private void SelectRandomEquations(int phase)
+    {
+        // Resetear usados
+        for (int i = 0; i < 5; i++) usedInPhase[i] = false;
+        lastUsedIndex = -1;
+
+        // Seleccionar 2 indices aleatorios diferentes
+        int first = Random.Range(0, 5);
+        int second;
+        do { second = Random.Range(0, 5); } while (second == first);
+
+        usedInPhase[first] = true;
+        usedInPhase[second] = true;
+
+        currentPhaseEquations[0, 0] = allPhases[phase][first, 0];
+        currentPhaseEquations[0, 1] = allPhases[phase][first, 1];
+        currentPhaseEquations[0, 2] = allPhases[phase][first, 2];
+
+        currentPhaseEquations[1, 0] = allPhases[phase][second, 0];
+        currentPhaseEquations[1, 1] = allPhases[phase][second, 1];
+        currentPhaseEquations[1, 2] = allPhases[phase][second, 2];
+    }
+
+    private void SelectNewEquationForRow(int row)
+    {
+        // Buscar una ecuacion no usada para reemplazar cuando falla
+        for (int i = 0; i < 5; i++)
+        {
+            if (!usedInPhase[i])
+            {
+                usedInPhase[i] = true;
+                currentPhaseEquations[row, 0] = allPhases[currentPhase][i, 0];
+                currentPhaseEquations[row, 1] = allPhases[currentPhase][i, 1];
+                currentPhaseEquations[row, 2] = allPhases[currentPhase][i, 2];
+                return;
+            }
+        }
+
+        // Si todas usadas resetear y elegir cualquiera diferente a la actual
+        for (int i = 0; i < 5; i++) usedInPhase[i] = false;
+        int newIndex;
+        do { newIndex = Random.Range(0, 5); } while (newIndex == lastUsedIndex);
+        lastUsedIndex = newIndex;
+        usedInPhase[newIndex] = true;
+        currentPhaseEquations[row, 0] = allPhases[currentPhase][newIndex, 0];
+        currentPhaseEquations[row, 1] = allPhases[currentPhase][newIndex, 1];
+        currentPhaseEquations[row, 2] = allPhases[currentPhase][newIndex, 2];
+    }
+
     private void StartPhase()
     {
         activeRow = 0;
+        SelectRandomEquations(currentPhase);
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 2; i++)
         {
             filledNum1[i] = -1;
             filledSign[i] = "";
@@ -119,11 +169,11 @@ public class MathManager : MonoBehaviour
 
     private void ShowInstruction()
     {
-        if (activeRow >= 5) return;
+        if (activeRow >= 2) return;
 
-        int n1 = phases[currentPhase][activeRow, 0];
-        int sign = phases[currentPhase][activeRow, 1];
-        int n2 = phases[currentPhase][activeRow, 2];
+        int n1 = currentPhaseEquations[activeRow, 0];
+        int sign = currentPhaseEquations[activeRow, 1];
+        int n2 = currentPhaseEquations[activeRow, 2];
 
         instructionText.text = GetNumberWord(n1) + " " +
             signWords[sign] + " " +
@@ -197,15 +247,14 @@ public class MathManager : MonoBehaviour
     {
         if (filledNum1[row] == -1 || filledSign[row] == "" || filledNum2[row] == -1) return;
 
-        int expectedN1 = phases[currentPhase][row, 0];
-        int expectedSign = phases[currentPhase][row, 1];
-        int expectedN2 = phases[currentPhase][row, 2];
+        int expectedN1 = currentPhaseEquations[row, 0];
+        int expectedSign = currentPhaseEquations[row, 1];
+        int expectedN2 = currentPhaseEquations[row, 2];
 
         if (filledNum1[row] == expectedN1 &&
             filledSign[row] == signSymbols[expectedSign] &&
             filledNum2[row] == expectedN2)
         {
-            // Calcular resultado automaticamente
             int result = CalculateResult(filledNum1[row], filledSign[row], filledNum2[row]);
 
             rowCompleted[row] = true;
@@ -215,7 +264,7 @@ public class MathManager : MonoBehaviour
 
             activeRow++;
 
-            if (activeRow < 5)
+            if (activeRow < 2)
                 ShowInstruction();
             else
                 Invoke(nameof(OnPhaseComplete), 1.5f);
@@ -231,6 +280,9 @@ public class MathManager : MonoBehaviour
 
     private void ClearRowDelayed()
     {
+        // Cambiar la ecuacion por una nueva aleatoria
+        SelectNewEquationForRow(rowToClear);
+
         filledNum1[rowToClear] = -1;
         filledSign[rowToClear] = "";
         filledNum2[rowToClear] = -1;
@@ -238,6 +290,9 @@ public class MathManager : MonoBehaviour
         slotsSign[rowToClear].ClearSlot();
         slotsNum2[rowToClear].ClearSlot();
         feedbackText.text = "";
+
+        // Mostrar nueva instruccion
+        ShowInstruction();
     }
 
     private void OnPhaseComplete()
@@ -256,7 +311,6 @@ public class MathManager : MonoBehaviour
     private void OnMathComplete()
     {
         gameActive = false;
-        gameCompleted = true;
         mathPanel.SetActive(false);
         if (puente_Isla3 != null)
             puente_Isla3.SetActive(true);

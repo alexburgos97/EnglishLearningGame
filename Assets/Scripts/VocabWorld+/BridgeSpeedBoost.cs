@@ -14,8 +14,8 @@ public class BridgeSpeedBoost : MonoBehaviour
         float currentWalk = SpatialBridge.actorService.localActor.avatar.walkSpeed;
         float currentRun = SpatialBridge.actorService.localActor.avatar.runSpeed;
     
-        SpatialBridge.coreGUIService.DisplayToastMessage(
-        "Default Walk: " + currentWalk + " Run: " + currentRun);
+        //SpatialBridge.coreGUIService.DisplayToastMessage(
+        //"Default Walk: " + currentWalk + " Run: " + currentRun);
 
 
         SpatialBridge.actorService.localActor.avatar.walkSpeed = walkSpeed;

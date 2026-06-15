@@ -12,6 +12,9 @@ public class MazeManager : MonoBehaviour
     public GameObject triggerSalida;
     public Transform mazeCanvas;
 
+    [Header("Medalla")]
+    public GameObject medallaSprite;
+
     [Header("Triggers del laberinto")]
     public GameObject[] triggers;
 
@@ -63,7 +66,6 @@ public class MazeManager : MonoBehaviour
         currentStep = 0;
         triggers[0].SetActive(true);
 
-        // Mover SyntaxSprite y Canvas a la entrada
         MoveToPosition(triggerEntrada.transform);
 
         PlayInstruction(0);
@@ -81,7 +83,6 @@ public class MazeManager : MonoBehaviour
 
         triggers[currentStep].SetActive(false);
 
-        // Mover SyntaxSprite y Canvas al trigger actual
         MoveToPosition(triggers[currentStep].transform);
 
         int audioIndex = currentStep + 1;
@@ -101,12 +102,10 @@ public class MazeManager : MonoBehaviour
 
     private void MoveToPosition(Transform target)
     {
-        // Mover SyntaxSprite
         syntaxSprite.SetActive(true);
         syntaxSprite.transform.position = target.position + Vector3.up * 1.5f;
         syntaxSprite.transform.rotation = target.rotation;
 
-        // Mover Canvas
         mazeCanvas.position = target.position + Vector3.up * 2f;
         mazeCanvas.rotation = target.rotation;
     }
@@ -140,5 +139,14 @@ public class MazeManager : MonoBehaviour
         syntaxSprite.SetActive(false);
         MazeUIManager.Instance.HidePanel();
         GameProgressManager.Instance.AwardPathfinderMedal();
+
+        // Desactivar la medalla de la escena
+        Invoke(nameof(DesactivarMedalla), 2f);
+    }
+
+    private void DesactivarMedalla()
+    {
+        if (medallaSprite != null)
+            medallaSprite.SetActive(false);
     }
 }

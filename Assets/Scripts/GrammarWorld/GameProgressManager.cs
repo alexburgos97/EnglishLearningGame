@@ -5,8 +5,16 @@ public class GameProgressManager : MonoBehaviour
 {
     public static GameProgressManager Instance { get; private set; }
 
-    // GrammarWorld
+    [Header("GrammarWorld")]
     public GameObject bloqueadorInsignia;
+
+    [Header("Medallas VocabWorld+")]
+    public VocabMedallaTrigger medalla4;
+    public VocabMedallaTrigger medalla5;
+    public VocabMedallaTrigger medalla6;
+    public LexiconLegendTrigger insigniaFinal2;
+
+    // GrammarWorld
     private bool hasBuildersMedal   = false;
     private bool hasVerbMaster      = false;
     private bool hasPathfinder      = false;
@@ -104,31 +112,32 @@ public class GameProgressManager : MonoBehaviour
         SpatialBridge.questService.quests[3].GetTaskByID(1).Complete();
         CheckSentenceBuilderBadge();
     }
+
     public void AwardLexiconLegendBadge()
     {
-    CheckLexiconLegendBadge();
+        CheckLexiconLegendBadge();
     }
 
     private void CheckSentenceBuilderBadge()
     {
-    if (hasBuildersMedal && hasVerbMaster && hasPathfinder && !hasSentenceBuilder)
-    {
-        if (bloqueadorInsignia != null)
-            bloqueadorInsignia.SetActive(false);
-        SpatialBridge.coreGUIService.DisplayToastMessage(
-            "The Sentence Builder Badge is waiting for you!");
-        SpatialBridge.questService.quests[4].Start();
-    }
+        if (hasBuildersMedal && hasVerbMaster && hasPathfinder && !hasSentenceBuilder)
+        {
+            if (bloqueadorInsignia != null)
+                bloqueadorInsignia.SetActive(false);
+            SpatialBridge.coreGUIService.DisplayToastMessage(
+                "The Sentence Builder Badge is waiting for you!");
+            SpatialBridge.questService.quests[4].Start();
+        }
     }
 
     public void AwardSentenceBuilderBadge()
     {
-    if (hasSentenceBuilder) return;
-    hasSentenceBuilder = true;
-    SpatialBridge.userWorldDataStoreService.SetVariable("hasSentenceBuilder", true);
-    SpatialBridge.questService.quests[4].GetTaskByID(1).Complete();
-    SpatialBridge.coreGUIService.DisplayToastMessage(
-        "You completed GrammarWorld! The Sentence Builder Badge is yours!");
+        if (hasSentenceBuilder) return;
+        hasSentenceBuilder = true;
+        SpatialBridge.userWorldDataStoreService.SetVariable("hasSentenceBuilder", true);
+        SpatialBridge.questService.quests[4].GetTaskByID(1).Complete();
+        SpatialBridge.coreGUIService.DisplayToastMessage(
+            "You completed GrammarWorld! The Sentence Builder Badge is yours!");
     }
 
     // ==================
@@ -141,6 +150,11 @@ public class GameProgressManager : MonoBehaviour
         hasDailyLifeScoutMedal = true;
         SpatialBridge.userWorldDataStoreService.SetVariable("hasDailyLifeScoutMedal", true);
         SpatialBridge.questService.quests[5].GetTaskByID(1).Complete();
+
+        // Mostrar Medalla 4 en escena
+        if (medalla4 != null)
+            medalla4.MostrarMedalla();
+
         CheckLexiconLegendBadge();
     }
 
@@ -150,6 +164,11 @@ public class GameProgressManager : MonoBehaviour
         hasNumberCruncher = true;
         SpatialBridge.userWorldDataStoreService.SetVariable("hasNumberCruncher", true);
         SpatialBridge.questService.quests[6].GetTaskByID(1).Complete();
+
+        // Mostrar Medalla 5 en escena
+        if (medalla5 != null)
+            medalla5.MostrarMedalla();
+
         CheckLexiconLegendBadge();
     }
 
@@ -159,6 +178,11 @@ public class GameProgressManager : MonoBehaviour
         hasGlobalCitizen = true;
         SpatialBridge.userWorldDataStoreService.SetVariable("hasGlobalCitizen", true);
         SpatialBridge.questService.quests[7].GetTaskByID(1).Complete();
+
+        // Mostrar Medalla 6 en escena
+        if (medalla6 != null)
+            medalla6.MostrarMedalla();
+
         CheckLexiconLegendBadge();
     }
 
@@ -169,6 +193,11 @@ public class GameProgressManager : MonoBehaviour
             hasLexiconLegend = true;
             SpatialBridge.userWorldDataStoreService.SetVariable("hasLexiconLegend", true);
             SpatialBridge.questService.quests[8].GetTaskByID(1).Complete();
+
+            // Mostrar Insignia Final 2 en escena
+            if (insigniaFinal2 != null)
+                insigniaFinal2.MostrarInsignia();
+
             SpatialBridge.coreGUIService.DisplayToastMessage(
                 "You completed VocabWorld+! The Lexicon Legend Badge is yours!");
         }

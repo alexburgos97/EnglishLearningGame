@@ -24,9 +24,12 @@ public class LexiconLegendTrigger : MonoBehaviour
         audioSource.spatialBlend = 0f;
         audioSource.playOnAwake = false;
 
-        // El bloqueador empieza activo
         if (bloqueadorInsignia != null)
             bloqueadorInsignia.SetActive(true);
+
+        // La insignia empieza desactivada
+        if (insigniaSprite != null)
+            insigniaSprite.SetActive(false);
     }
 
     void Update()
@@ -38,12 +41,20 @@ public class LexiconLegendTrigger : MonoBehaviour
         transform.localScale = originalScale * pulse;
     }
 
+    public void MostrarInsignia()
+    {
+        if (insigniaSprite != null)
+            insigniaSprite.SetActive(true);
+        isPulsing = true;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (awarded) return;
+        if (insigniaSprite == null || !insigniaSprite.activeSelf) return;
+
         awarded = true;
         isPulsing = false;
-
         transform.localScale = originalScale;
 
         if (audioCelebracion != null)
@@ -53,5 +64,12 @@ public class LexiconLegendTrigger : MonoBehaviour
         }
 
         GameProgressManager.Instance.AwardLexiconLegendBadge();
+        Invoke(nameof(DesactivarInsignia), 2f);
+    }
+
+    private void DesactivarInsignia()
+    {
+        if (insigniaSprite != null)
+            insigniaSprite.SetActive(false);
     }
 }
