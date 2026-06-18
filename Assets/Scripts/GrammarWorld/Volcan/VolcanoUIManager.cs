@@ -151,7 +151,7 @@ public class VolcanoUIManager : MonoBehaviour
             if (selected == correct)
             {
                 feedbackTextPS.text = "CORRECT! WELL DONE!";
-                feedbackTextPS.color = Color.green;
+                //feedbackTextPS.color = Color.green;
                 PlayFeedbackAudio(true);
                 Invoke(nameof(NextQuestion), 2f);
             }
@@ -171,7 +171,7 @@ public class VolcanoUIManager : MonoBehaviour
             if (selected == correct)
             {
                 feedbackTextPA.text = "CORRECT! WELL DONE!";
-                feedbackTextPA.color = Color.green;
+                //feedbackTextPA.color = Color.green;
                 PlayFeedbackAudio(true);
                 Invoke(nameof(NextQuestion), 2f);
             }
