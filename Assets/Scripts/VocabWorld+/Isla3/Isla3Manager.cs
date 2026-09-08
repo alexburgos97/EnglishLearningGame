@@ -1,5 +1,5 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
+
 
 public class Isla3Manager : MonoBehaviour
 {
@@ -34,8 +34,9 @@ public class Isla3Manager : MonoBehaviour
     public void MoveCanvasToPlayer()
     {
     if (isla3Canvas == null) return;
-    Vector3 avatarPos = SpatialBridge.actorService.localActor.avatar.position;
-    
+    if (PlayerController.Instance == null) return;
+    Vector3 avatarPos = PlayerController.Instance.transform.position;
+
     // Posicionar frente al jugador
     Vector3 dirección = avatarPos - isla3Canvas.position;
     dirección.y = 0; // Evitar inclinación vertical
@@ -78,7 +79,7 @@ public class Isla3Manager : MonoBehaviour
     public void OnFamilyComplete()
     {
         totalCompleted++;
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Family word learned! " + totalCompleted + "/" + totalInteractions);
         CheckAllComplete();
     }
@@ -86,7 +87,7 @@ public class Isla3Manager : MonoBehaviour
     public void OnAnimalComplete()
     {
         totalCompleted++;
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Animal discovered! " + totalCompleted + "/" + totalInteractions);
         CheckAllComplete();
     }
@@ -94,7 +95,7 @@ public class Isla3Manager : MonoBehaviour
     public void OnPlaceComplete()
     {
         totalCompleted++;
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Place identified! " + totalCompleted + "/" + totalInteractions);
         CheckAllComplete();
     }
@@ -103,7 +104,7 @@ public class Isla3Manager : MonoBehaviour
     {
     if (totalCompleted >= totalInteractions)
         {
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Amazing! You explored the whole city!");
 
         // Desactivar bloqueador de la insignia

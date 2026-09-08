@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
-using SpatialSys.UnitySDK;
+
 
 public class DraggableNumber : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -40,10 +40,10 @@ public class DraggableNumber : MonoBehaviour, IPointerClickHandler, IPointerEnte
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (!isSign)
-            SpatialBridge.coreGUIService.DisplayToastMessage(
+            Debug.Log(
                 GetNumberWord(numberValue));
         else
-            SpatialBridge.coreGUIService.DisplayToastMessage(
+            Debug.Log(
                 GetSignWord(signSymbol));
     }
 

@@ -1,5 +1,5 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
+
 
 public class IslandCentralManager : MonoBehaviour
 {
@@ -53,8 +53,10 @@ public class IslandCentralManager : MonoBehaviour
     // Llamado por Trigger_Inicio_Isla_Central
     public void OnPlayerEnter()
     {
-    SpatialBridge.questService.quests[5].Start();
-    PlayAudio(audioBienvenida);
+        // TODO(migración WebGL): el registro de misión "quests[5].Start()" usaba el
+        // questService de Spatial, que ya no existe. Sustituir por el sistema de
+        // progreso propio (GameProgressManager) si se necesita rastrear esta misión.
+        PlayAudio(audioBienvenida);
     }
 
     // Llamado por el jugador al tocar el mapa o un trigger
@@ -62,7 +64,7 @@ public class IslandCentralManager : MonoBehaviour
     {
         PlayAudio(audioInstruccion);
         puente_Isla1.SetActive(true);
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Great! The bridge is open. Cross to explore Food Island!");
     }
 

@@ -1,5 +1,5 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
+
 
 public class LavaBlocker : MonoBehaviour
 {
@@ -10,12 +10,14 @@ public class LavaBlocker : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (isCooled) return;
+        if (!other.CompareTag("Player")) return;
         if (Time.time - lastTeleportTime < 2f) return;
         lastTeleportTime = Time.time;
 
-        SpatialBridge.actorService.localActor.avatar.position =
-            puntoReaparicion.position;
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        // respawn
+        if (PlayerController.Instance != null)
+            PlayerController.Instance.Teleport(puntoReaparicion.position, PlayerController.Instance.transform.rotation);
+        Debug.Log(
             "Complete both challenges first!");
     }
 

@@ -1,5 +1,5 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
+
 
 public class RecursosAdicionales : MonoBehaviour
 {
@@ -8,8 +8,8 @@ public class RecursosAdicionales : MonoBehaviour
 
     public void OpenResource()
     {
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Opening: " + resourceName);
-        SpatialBridge.spaceService.OpenURL(resourceURL);
+        Application.OpenURL(resourceURL);
     }
 }

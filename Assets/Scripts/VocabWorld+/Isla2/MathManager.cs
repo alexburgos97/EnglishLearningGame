@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-using SpatialSys.UnitySDK;
+
 
 public class MathManager : MonoBehaviour
 {
@@ -314,7 +314,7 @@ public class MathManager : MonoBehaviour
         mathPanel.SetActive(false);
         if (puente_Isla3 != null)
             puente_Isla3.SetActive(true);
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Amazing! You mastered the numbers!");
         GameProgressManager.Instance.AwardNumberCruncherMedal();
     }

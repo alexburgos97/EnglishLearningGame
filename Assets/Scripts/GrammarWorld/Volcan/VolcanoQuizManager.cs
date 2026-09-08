@@ -1,5 +1,5 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
+
 
 public class VolcanoQuizManager : MonoBehaviour
 {
@@ -80,7 +80,7 @@ public class VolcanoQuizManager : MonoBehaviour
     {
         if (!presentSimpleCompleted)
         {
-            SpatialBridge.coreGUIService.DisplayToastMessage(
+            Debug.Log(
                 "Complete Present Simple first!");
             return;
         }
@@ -170,7 +170,7 @@ public class VolcanoQuizManager : MonoBehaviour
     public void OnRockLanded()
     {
         if (!gameActive) return;
-        SpatialBridge.coreGUIService.DisplayToastMessage("Too slow! Try again!");
+        Debug.Log("Too slow! Try again!");
         VolcanoUIManager.Instance.ClosePanel();
         Invoke(nameof(RetryQuestion), 1.5f);
     }
@@ -189,7 +189,7 @@ public class VolcanoQuizManager : MonoBehaviour
         if (isPresentSimple)
         {
             presentSimpleCompleted = true;
-            SpatialBridge.coreGUIService.DisplayToastMessage(
+            Debug.Log(
                 "Great! Now go to the right side for Past Simple!");
         }
         else
@@ -220,7 +220,7 @@ public class VolcanoQuizManager : MonoBehaviour
         foreach (LavaBlocker blocker in blockers)
             blocker.CoolDown();
 
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Amazing! Cross the volcano to claim your medal!");
     }
 }

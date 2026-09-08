@@ -1,5 +1,5 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
+
 
 public class VolcanoTrigger : MonoBehaviour
 {
@@ -13,7 +13,6 @@ public class VolcanoTrigger : MonoBehaviour
             if (activated) return;
             activated = true;
             VolcanoQuizManager.Instance.TryStartPresentSimple();
-            GetComponent<SpatialTriggerEvent>().enabled = false;
         }
         else
         {
@@ -27,7 +26,6 @@ public class VolcanoTrigger : MonoBehaviour
             if (activated) return;
             activated = true;
             VolcanoQuizManager.Instance.TryStartPastSimple();
-            GetComponent<SpatialTriggerEvent>().enabled = false;
         }
     }
 }

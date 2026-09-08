@@ -1,0 +1,106 @@
+[33m56511c5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m actualizando colores de los canvas
+[33m0c9d7c4[m actualizando mecanicas de isla 1 e isla 2
+[33m1559dc8[m arreglando conflicto del juego del crater de grammarworld
+[33m9836b47[m actualizando mecanica zona escolar isla 1
+[33m0a781fe[m añadiendo objetos 2D más realistas a la isla 1
+[33m1f15741[m añadiendo chat conversacional en la biblioteca
+[33md289453[m añadiendo robot IA a la biblioteca
+[33m677a68a[m añadiendo imagenes de direccion en las escenas para que sea más intuitivo
+[33md66c2ca[m añadiendo letrero y flecha de direccion del juego
+[33m17e8187[m completando isla 3 de vocabworld+
+[33mce0b04b[m configurando mecanicas de la ultima isla
+[33m5d223ca[m añadiendo sprites a la ultima Isla
+[33m8940380[m añadiendo ciudad a la ultima isla
+[33m98b0431[m añadiendo objetos a ver cual se publica
+[33mfe50ffb[m cambiando sprite por robot en isla central
+[33mb524143[m añadiendo robot y quitando puente
+[33m06eb9b8[m cambiando de robot
+[33med492c0[m cambiando robot sparky low polly
+[33m8b6d955[m añadiendo robot low polly
+[33m8f51cb2[m perfilando mundo de la gramatica
+[33m842a6f1[m añadiendo audios
+[33mde7c1b7[m añadiendo audios hasta el crater
+[33mab7f0bc[m añadiendo humo al volcan
+[33m060369a[m actualizando mecanicas
+[33m271881f[m añadiendo demo al volcan, pero hay un error que resolver
+[33m207db26[m añadiendo instruccion con demo a la actividad 1 de grammarworld
+[33m3f8a3b0[m añadiendo bienvendida en el inicio del lobby
+[33m381f4d7[m añadiendo otra paloma animada y peces animados en la isla principal, tambien se añade nuevo robot animado al lobby
+[33m56ddb57[m añadiendo ave a la escena de grammar
+[33m9ea8648[m ocultando mundos mientras no se esté en ese mundo, tanto el lobby como los mundos y se visualiza unicamente los espacios principales
+[33m90d9194[m modificando el lobby
+[33m6070461[m finalizando mecanica isla 2
+[33mc04bbac[m añadiendo scripts para mecanicas de matematicas
+[33md600aef[m añadiendo canvas a la seccion de matematicas, isla 2
+[33m62db6a2[m completando mecanicas isla 1
+[33mac9f7e5[m estructurando la mecanica de la zona escolar
+[33m899344e[m añadiendo scripts para la ultima seccion de la isla 1
+[33m6a4b2e4[m modificando el terreno de la isla 2 y añadiendo un terreno independiente para la isla 3 y que no cree conflicto al editar el terreno de la isla 2.
+[33m75d504b[m añadiendo edificios a grammarworld
+[33m9764407[m añadiendo a la UI las imagenes de las insignias de VocabWorld
+[33mb74da47[m 2 secciones de la primer isla completas, falta la ultima seccion de escuela
+[33m47f2ee4[m configurando la zona de la ropa de la Isla1
+[33m172cee5[m añadiendo la vocabcard para la zona de comida de la isla 1
+[33m7a84e41[m añadiendo interaccion en vocabworld
+[33ma01330d[m añadiendo un Quest 4 con insignia fisica al final del juego de grammarworld, se crea tambien la estructura para las mecanicas de la isla principal y la isla 1
+[33ma1f5c41[m añadiendo 6 audios a la carpeta isla1
+[33m8b77d00[m añadiendo 2 terrenos para las ultimas islas de vocabworld
+[33m198a738[m completando mecanica del laberinto
+[33mfececaf[m configurando mecanica del laberinto y eliminando cosas para liberar espacio porque no puede pesar más de 500mb
+[33m4d1fe98[m editando laberinto
+[33m468908c[m añadiendo objetos 3D segun la secuencia de indicaciones
+[33md52208d[m aun configurando caida al infinito en la seccion del volcan
+[33me67466e[m aun configurando la actividad 2 del volcan
+[33mfe8b121[m aun modificando mecanica del volcan version1.1
+[33m2a50b5f[m añadiendo mecanica a verbVolcano
+[33m3b88635[m añadiendo pasaporte y medallas al mundo
+[33m35ad715[m modificando codigo del puente
+[33mc112fbc[m configurando canvas de todos los bloque de la actividad 1 del puente de grammarworld
+[33m9d032fe[m añadiendo mecanica al puente de grammarworld
+[33m260a9b9[m añadiendo la segunda isla
+[33mb5bf97f[m añadiendo puente a la primer isla
+[33mfead109[m añadiendo arboles a la isla principal de vocabworld
+[33m9e30166[m creando y editando el terreno de la isla principal de vocabworld
+[33m3d8d2c4[m modificando terreno vocabworld
+[33mc53c9a7[m encapsulando todos los objetos del laberinto dentro de un solo objeto
+[33m04640da[m continuar diseñando el laberinto
+[33m1f9de5b[m diseñando el laberinto
+[33mac8eeb1[m añadiendo texturas a las dos actividades y diseñando el inicio del laberinto
+[33m6779e17[m actualizacion de la actividad 1
+[33m7b3ac90[m arreglando escena gramarworld
+[33m395d003[m añadiendo terreno de VocabWorld con su respectivo teletransporte
+[33m4c3e4ce[m cambiando plano de grammarWorld por un terreno y añadiendo un teleporter para que llegue al espacio de grammarworld
+[33m9c36666[m Modificando terreno o plano del primer escenario de grammarworld y añadiendo un plano con volcan 3D como prueba para el segundo escenario
+[33m02e9df8[m completando la arquitectura de la biblioteca y creando el espacio(plano, calles) de grammarWorld
+[33m5dc9456[m añadiendo 2 estrellas a la biblioteca que se usaran como punto de interes
+[33m34f3ad4[m añadiendo objetos 3d a la biblioteca para irle dando vida
+[33mfb43fef[m dando forma a la biblioteca, creando texturas y demas
+[33m0f5dd00[m modificando sonidos de ambiente y de la escena principal
+[33mb392303[m añadiendo robot sparky a la escena principal
+[33mec850f8[m modificando audio source ambiente y animacion del mundo y de la manzana
+[33m7c73b6a[m añadiendo efectos de sonido a la escena principal para que cuando camine cerca de las ventanas escuche el sonido del viento
+[33mb30fae5[m añadiendo aminacion(movimiento) a los 3 objetos 3D de la escena principal
+[33m063b815[m añadiendo manzana, globo terraqueo y una silla diferente por temas de poligonos
+[33m9af2af2[m completando mesas y sillas del auditorio principal y añadiendo un lapiz al lobby principal
+[33m0829c27[m añadiendo silla y mesa low polly a la escena principal
+[33m32d2631[m eliminando silla 3D que supera los poligonos y hacia que el escenario sea muy lento
+[33mbde33d0[m añadiendo silla y mesas a la escena lobby principal y mejorando textura de materiales de la escena
+[33m60945b1[m estableciendo las bases para el espacio de la biblioteca
+[33mcfae6b2[m configurando puntos de teletransporte
+[33m208083a[m añadiendo materiales y texturas a la escena para que vaya simulando el Lobby del aula futurista
+[33m8148d64[m añadiendo objetos y diseñando mejor la escena del lobby principal
+[33m67b7c5a[m Añadiendo planos al lobby, skybox que simule aula en las nubes, y 2 portales
+[33mfe6ae94[m creando un nuevo mundo con su escena principal lobby
+[33ma75faa7[m añadiendo más colliders a objetos de la escena
+[33m535d1fd[m Cambiando colores a objetos de la escena y añadiendo colliders a algunos materiales
+[33mf5d283b[m añadiendo ambiente 3D como una nueva escena
+[33mc234fbb[m añadiendo un nuevo robot como objeto 3D de Sketchfab y agregando moviento al robot dentro de la escena
+[33m635e00e[m añadiendo collider al robot
+[33m5f0a01a[m actualizando proyecto
+[33m06a0562[m añadiendo objeto robot 3d a la escena
+[33m1f2ba63[m Añadiendo mas objetos a la escena como prueba
+[33m4ddef39[m Merge branch 'main' of https://github.com/alexburgos97/EnglishLearningGame
+[33m717ec51[m subiendo cambios del proyecto
+[33m1ada778[m agregando archivo de prueba
+[33m0198c54[m inicial commit
+[33m0ffdf70[m Initial commit

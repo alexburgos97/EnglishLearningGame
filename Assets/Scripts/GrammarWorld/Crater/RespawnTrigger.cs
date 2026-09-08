@@ -1,5 +1,5 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
+
 
 public class RespawnTrigger : MonoBehaviour
 {
@@ -10,10 +10,12 @@ public class RespawnTrigger : MonoBehaviour
     {
         if (puntoInicio != null)
         {
-            // Nueva función correcta del SDK de Spatial para teletransportar
-            SpatialBridge.actorService.localActor.avatar.SetPositionRotation(puntoInicio.position, puntoInicio.rotation);
-            
-            SpatialBridge.coreGUIService.DisplayToastMessage("Watch your step! Let's try again.");
+            if (PlayerController.Instance != null)
+            {
+                PlayerController.Instance.Teleport(puntoInicio.position, puntoInicio.rotation);
+            }
+
+            Debug.Log("Watch your step! Let's try again.");
         }
     }
 }

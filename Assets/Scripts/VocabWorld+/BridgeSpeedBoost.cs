@@ -1,5 +1,5 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
+
 
 public class BridgeSpeedBoost : MonoBehaviour
 {
@@ -11,20 +11,13 @@ public class BridgeSpeedBoost : MonoBehaviour
 
     public void OnEnterBridge()
     {
-        float currentWalk = SpatialBridge.actorService.localActor.avatar.walkSpeed;
-        float currentRun = SpatialBridge.actorService.localActor.avatar.runSpeed;
-    
-        //SpatialBridge.coreGUIService.DisplayToastMessage(
-        //"Default Walk: " + currentWalk + " Run: " + currentRun);
-
-
-        SpatialBridge.actorService.localActor.avatar.walkSpeed = walkSpeed;
-        SpatialBridge.actorService.localActor.avatar.runSpeed = runSpeed;
+        if (PlayerController.Instance != null)
+            PlayerController.Instance.SetSpeed(walkSpeed, runSpeed);
     }
 
     public void OnExitBridge()
     {
-        SpatialBridge.actorService.localActor.avatar.walkSpeed = defaultWalkSpeed;
-        SpatialBridge.actorService.localActor.avatar.runSpeed = defaultRunSpeed;
+        if (PlayerController.Instance != null)
+            PlayerController.Instance.SetSpeed(defaultWalkSpeed, defaultRunSpeed);
     }
 }

@@ -1,5 +1,5 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
+
 
 public class SentenceBuilderTrigger : MonoBehaviour
 {

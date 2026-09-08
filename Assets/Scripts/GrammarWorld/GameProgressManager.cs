@@ -1,5 +1,4 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
 
 public class GameProgressManager : MonoBehaviour
 {
@@ -13,14 +12,12 @@ public class GameProgressManager : MonoBehaviour
     public VocabMedallaTrigger medalla5;
     public VocabMedallaTrigger medalla6;
     public LexiconLegendTrigger insigniaFinal2;
+    public GameObject bloqueadorInsigniaVocab;
 
-    // GrammarWorld
-    private bool hasBuildersMedal   = false;
-    private bool hasVerbMaster      = false;
-    private bool hasPathfinder      = false;
-    private bool hasSentenceBuilder = false;
-
-    // VocabWorld+
+    private bool hasBuildersMedal        = false;
+    private bool hasVerbMaster           = false;
+    private bool hasPathfinder           = false;
+    private bool hasSentenceBuilder      = false;
     private bool hasDailyLifeScoutMedal  = false;
     private bool hasNumberCruncher       = false;
     private bool hasGlobalCitizen        = false;
@@ -39,45 +36,20 @@ public class GameProgressManager : MonoBehaviour
 
     private void LoadProgress()
     {
-        SpatialBridge.userWorldDataStoreService.GetVariable("hasBuildersMedal", false)
-            .SetCompletedEvent((response) => {
-                hasBuildersMedal = (bool)response.value;
-            });
+        hasBuildersMedal       = PlayerPrefs.GetInt("hasBuildersMedal", 0) == 1;
+        hasVerbMaster          = PlayerPrefs.GetInt("hasVerbMaster", 0) == 1;
+        hasPathfinder          = PlayerPrefs.GetInt("hasPathfinder", 0) == 1;
+        hasSentenceBuilder     = PlayerPrefs.GetInt("hasSentenceBuilder", 0) == 1;
+        hasDailyLifeScoutMedal = PlayerPrefs.GetInt("hasDailyLifeScoutMedal", 0) == 1;
+        hasNumberCruncher      = PlayerPrefs.GetInt("hasNumberCruncher", 0) == 1;
+        hasGlobalCitizen       = PlayerPrefs.GetInt("hasGlobalCitizen", 0) == 1;
+        hasLexiconLegend       = PlayerPrefs.GetInt("hasLexiconLegend", 0) == 1;
+    }
 
-        SpatialBridge.userWorldDataStoreService.GetVariable("hasVerbMaster", false)
-            .SetCompletedEvent((response) => {
-                hasVerbMaster = (bool)response.value;
-            });
-
-        SpatialBridge.userWorldDataStoreService.GetVariable("hasPathfinder", false)
-            .SetCompletedEvent((response) => {
-                hasPathfinder = (bool)response.value;
-            });
-
-        SpatialBridge.userWorldDataStoreService.GetVariable("hasSentenceBuilder", false)
-            .SetCompletedEvent((response) => {
-                hasSentenceBuilder = (bool)response.value;
-            });
-
-        SpatialBridge.userWorldDataStoreService.GetVariable("hasDailyLifeScoutMedal", false)
-            .SetCompletedEvent((response) => {
-                hasDailyLifeScoutMedal = (bool)response.value;
-            });
-
-        SpatialBridge.userWorldDataStoreService.GetVariable("hasNumberCruncher", false)
-            .SetCompletedEvent((response) => {
-                hasNumberCruncher = (bool)response.value;
-            });
-
-        SpatialBridge.userWorldDataStoreService.GetVariable("hasGlobalCitizen", false)
-            .SetCompletedEvent((response) => {
-                hasGlobalCitizen = (bool)response.value;
-            });
-
-        SpatialBridge.userWorldDataStoreService.GetVariable("hasLexiconLegend", false)
-            .SetCompletedEvent((response) => {
-                hasLexiconLegend = (bool)response.value;
-            });
+    private void SaveProgress(string key, bool value)
+    {
+        PlayerPrefs.SetInt(key, value ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
     // ==================
@@ -88,9 +60,7 @@ public class GameProgressManager : MonoBehaviour
     {
         if (hasBuildersMedal) return;
         hasBuildersMedal = true;
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasBuildersMedal", true);
-        SpatialBridge.questService.quests[1].GetTaskByID(1).Complete();
-        SpatialBridge.questService.quests[2].Start();
+        SaveProgress("hasBuildersMedal", true);
         CheckSentenceBuilderBadge();
     }
 
@@ -98,9 +68,7 @@ public class GameProgressManager : MonoBehaviour
     {
         if (hasVerbMaster) return;
         hasVerbMaster = true;
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasVerbMaster", true);
-        SpatialBridge.questService.quests[2].GetTaskByID(1).Complete();
-        SpatialBridge.questService.quests[3].Start();
+        SaveProgress("hasVerbMaster", true);
         CheckSentenceBuilderBadge();
     }
 
@@ -108,14 +76,8 @@ public class GameProgressManager : MonoBehaviour
     {
         if (hasPathfinder) return;
         hasPathfinder = true;
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasPathfinder", true);
-        SpatialBridge.questService.quests[3].GetTaskByID(1).Complete();
+        SaveProgress("hasPathfinder", true);
         CheckSentenceBuilderBadge();
-    }
-
-    public void AwardLexiconLegendBadge()
-    {
-        CheckLexiconLegendBadge();
     }
 
     private void CheckSentenceBuilderBadge()
@@ -124,9 +86,7 @@ public class GameProgressManager : MonoBehaviour
         {
             if (bloqueadorInsignia != null)
                 bloqueadorInsignia.SetActive(false);
-            SpatialBridge.coreGUIService.DisplayToastMessage(
-                "The Sentence Builder Badge is waiting for you!");
-            SpatialBridge.questService.quests[4].Start();
+            Debug.Log("The Sentence Builder Badge is waiting for you!");
         }
     }
 
@@ -134,10 +94,8 @@ public class GameProgressManager : MonoBehaviour
     {
         if (hasSentenceBuilder) return;
         hasSentenceBuilder = true;
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasSentenceBuilder", true);
-        SpatialBridge.questService.quests[4].GetTaskByID(1).Complete();
-        SpatialBridge.coreGUIService.DisplayToastMessage(
-            "You completed GrammarWorld! The Sentence Builder Badge is yours!");
+        SaveProgress("hasSentenceBuilder", true);
+        Debug.Log("You completed GrammarWorld! The Sentence Builder Badge is yours!");
     }
 
     // ==================
@@ -148,58 +106,61 @@ public class GameProgressManager : MonoBehaviour
     {
         if (hasDailyLifeScoutMedal) return;
         hasDailyLifeScoutMedal = true;
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasDailyLifeScoutMedal", true);
-        SpatialBridge.questService.quests[5].GetTaskByID(1).Complete();
-
-        // Mostrar Medalla 4 en escena
-        if (medalla4 != null)
-            medalla4.MostrarMedalla();
-
-        CheckLexiconLegendBadge();
+        SaveProgress("hasDailyLifeScoutMedal", true);
+        if (medalla4 != null) medalla4.MostrarMedalla();
     }
 
     public void AwardNumberCruncherMedal()
     {
         if (hasNumberCruncher) return;
         hasNumberCruncher = true;
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasNumberCruncher", true);
-        SpatialBridge.questService.quests[6].GetTaskByID(1).Complete();
-
-        // Mostrar Medalla 5 en escena
-        if (medalla5 != null)
-            medalla5.MostrarMedalla();
-
-        CheckLexiconLegendBadge();
+        SaveProgress("hasNumberCruncher", true);
+        if (medalla5 != null) medalla5.MostrarMedalla();
     }
 
     public void AwardGlobalCitizenMedal()
     {
         if (hasGlobalCitizen) return;
         hasGlobalCitizen = true;
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasGlobalCitizen", true);
-        SpatialBridge.questService.quests[7].GetTaskByID(1).Complete();
+        SaveProgress("hasGlobalCitizen", true);
+        if (medalla6 != null) medalla6.MostrarMedalla();
+    }
 
-        // Mostrar Medalla 6 en escena
-        if (medalla6 != null)
-            medalla6.MostrarMedalla();
-
+    public void OnMedalla4Collected()
+    {
+        Debug.Log("Daily Life Scout Medal earned!");
         CheckLexiconLegendBadge();
+    }
+
+    public void OnMedalla5Collected()
+    {
+        Debug.Log("Number Cruncher Medal earned!");
+        CheckLexiconLegendBadge();
+    }
+
+    public void OnMedalla6Collected()
+    {
+        Debug.Log("Global Citizen Medal earned!");
+        CheckLexiconLegendBadge();
+    }
+
+    public void AwardLexiconLegendBadge()
+    {
+        if (hasLexiconLegend) return;
+        hasLexiconLegend = true;
+        SaveProgress("hasLexiconLegend", true);
+        Debug.Log("You completed VocabWorld+! The Lexicon Legend Badge is yours!");
     }
 
     private void CheckLexiconLegendBadge()
     {
         if (hasDailyLifeScoutMedal && hasNumberCruncher && hasGlobalCitizen && !hasLexiconLegend)
         {
-            hasLexiconLegend = true;
-            SpatialBridge.userWorldDataStoreService.SetVariable("hasLexiconLegend", true);
-            SpatialBridge.questService.quests[8].GetTaskByID(1).Complete();
-
-            // Mostrar Insignia Final 2 en escena
+            if (bloqueadorInsigniaVocab != null)
+                bloqueadorInsigniaVocab.SetActive(false);
             if (insigniaFinal2 != null)
                 insigniaFinal2.MostrarInsignia();
-
-            SpatialBridge.coreGUIService.DisplayToastMessage(
-                "You completed VocabWorld+! The Lexicon Legend Badge is yours!");
+            Debug.Log("The Lexicon Legend Badge is waiting for you!");
         }
     }
 
@@ -207,35 +168,28 @@ public class GameProgressManager : MonoBehaviour
     // GETTERS
     // ==================
 
-    public bool HasBuildersMedal()          => hasBuildersMedal;
-    public bool HasVerbMaster()             => hasVerbMaster;
-    public bool HasPathfinder()             => hasPathfinder;
-    public bool HasSentenceBuilder()        => hasSentenceBuilder;
-    public bool HasDailyLifeScoutMedal()    => hasDailyLifeScoutMedal;
-    public bool HasNumberCruncher()         => hasNumberCruncher;
-    public bool HasGlobalCitizen()          => hasGlobalCitizen;
-    public bool HasLexiconLegend()          => hasLexiconLegend;
+    public bool HasBuildersMedal()         => hasBuildersMedal;
+    public bool HasVerbMaster()            => hasVerbMaster;
+    public bool HasPathfinder()            => hasPathfinder;
+    public bool HasSentenceBuilder()       => hasSentenceBuilder;
+    public bool HasDailyLifeScoutMedal()   => hasDailyLifeScoutMedal;
+    public bool HasNumberCruncher()        => hasNumberCruncher;
+    public bool HasGlobalCitizen()         => hasGlobalCitizen;
+    public bool HasLexiconLegend()         => hasLexiconLegend;
 
     public void ResetAllProgress()
     {
-        hasBuildersMedal        = false;
-        hasVerbMaster           = false;
-        hasPathfinder           = false;
-        hasSentenceBuilder      = false;
-        hasDailyLifeScoutMedal  = false;
-        hasNumberCruncher       = false;
-        hasGlobalCitizen        = false;
-        hasLexiconLegend        = false;
+        hasBuildersMedal       = false;
+        hasVerbMaster          = false;
+        hasPathfinder          = false;
+        hasSentenceBuilder     = false;
+        hasDailyLifeScoutMedal = false;
+        hasNumberCruncher      = false;
+        hasGlobalCitizen       = false;
+        hasLexiconLegend       = false;
 
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasBuildersMedal", false);
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasVerbMaster", false);
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasPathfinder", false);
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasSentenceBuilder", false);
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasDailyLifeScoutMedal", false);
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasNumberCruncher", false);
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasGlobalCitizen", false);
-        SpatialBridge.userWorldDataStoreService.SetVariable("hasLexiconLegend", false);
-
-        SpatialBridge.coreGUIService.DisplayToastMessage("All progress reset!");
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        Debug.Log("All progress reset!");
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
-using SpatialSys.UnitySDK;
+
 
 public class DroppableSlot : MonoBehaviour, IPointerClickHandler
 {

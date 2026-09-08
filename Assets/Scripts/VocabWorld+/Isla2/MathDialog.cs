@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using SpatialSys.UnitySDK;
+
 
 public class MathDialog : MonoBehaviour
 {
@@ -136,7 +136,7 @@ public class MathDialog : MonoBehaviour
         aventurera1.localScale = originalScaleB;
         dialogPanel.SetActive(true);
 
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Now complete the equations!");
     }
 }

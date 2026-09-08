@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using SpatialSys.UnitySDK;
+
 
 public class CraterTutorialManager : MonoBehaviour
 {
@@ -219,7 +219,7 @@ public class CraterTutorialManager : MonoBehaviour
         if (firstBlock != null)
             firstBlock.ResetPosition();
 
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Game started! Cross the bridge!");
     }
 

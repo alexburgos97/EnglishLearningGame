@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
-using SpatialSys.UnitySDK;
+
 
 public class NumberTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -34,7 +34,7 @@ public class NumberTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        SpatialBridge.coreGUIService.DisplayToastMessage(numberInEnglish);
+        Debug.Log(numberInEnglish);
     }
 
     public void OnPointerExit(PointerEventData eventData)

@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-using SpatialSys.UnitySDK;
+
 
 public class VocabObject : MonoBehaviour
 {
@@ -61,7 +61,7 @@ public class VocabObject : MonoBehaviour
         else if (category == "school")
             VocabCardManager.Instance.AddSchoolWord(wordInEnglish);
 
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             wordInEnglish + " added to your Vocab Card!");
 
         Isla1Manager.Instance.OnFoodWordComplete();

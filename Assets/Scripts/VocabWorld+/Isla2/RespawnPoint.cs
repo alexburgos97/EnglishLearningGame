@@ -1,5 +1,5 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
+
 
 public class RespawnPoint : MonoBehaviour
 {
@@ -7,7 +7,10 @@ public class RespawnPoint : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        SpatialBridge.actorService.localActor.avatar.position =
-            puntoReaparicion.position;
+        if (!other.CompareTag("Player")) return;
+
+        // respawn
+        if (PlayerController.Instance != null)
+            PlayerController.Instance.Teleport(puntoReaparicion.position, PlayerController.Instance.transform.rotation);
     }
 }

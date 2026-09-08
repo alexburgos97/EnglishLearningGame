@@ -1,5 +1,5 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
+
 
 public class BridgeQuizManager : MonoBehaviour
 {
@@ -141,7 +141,7 @@ public class BridgeQuizManager : MonoBehaviour
 
     public void LlegadaAMeta()
     {
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Perfect! The bridge is stable! You crossed the crater!");
         GameProgressManager.Instance.AwardBuildersMedal();
 

@@ -1,5 +1,5 @@
 using UnityEngine;
-using SpatialSys.UnitySDK;
+
 
 public class Isla1Manager : MonoBehaviour
 {
@@ -129,7 +129,7 @@ public class Isla1Manager : MonoBehaviour
     {
         if (!zonaComidaComplete || !zonaRopaComplete || !zonaEscolarComplete)
         {
-            SpatialBridge.coreGUIService.DisplayToastMessage(
+            Debug.Log(
                 "Complete all activities to unlock the bridge!");
         }
     }
@@ -148,7 +148,7 @@ public class Isla1Manager : MonoBehaviour
             // Activar flechas hacia Zona Ropa
             ActivarFlechas(flechasZonaComida);
 
-            SpatialBridge.coreGUIService.DisplayToastMessage(
+            Debug.Log(
                 "Great! Now explore the Clothes Zone!");
             CheckAllZonesComplete();
         }
@@ -168,7 +168,7 @@ public class Isla1Manager : MonoBehaviour
         DesactivarFlechas(flechasZonaComida);
         ActivarFlechas(flechasZonaRopa);
 
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Amazing! Now explore the School Zone!");
         CheckAllZonesComplete();
     }
@@ -181,7 +181,7 @@ public class Isla1Manager : MonoBehaviour
         DesactivarFlechas(flechasZonaRopa);
         ActivarFlechas(flechasZonaEscolar);
 
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Excellent! Your Vocab Card is complete!");
         CheckAllZonesComplete();
     }
@@ -212,7 +212,7 @@ public class Isla1Manager : MonoBehaviour
         if (puente_Isla2 != null)
             puente_Isla2.SetActive(true);
 
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Congratulations! The bridge to Island 2 is now open!");
 
         GameProgressManager.Instance.AwardDailyLifeScoutMedal();

@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-using SpatialSys.UnitySDK;
+
 
 public class VolcanoRock : MonoBehaviour
 {
@@ -21,7 +21,7 @@ public class VolcanoRock : MonoBehaviour
     {
         if (targetPoint == null)
         {
-            SpatialBridge.coreGUIService.DisplayToastMessage("ERROR: targetPoint null!");
+            Debug.Log("ERROR: targetPoint null!");
             return;
         }
 

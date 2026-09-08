@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using SpatialSys.UnitySDK;
+
 
 public class VolcanoTutorialManager : MonoBehaviour
 {
@@ -233,7 +233,7 @@ public class VolcanoTutorialManager : MonoBehaviour
         if (rock != null)
             rock.gameObject.SetActive(false);
 
-        SpatialBridge.coreGUIService.DisplayToastMessage(
+        Debug.Log(
             "Go to the LEFT platform and start!");
     }
 
