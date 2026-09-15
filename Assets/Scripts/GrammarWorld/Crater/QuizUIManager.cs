@@ -27,12 +27,12 @@ public class QuizUIManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    public void MoverCanvasAPosicion(Transform posicionTrigger)
+    public void MoverCanvasAPosicion(Transform posicionTrigger, Transform rotacionTrigger = null)
     {
         if (quizCanvas != null)
         {
             quizCanvas.position = posicionTrigger.position + new Vector3(0, 1.5f, 0);
-            quizCanvas.rotation = posicionTrigger.rotation;
+            quizCanvas.rotation = (rotacionTrigger != null ? rotacionTrigger : posicionTrigger).rotation;
         }
     }
 

@@ -25,13 +25,26 @@ public class GameProgressManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
-    }
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
 
-    void Start()
-    {
+        // Este objeto vive dentro de _EspacioGrammarWorld, que WorldManager.Start()
+        // desactiva al iniciar. Si LoadProgress() estuviera en Start(), correría
+        // solo si este Start() se ejecuta antes que el de WorldManager (no garantizado),
+        // dejando el progreso sin cargar hasta la primera visita a GrammarWorld.
+        // Awake() siempre corre antes que cualquier Start(), así que es seguro aquí.
         LoadProgress();
+
+        // CheckSentenceBuilderBadge() normalmente se dispara solo dentro de los Award*Medal(),
+        // que no hacen nada si la medalla ya estaba en true (guardada de una sesión anterior).
+        // Sin este chequeo acá, un jugador que ya tenía las 3 medallas de GrammarWorld en
+        // PlayerPrefs nunca vuelve a evaluar la condición y bloqueadorInsignia se queda
+        // activado para siempre, aunque ya califique.
+        CheckSentenceBuilderBadge();
     }
 
     private void LoadProgress()

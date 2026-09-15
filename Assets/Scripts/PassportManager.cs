@@ -1,9 +1,23 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 
 public class PassportManager : MonoBehaviour
 {
+    // La escena no tiene ningún GameObject EventSystem (se perdió en la migración
+    // fuera de Spatial), así que el GraphicRaycaster del Canvas nunca recibía clics
+    // y ningún botón UI —incluido el ícono del pasaporte— respondía. Se crea uno
+    // automáticamente antes de que cargue la escena si no existe.
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void EnsureEventSystem()
+    {
+        if (EventSystem.current != null) return;
+
+        GameObject go = new GameObject("EventSystem", typeof(EventSystem), typeof(StandaloneInputModule));
+        DontDestroyOnLoad(go);
+    }
+
     public static PassportManager Instance { get; private set; }
 
     [Header("Paneles")]
@@ -71,6 +85,12 @@ public class PassportManager : MonoBehaviour
 
     private void OpenPassport()
     {
+        if (GameProgressManager.Instance == null)
+        {
+            Debug.LogWarning("PassportManager: GameProgressManager.Instance es null, no se puede abrir el pasaporte.");
+            return;
+        }
+
         // GrammarWorld
         medalBuilders.sprite = GameProgressManager.Instance.HasBuildersMedal() ?
             buildersColor : buildersGray;

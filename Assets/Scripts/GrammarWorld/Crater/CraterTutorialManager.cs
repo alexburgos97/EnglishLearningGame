@@ -12,6 +12,9 @@ public class CraterTutorialManager : MonoBehaviour
     public AudioSource audioSource;
     public BridgeBlock firstBlock;
 
+    [Tooltip("BlockTrigger del bloque 0 (en TriggerInicioPuente). Se activa manualmente al presionar PLAY en vez de por colisión, para que no aparezca junto con el panel del tutorial.")]
+    public BlockTrigger firstBlockTrigger;
+
     [Header("Audios de fases")]
     public AudioClip audioPhase1;
     public AudioClip audioPhase2;
@@ -218,6 +221,11 @@ public class CraterTutorialManager : MonoBehaviour
 
         if (firstBlock != null)
             firstBlock.ResetPosition();
+
+        // La pregunta real del bloque 0 se dispara acá (no por colisión con TriggerInicioPuente,
+        // que también lanza el tutorial) para que nunca aparezca junto con el panel del tutorial.
+        if (firstBlockTrigger != null)
+            firstBlockTrigger.Activar();
 
         Debug.Log(
             "Game started! Cross the bridge!");
